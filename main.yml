@@ -3,7 +3,7 @@
 #  set rest-api enable
 #end
 - name: Firewalls Fortinet
-  hosts: fortinet
+  hosts: fortigate-1
   connection: httpapi
   gather_facts: no
   
