@@ -16,14 +16,14 @@
   connection: httpapi
   gather_facts: no
   
-  tasks:
-    - name: Alert console
-      fortinet.fortianalyzer.faz_cli_system_global:
-        cli_system_global:
-          language: english
+  # tasks:
+  #   - name: Alert console
+  #     fortinet.fortianalyzer.faz_cli_system_global:
+  #       cli_system_global:
+  #         language: english
 
-  # roles:
-  #   - fortianalyzer_device_authorization
+  roles:
+    - fortianalyzer_device_authorization
   
 
   
