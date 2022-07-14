@@ -31,4 +31,5 @@ fortigate_vdom: "root"
 
 #fortianalyzer_ip: "172.16.1.213"
 fortianalyzer_ip: "fortianalyzer.fortidemo.com"
-fortigate_ip: "172.16.1.212"
+#fortigate_ip: "172.16.1.212"
+fortigate_ip: "fortigate-vm.fortidemo.com"
