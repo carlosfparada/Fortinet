@@ -1,0 +1,62 @@
+---
+
+# The default username for your Fortinet router is admin. The default password is (blank).
+
+# License available for 15 days after first use
+#
+# https://help.fortinet.com/fdb/5-0-0/html/source/tasks/t_network_configuration_cli.html
+#
+# Set the IP address and netmask of the LAN interface:
+#   config system interface
+#     edit <port>
+#       set mode static
+#       set ip <ip_address> <netmask>
+#       set allowaccess (http https ping ssh telnet)
+#     end
+
+# where:
+#   <port> can be one of port1- port4.
+#   <ip_address> is the interface IP address.
+#   <netmask> is the interface netmask.
+
+# Sample Command:
+#   config system interface
+#     edit port1
+#       set mode static
+#       set ip 192.168.100.159 255.255.255.0
+#       set allowaccess ping https ssh
+#     end
+# 
+# To save configs permanently
+#   execute cfg save
+#
+# Generate Token: https://docs.fortinet.com/document/forticonverter/6.2.1/online-help/866905/connect-fortigate-device-via-api-token
+# Step 1: Create an administrator profile
+#   On the FortiGate GUI, select System > Admin Profiles > Create New.
+#   Create a New Profile.
+#   Enter a profile name and enable all the Read/Write permissions. Please note the profile name, it will be used in Step 2.
+#   Click OK
+# Step 2: Create a REST API Admin
+#   On the FortiGate GUI, select System > Administrators > Create New > REST API Admin.
+#   Enter the API-user's name and select the profile name you created from Step 1.
+#   The trusted host must be specified to ensure that the machine of your FortiConverter installed can reach the FortiGate.
+#   Click OK and an API token will be generated.
+#   Make a note of the API token as it’s only shown once and cannot be retrieved.
+#   Click Close to complete creation of the REST API Admin.
+# Regenerate an API token for API-user:
+#   In FortiGate GUI,
+#     Go to System > Administrators.
+#     Edit your REST API admin user
+#     Click Regenerate.
+#   In CLI console, use the CLI command below:
+#     execute api-user generate-key [API user name]
+#
+# Token: 1xf70f03r00c8p5fH5chpn5GQ7rhmQ
+#
+# View firewall policies (rules):
+#   UI: Policy & Objects -> Firewall Policy
+#   CLI: show firewall policy 
+
+#- include_vars: ../vars/main.yml
+
+- include_tasks: rule_main.yml

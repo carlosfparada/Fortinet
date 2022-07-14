@@ -1,0 +1,14 @@
+---
+#config system global
+#  set rest-api enable
+#end
+- name: Firewalls Fortinet
+  hosts: fortinet
+  connection: httpapi
+  gather_facts: no
+  
+  roles:
+    - fortigate-gatther-facts
+    - fortigate-create-rules
+    
+  

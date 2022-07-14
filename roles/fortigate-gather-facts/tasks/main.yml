@@ -1,0 +1,14 @@
+---
+
+- name: Gather facts from Fortinet FortiGate
+  fortinet.fortios.fortios_configuration_fact:
+    vdom: "{{ fw_fg_vdom }}"
+    access_token: "{{ fw_access_token }}"
+    selectors:
+      - selector: "firewall_policy"
+      - selector: "system_interface"
+      - selector: "firewall_address"
+  register: _fortinet_facts
+
+- debug:
+    var: _fortinet_facts
