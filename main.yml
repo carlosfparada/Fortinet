@@ -17,6 +17,13 @@
   gather_facts: no
   
   tasks:
+    - fmgr_fact:
+      facts:
+        selector: 'dvmdb_script'
+        params:
+            adom: 'root'
+            script: ''
+
     - name: Alert console
       fortinet.fortianalyzer.faz_cli_system_global:
         cli_system_global:
