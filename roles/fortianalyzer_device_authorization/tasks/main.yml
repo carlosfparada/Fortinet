@@ -1,6 +1,6 @@
 ---
 
-- name: Autorize an Added device (Fortigste) to FortiAnalyzer 
+- name: Autorize an Added device on FortiAnalyzer 
   community.fortios.faz_device:
     adom: "{{ fortigate_vdom }}"
     device_username: "admin"
