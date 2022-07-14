@@ -19,10 +19,11 @@
   tasks:
     - name: Get facts
       fortinet.fortimanager.fmgr_fact:
-        selector: 'dvmdb_script'
-        params:
-            adom: 'root'
-            script: ''
+        facts:
+          selector: 'dvmdb_script'
+          params:
+              adom: 'root'
+              script: ''
 
     - name: Alert console
       fortinet.fortianalyzer.faz_cli_system_global:
