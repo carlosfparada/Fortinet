@@ -6,6 +6,15 @@
 
 - name: Test
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
+    dvm_cmd_add_device:
+      adom: "{{ fortigate_vdom }}"
+      device:
+        admin_usr: admin
+        admin_pass: admin
+        device_action: "promote_unreg"
+        ip: "{{ fortigate_ip }}"
+        mgmt_mode: faz
+
 
 - name: Autorize an Added device on FortiAnalyzer 
   community.fortios.faz_device:
