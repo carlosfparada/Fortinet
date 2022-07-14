@@ -5,7 +5,7 @@
     var: _address
     verbosity: 2
 
-- name: "create IPv4 address entry for {{ _address.name }}"
+- name: "Create IPv4 address entry for {{ _address.name }}"
   fortinet.fortios.fortios_firewall_address:
     vdom: "{{ fw_fg_vdom }}"
     access_token: "{{ fw_access_token }}"

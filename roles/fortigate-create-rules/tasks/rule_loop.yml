@@ -2,7 +2,8 @@
 # inner rule
 # Fortigate
 
-- set_fact:
+- name: Set initial facts
+  set_fact:
     _src_names: []
     _dest_names: []
     _services: []
@@ -22,7 +23,8 @@
     loop_var: _address
   when: _rule.src.addresses | length > 0
 
-- set_fact:
+- name: Set destination interface facts
+  set_fact:
     _intf: "{{ _rule.dest.interface }}"
   
 - name: Loop dest IP address list
@@ -76,7 +78,7 @@
   loop_control:
     label: "{{ item.name }}"
 
-- name: "add rule {{ _rule.name }} with policyID: {{ _next_policyid }}"
+- name: "Generate add rule {{ _rule.name }} with policyID: {{ _next_policyid }}"
   fortinet.fortios.fortios_firewall_policy:
     vdom: "{{ fw_fg_vdom }}"
     access_token: "{{ fw_access_token }}"

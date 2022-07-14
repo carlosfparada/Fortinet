@@ -10,5 +10,6 @@
     #  - selector: "firewall_address"
   register: _fortinet_facts
 
-- debug:
+- name: Debug FortiGate Facts
+  debug:
     var: _fortinet_facts
