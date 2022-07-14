@@ -8,8 +8,7 @@
 #   roles:
 #     - fortigate-gather-facts
 #     - fortigate-create-rules
-#     - fortigate-connect-fortianalyzer 
-  
+#     - fortigate-connect-fortianalyzer  
 
 - name: Fortinet FortiAnalyser roles
   hosts: fortianalyzer-1
