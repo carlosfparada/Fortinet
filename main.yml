@@ -16,8 +16,14 @@
   connection: httpapi
   gather_facts: no
   
-  roles:
-    - fortianalyzer_device_authorization
+  tasks:
+    - name: Alert console
+      faz_cli_system_global:
+        cli_system_global:
+          language: english
+
+  #roles:
+  #  - fortianalyzer_device_authorization
   
 
   
