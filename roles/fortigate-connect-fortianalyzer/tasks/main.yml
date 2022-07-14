@@ -10,7 +10,7 @@
       source_ip: "172.16.1.212"
       reliable: enable
       upload_option: realtime
-      status: disable
+      status: enable
   register: _fortinet_log_settings
 
 - name: Debug FortiGate connect FortiAnalyzer logs settings
