@@ -16,3 +16,19 @@
 - name: Debug FortiGate connect FortiAnalyzer logs settings
   debug:
     var: _fortinet_log_settings
+
+
+- name: DISCOVER AND ADD DEVICE A VIRTUAL FORTIGATE
+  community.fortios.faz_device:
+    adom: "root"
+    device_username: "admin"
+    device_password: "admin"
+    device_ip: "{{ fortigate_ip }}"
+    device_unique_name: "FGT2"
+    mgmt_mode: "faz"
+    os_type: "fos"
+    os_ver: "5.0"
+    minor_rev: 6
+    state: "present"
+    platform_str: "FortiGate-VM64"
+    
