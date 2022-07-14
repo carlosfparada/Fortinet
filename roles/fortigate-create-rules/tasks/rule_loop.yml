@@ -80,8 +80,8 @@
 
 - name: "Generate add rule {{ _rule.name }} with policyID: {{ _next_policyid }}"
   fortinet.fortios.fortios_firewall_policy:
-    vdom: "{{ fw_fg_vdom }}"
-    access_token: "{{ fw_access_token }}"
+    vdom: "{{ fortigate_vdom }}"
+    access_token: "{{ fortigate_token }}"
     state: present
     firewall_policy: 
       policyid: "{{ _next_policyid }}"
