@@ -10,10 +10,7 @@
       source_ip: "172.16.1.212"
       reliable: enable
       upload_option: realtime
-      #interface: port1
-      #set serial "FAZ-VMTM22009405"
-      #enc_algorithm: low
-      status: enable
+      status: disable
   register: _fortinet_log_settings
 
 - name: Debug FortiGate connect FortiAnalyzer logs settings
