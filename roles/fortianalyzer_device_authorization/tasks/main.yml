@@ -1,5 +1,9 @@
 ---
 
+- name: debug
+  debug:
+    var: ansible_user
+
 - name: Autorize an Added device on FortiAnalyzer 
   community.fortios.faz_device:
     adom: "{{ fortigate_vdom }}"
