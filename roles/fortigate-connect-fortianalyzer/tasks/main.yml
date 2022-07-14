@@ -3,7 +3,7 @@
 - name: Connect Fortinet FortiGate to FortiAnalyzer
   fortinet.fortios.fortios_log_fortianalyzer_setting:
     vdom: "{{ fortigate_vdom }}"
-    access_token: fortigate_token
+    access_token: "{{ fortigate_token }}"
     log_fortianalyzer_setting:
       certificate_verification: "enable"
       server: "{{ fortianalyzer_ip }}"
