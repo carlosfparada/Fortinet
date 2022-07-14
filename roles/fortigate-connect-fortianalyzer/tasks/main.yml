@@ -2,12 +2,12 @@
 
 - name: Connect Fortinet FortiGate to FortiAnalyzer
   fortinet.fortios.fortios_log_fortianalyzer_setting:
-    vdom: "{{ fw_fg_vdom }}"
-    access_token: "{{ fw_access_token }}"
+    vdom: "{{ fortigate_vdom }}"
+    access_token: fortigate_token
     log_fortianalyzer_setting:
       certificate_verification: "enable"
-      server: "172.16.1.213"
-      source_ip: "172.16.1.212"
+      server: "{{ fortianalyzer_ip }}"
+      source_ip: "{{ fortigate_ip }}"
       reliable: enable
       upload_option: realtime
       status: enable

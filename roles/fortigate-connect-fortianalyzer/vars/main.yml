@@ -26,6 +26,8 @@
 #   UI: Policy & Objects -> Firewall Policy
 #   CLI: show firewall policy 
 
-fw_fg_vdom: "root"
-fw_access_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
+fortigate_vdom: "root"
+fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 
+fortianalyzer_ip: "172.16.1.213"
+fortigate_ip: "172.16.1.212"
