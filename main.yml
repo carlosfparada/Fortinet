@@ -17,7 +17,8 @@
   gather_facts: no
   
   tasks:
-    - fmgr_fact:
+    - name: Get facts
+      fortinet.fortimanager.fmgr_fact:
       facts:
         selector: 'dvmdb_script'
         params:
