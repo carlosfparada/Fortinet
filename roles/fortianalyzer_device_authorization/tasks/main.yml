@@ -9,4 +9,5 @@
     #device_unique_name: "FortiGate-VM64-KVM"
     #device_serial: "FGVMEVPAYOCISQ99"
     mgmt_mode: "faz"
-    mode: "promote"
+    #mode: "promote"
+    mode: "add"
