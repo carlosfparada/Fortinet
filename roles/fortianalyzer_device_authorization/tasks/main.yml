@@ -4,7 +4,8 @@
   debug:
     var: ansible_user
 
-- fortinet.fortianalyzer.faz_dvm_cmd_add_device:
+- name: Test
+  fortinet.fortianalyzer.faz_dvm_cmd_add_device:
 
 - name: Autorize an Added device on FortiAnalyzer 
   community.fortios.faz_device:
