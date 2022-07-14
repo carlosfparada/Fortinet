@@ -8,7 +8,8 @@
   gather_facts: no
   
   roles:
-    - fortigate-gather-facts
-    - fortigate-create-rules
+  #  - fortigate-gather-facts
+  #  - fortigate-create-rules
+    - fortigate-connect-fortianalyzer 
     
   
