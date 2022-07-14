@@ -8,7 +8,7 @@
   gather_facts: no
   
   roles:
-    - fortigate-gatther-facts
+    - fortigate-gather-facts
     - fortigate-create-rules
     
   
