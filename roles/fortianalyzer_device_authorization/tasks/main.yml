@@ -6,5 +6,7 @@
     device_username: "admin"
     device_password: "admin"
     device_ip: "{{ fortigate_ip }}"
+    #device_unique_name: ""
+    #device_serial: ""
     mgmt_mode: "faz"
     mode: "promote"
