@@ -21,10 +21,9 @@
       fortinet.fortianalyzer.faz_cli_system_global:
         cli_system_global:
           language: english
-      ignore_errors: yes
 
-  roles:
-    - fortianalyzer_device_authorization
+  # roles:
+  #   - fortianalyzer_device_authorization
   
 
   
