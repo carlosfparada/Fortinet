@@ -1,0 +1,18 @@
+---
+
+- name: Connect Fortinet FortiGate to FortiAnalyzer
+  fortinet.fortios.fortios_log_fortianalyzer_setting:
+    vdom: "{{ fortigate_vdom }}"
+    access_token: fortigate_token
+    log_fortianalyzer_setting:
+      certificate_verification: "enable"
+      server: "{{ fortianalyzer_ip }}"
+      source_ip: "{{ fortigate_ip }}"
+      reliable: enable
+      upload_option: realtime
+      status: enable
+  register: _fortinet_log_settings
+
+- name: Debug FortiGate connect FortiAnalyzer logs settings
+  debug:
+    var: _fortinet_log_settings

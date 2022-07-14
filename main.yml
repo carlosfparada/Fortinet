@@ -1,8 +1,6 @@
 ---
-#config system global
-#  set rest-api enable
-#end
-- name: Fortinet FortiGate role
+
+- name: Fortinet FortiGate roles
   hosts: fortigate-1
   connection: httpapi
   gather_facts: no
@@ -10,6 +8,16 @@
   roles:
   #  - fortigate-gather-facts
   #  - fortigate-create-rules
-    - fortigate-connect-fortianalyzer 
-    
+  #  - fortigate-connect-fortianalyzer 
+  
+
+- name: Fortinet FortiAnalyser roles
+  hosts: fortianalyzer-1
+  connection: httpapi
+  gather_facts: no
+  
+  roles:
+    - fortianalyzer_device_authorization
+  
+
   
