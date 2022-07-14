@@ -1,16 +1,18 @@
 ---
 
-- name: DISCOVER AND ADD DEVICE A VIRTUAL FORTIGATE
-  community.fortios.faz_device:
-    #adom: "{{ fortigate_vdom }}"
-    #access_token: fortigate_token
-    device_username: "admin"
-    device_password: "admin"
-    device_ip: "{{ fortigate_ip }}"
-    device_unique_name: "FGT2"
-    mgmt_mode: "faz"
-    os_type: "fos"
-    os_ver: "5.0"
-    minor_rev: 6
-    state: "present"
-    platform_str: "FortiGate-VM64"
+- name: Connect Fortinet FortiGate to FortiAnalyzer
+  fortinet.fortios.fortios_log_fortianalyzer_setting:
+    vdom: "{{ fortigate_vdom }}"
+    access_token: fortigate_token
+    log_fortianalyzer_setting:
+      certificate_verification: "enable"
+      server: "{{ fortianalyzer_ip }}"
+      source_ip: "{{ fortigate_ip }}"
+      reliable: enable
+      upload_option: realtime
+      status: enable
+  register: _fortinet_log_settings
+
+- name: Debug FortiGate connect FortiAnalyzer logs settings
+  debug:
+    var: _fortinet_log_settings

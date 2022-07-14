@@ -1,14 +1,14 @@
 ---
 
-- name: Fortinet FortiGate roles
-  hosts: fortigate-1
-  connection: httpapi
-  gather_facts: no
+# - name: Fortinet FortiGate roles
+#   hosts: fortigate-1
+#   connection: httpapi
+#   gather_facts: no
   
-  roles:
-  #  - fortigate-gather-facts
-  #  - fortigate-create-rules
-  #  - fortigate-connect-fortianalyzer 
+#   roles:
+#     - fortigate-gather-facts
+#     - fortigate-create-rules
+#     - fortigate-connect-fortianalyzer 
   
 
 - name: Fortinet FortiAnalyser roles
