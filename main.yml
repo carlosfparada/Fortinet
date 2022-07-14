@@ -22,8 +22,8 @@
         cli_system_global:
           language: english
 
-  roles:
-    - fortianalyzer_device_authorization
+  # roles:
+  #   - fortianalyzer_device_authorization
   
 
   
