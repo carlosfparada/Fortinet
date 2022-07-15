@@ -1,9 +1,5 @@
 ---
 
-- name: debug
-  debug:
-    var: ansible_user
-
 - name: Test
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
     dvm_cmd_add_device:
@@ -11,9 +7,11 @@
       device:
         adm_usr: admin
         adm_pass: admin
-        device action: "promote_unreg"
         ip: "{{ fortigate_ip }}"
+        name: "FortiGate-VM64-KVM"
+        #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
+        device action: "promote_unreg"
 
 
 # - name: Autorize an Added device on FortiAnalyzer 
