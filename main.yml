@@ -16,9 +16,9 @@
   gather_facts: no
 
   roles:
-    - fortianalyzer_device_authorization
+    #- fortianalyzer_device_authorization
     - fortianalyzer_config_settings
-    - fortianalyzer_gather_facts
+    #- fortianalyzer_gather_facts
   
 
   
