@@ -32,7 +32,7 @@
       webadmin_language: english
       https_port: 443
       http_port: 80
-      gui-theme: kiwi
+      gui-theme: green
       access-banner: disable
       admin-https-redirect: disable
       objects-force-deletion: disable
