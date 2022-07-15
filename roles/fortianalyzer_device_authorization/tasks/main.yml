@@ -16,16 +16,16 @@
         mgmt_mode: faz
 
 
-- name: Autorize an Added device on FortiAnalyzer 
-  community.fortios.faz_device:
-    adom: "{{ fortigate_vdom }}"
-    device_username: "admin"
-    device_password: "admin"
-    device_ip: "{{ fortigate_ip }}"
-    mgmt_mode: "faz"
-    mode: "promote"
-    #mode: "add"
-    #device_unique_name: "FortiGate-VM64-KVM"
-    #device_serial: "FGVMEVPAYOCISQ99"
-    #platform_str: "FortiGate-VM64"
+# - name: Autorize an Added device on FortiAnalyzer 
+#   community.fortios.faz_device:
+#     adom: "{{ fortigate_vdom }}"
+#     device_username: "admin"
+#     device_password: "admin"
+#     device_ip: "{{ fortigate_ip }}"
+#     mgmt_mode: "faz"
+#     mode: "promote"
+#     #mode: "add"
+#     #device_unique_name: "FortiGate-VM64-KVM"
+#     #device_serial: "FGVMEVPAYOCISQ99"
+#     #platform_str: "FortiGate-VM64"
 
