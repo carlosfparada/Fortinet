@@ -23,8 +23,9 @@
 
 # System Settings
 
-- faz_cli_system_admin_setting:
-    fortinet.fortianalyzer.cli_system_admin_setting:
+- name: Config System Admin Settings
+  faz_cli_system_admin_setting.faz_cli_system_admin_setting:
+    cli_system_admin_setting:
       idle_timeout: 28800
       idle_timeout_api: 28800
       idle_timeout_gui: 28800
