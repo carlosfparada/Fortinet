@@ -23,203 +23,115 @@
 
 # Get facts
 
-- name: Get FortiAnalyzer facts
+- name: "Get FortiAnalyzer facts dvmdb_adom {{ fortigate_vdom }}"
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
         selector: dvmdb_adom
-        # selector: dvmdb_group
+        params:
+          adom: "{{ fortigate_vdom }}"
 
-
-- name: Get FortiAnalyzer facts
-  fortinet.fortianalyzer.faz_fact:
-    facts:
-        #selector: dvmdb_device
-        selector: dvmdb_adom
-        # selector: dvmdb_group
-        
-
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts dvmdb_device
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
-        # selector: cli_system_admin_setting
-        # selector: cli_system_admin_user
-        # selector: sys_status
         params:
             adom: "{{ fortigate_vdom }}"
             device: ""
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_fmupdate_analyzer_virusreport
-        # selector: cli_system_admin_user
-        # selector: sys_status
 
-
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_fmupdate_service
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_fmupdate_service
-        # selector: cli_system_admin_user
-        # selector: sys_status
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_admin_user
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_admin_user
-        # selector: sys_status
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_connector
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
-        selector: sys_status
-
-- name: Get FortiAnalyzer facts
-  fortinet.fortianalyzer.faz_fact:
-    facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_connector
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_dns
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_dns
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_fortiview_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_fortiview_setting
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_global
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_global
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_interface
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_interface
         params:
-          interface: port1
+          interface: ""
 
-
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_locallog_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_locallog_setting
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_locallog_disk_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_locallog_disk_setting
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_filter
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_locallog_fortianalyzer_filter
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_locallog_fortianalyzer_setting
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_log_settings
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_log_settings
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_log_alert
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_log_alert
 
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_log_interfacestats
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_log_interfacestats
   
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_performance
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_performance
   
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_report_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_report_setting
   
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts cli_system_status
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: cli_system_status
   
-- name: Get FortiAnalyzer facts
+- name: Get FortiAnalyzer facts sys_status
   fortinet.fortianalyzer.faz_fact:
     facts:
-        #selector: dvmdb_device
-        # selector: dvmdb_adom
-        # selector: dvmdb_group
         selector: sys_status
-  
-
 
