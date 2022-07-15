@@ -1,5 +1,8 @@
 ---
 
+
+# Device Management
+
 - name: Creation of a Device Group
   fortinet.fortianalyzer.faz_dvmdb_group:
     adom: "{{ fortigate_vdom }}"
@@ -17,3 +20,17 @@
       vdom: "{{ fortigate_vdom }}"
     group: Group1
     state: present
+
+# Get facts
+
+- name: Get FortiAnalyzer facts
+  fortinet.fortianalyzer.faz_fact:
+    facts:
+        selector: dvmdb_device
+        # selector: dvmdb_adom
+        # selector: dvmdb_group
+        # selector: cli_system_admin_setting
+        # selector: cli_system_admin_user
+        # selector: sys_status
+        params:
+            adom: 'root'
