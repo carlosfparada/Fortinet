@@ -49,7 +49,7 @@
     cli_system_admin_profile:
       profileid: MyProfile
       description: This is MyProfile description... 
-      system-settings: read
+      system-setting: read
       run-report: read-write
       triage-events: read-write
       update-incidents: read-write
