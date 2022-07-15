@@ -1,6 +1,6 @@
 ---
 
-- name: Test
+- name: FortiAnalyzer to Authorize Fortigate add
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
     dvm_cmd_add_device:
       adom: "{{ fortigate_vdom }}"

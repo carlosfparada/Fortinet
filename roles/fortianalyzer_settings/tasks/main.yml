@@ -52,6 +52,8 @@
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_admin_user
+        params: 
+          user: ""
 
 - name: Get FortiAnalyzer facts cli_system_connector
   fortinet.fortianalyzer.faz_fact:
