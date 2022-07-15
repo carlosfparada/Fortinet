@@ -20,3 +20,25 @@
       vdom: "{{ fortigate_vdom }}"
     group: Group1
     state: present
+
+# System Settings
+
+- faz_cli_system_admin_setting:
+    fortinet.fortianalyzer.cli_system_admin_setting:
+      idle_timeout: 28800
+      idle_timeout_api: 28800
+      idle_timeout_gui: 28800
+      webadmin_language: english
+      https_port: 443
+      http_port: 80
+      gui-theme: kiwi
+      access-banner: disable
+      admin-https-redirect: disable
+      objects-force-deletion: disable
+      shell-access: disable
+      show-add-multiple: disable
+      show-checkbox-in-table: disable
+      show-device-import-export: disable
+      show-fct-manager: disable
+      show-hostname: disable
+      show-log-forwarding: disable
