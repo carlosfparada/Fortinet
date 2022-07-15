@@ -17,7 +17,8 @@
 
   roles:
     - fortianalyzer_device_authorization
-    - fortianalyzer_settings
+    - fortianalyzer_config_settings
+    - fortianalyzer_gather_facts
   
 
   
