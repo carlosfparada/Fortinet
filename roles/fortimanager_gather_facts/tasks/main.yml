@@ -1,0 +1,8 @@
+---
+
+- name: Get FortiManager facts
+  fortinet.fortianalyzer.faz_fact:
+    facts:
+        selector: dvmdb_adom
+        params:
+          adom: "{{ fortigate_vdom }}"
