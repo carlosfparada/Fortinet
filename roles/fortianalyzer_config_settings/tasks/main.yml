@@ -74,7 +74,7 @@
 
 - name: Create System Settings Log Disk profile (Advanced -> Device Log Settings)
   fortinet.fortianalyzer.faz_cli_system_locallog_disk_setting:
-    faz_cli_system_locallog_disk_setting:
+    cli_system_locallog_disk_setting:
       roll-day:
       - sunday
       - monday
