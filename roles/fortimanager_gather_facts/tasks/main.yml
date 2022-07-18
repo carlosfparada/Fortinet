@@ -57,6 +57,3 @@
         selector: sys_status
         params:
           user: ""
-
-
-
