@@ -48,7 +48,7 @@
   fortinet.fortianalyzer.faz_cli_system_admin_profile:
     cli_system_admin_profile:
       profileid: MyProfile
-      description: This is MyProfile description... 
+      description: This is MyProfile created by Ansible
       system-setting: read
       adom-switch: read
       device-manager: read-write
@@ -60,3 +60,33 @@
       run-report: read-write
       triage-events: read-write
     state: present
+
+- name: Create System Admin (Admin -> Administrators)
+  fortinet.fortianalyzer.faz_cli_system_admin_user:
+    cli_system_admin_user:
+      userid: myadmin
+      description: 'My admin user created by Ansible'
+      change-password: disable
+      email-address: 'myadmin@ansible.com'
+      profileid: MyProfile
+      two-factor-auth: disable
+    state: present
+
+
+
+# - name: Create System Admin profile (Admin -> Profile)
+#   fortinet.fortianalyzer.faz_cli_system_fortiview_setting:
+#     cli_system_fortiview_setting:
+#       profileid: MyProfile
+#       description: This is MyProfile description... 
+#       system-setting: read
+#       adom-switch: read
+#       device-manager: read-write
+#       update-incidents: read-write
+#       realtime-monitor: read-write
+#       execute-playbook: read-write
+#       fabric-viewer: read
+#       report-viewer: read-write
+#       run-report: read-write
+#       triage-events: read-write
+#     state: present
