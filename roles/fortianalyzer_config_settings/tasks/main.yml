@@ -75,22 +75,22 @@
 - name: Create System Settings Log File Management (Advanced -> File Management)
   fortinet.fortianalyzer.faz_cli_system_autodelete:
     cli_system_autodelete:
-      dlp-files-auto-deletion:
+      log-auto-deletion:
         retention: days
         runat: 2 #2:00
         value: 200
         status: enable
-      log-auto-deletion:
+      report-auto-deletion:
         retention: days
-        runat: 3 #2:00
+        runat: 3 #3:00
         value: 300
         status: enable
-      quarantine-files-auto-deletion:
+      dlp-files-auto-deletion:
         retention: days
-        runat: 4 #2:00
+        runat: 4 #4:00
         value: 400
         status: enable
-      report-auto-deletion:
+      quarantine-files-auto-deletion:
         retention: days
         runat: 5 #2:00
         value: 500
