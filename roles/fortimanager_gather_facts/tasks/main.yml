@@ -26,10 +26,10 @@
             adom: "{{ fortigate_vdom }}"
             device: ""
 
-- name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_fmupdate_analyzer_virusreport
+# - name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
+#   fortinet.fortimanager.fmgr_fact:
+#     facts:
+#         selector: cli_fmupdate_analyzer_virusreport
 
 - name: Get FortiAnalyzer facts cli_fmupdate_service
   fortinet.fortimanager.fmgr_fact:
