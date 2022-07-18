@@ -74,7 +74,7 @@
 
 - name: Create System Settings Log File Management (Advanced -> File Management)
   fortinet.fortianalyzer.faz_cli_system_autodelete:
-    faz_cli_system_autodelete:
+    cli_system_autodelete:
       cli_system_autodelete:
         dlp-files-auto-deletion:
           retention: days
