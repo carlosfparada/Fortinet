@@ -7,14 +7,14 @@
         params:
           adom: "{{ fortigate_vdom }}"
 
-- name: "Get FortiAnalyzer facts dvmdb_adom {{ fortigate_vdom }}"
+- name: "Get FortiManager facts dvmdb_adom {{ fortigate_vdom }}"
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: dvmdb_adom
         params:
           adom: "{{ fortigate_vdom }}"
 
-- name: Get FortiAnalyzer facts dvmdb_device
+- name: Get FortiManager facts dvmdb_device
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: dvmdb_device
@@ -22,43 +22,44 @@
             adom: "{{ fortigate_vdom }}"
             device: ""
 
-- name: Get FortiAnalyzer facts system_interface
+- name: Get FortiManager facts system_interface
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_interface
         params:
             interface: ""
 
-- name: Get FortiAnalyzer facts system_locallog_setting
+- name: Get FortiManager facts system_locallog_setting
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_locallog_setting
 
-- name: Get FortiAnalyzer facts system_performance
+- name: Get FortiManager facts system_performance
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_performance
 
-- name: Get FortiAnalyzer facts firewall_profilegroup
+- name: Get FortiManager facts firewall_profilegroup
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: firewall_profilegroup
         params:
+          profile-group: ""
           adom: ""
 
-- name: Get FortiAnalyzer facts system_admin_profile
+- name: Get FortiManager facts system_admin_profile
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_admin_profile
 
-- name: Get FortiAnalyzer facts system_admin_user
+- name: Get FortiManager facts system_admin_user
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_admin_user
         params:
           user: ""
 
-- name: Get FortiAnalyzer facts sys_status
+- name: Get FortiManager facts sys_status
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: sys_status
