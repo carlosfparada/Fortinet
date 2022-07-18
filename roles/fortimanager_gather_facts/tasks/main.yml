@@ -31,10 +31,10 @@
 #     facts:
 #         selector: cli_fmupdate_analyzer_virusreport
 
-- name: Get FortiAnalyzer facts cli_fmupdate_service
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_fmupdate_service
+# - name: Get FortiAnalyzer facts cli_fmupdate_service
+#   fortinet.fortimanager.fmgr_fact:
+#     facts:
+#         selector: cli_fmupdate_service
 
 - name: Get FortiAnalyzer facts cli_system_admin_user
   fortinet.fortimanager.fmgr_fact:
