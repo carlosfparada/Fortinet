@@ -1,9 +1,5 @@
 ---
 
-- name: debug
-  debug:
-    var: hostname
-
 - name: Get FortiManager facts
   fortinet.fortimanager.fmgr_fact:
     facts:
@@ -47,6 +43,8 @@
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: firewall_profilegroup
+        params:
+          adom: ""
 
 - name: Get FortiAnalyzer facts system_admin_profile
   fortinet.fortimanager.fmgr_fact:
