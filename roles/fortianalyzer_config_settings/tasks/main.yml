@@ -72,7 +72,7 @@
       two-factor-auth: disable
     state: present
 
-- name: Create System Settings Log Disk profile (Advanced -> Device Log Settings)
+- name: Create System Settings Log ?? (Advanced -> Log??)
   fortinet.fortianalyzer.faz_cli_system_autodelete:
    - faz_cli_system_autodelete:
         cli_system_autodelete:
