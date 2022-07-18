@@ -72,27 +72,27 @@
       two-factor-auth: disable
     state: present
 
-- name: Create System Settings Log ?? (Advanced -> Log??)
+- name: Create System Settings Log File Management (Advanced -> File Management)
   fortinet.fortianalyzer.faz_cli_system_autodelete:
-   - faz_cli_system_autodelete:
-        cli_system_autodelete:
-          dlp-files-auto-deletion:
-            retention: days
-            runat: 2 #2:00
-            value: 200
-            status: enable
-          log-auto-deletion:
-            retention: days
-            runat: 3 #2:00
-            value: 300
-            status: enable
-          quarantine-files-auto-deletion:
-            retention: days
-            runat: 4 #2:00
-            value: 400
-            status: enable
-          report-auto-deletion:
-            retention: days
-            runat: 5 #2:00
-            value: 500
-            status: enable
+    faz_cli_system_autodelete:
+      cli_system_autodelete:
+        dlp-files-auto-deletion:
+          retention: days
+          runat: 2 #2:00
+          value: 200
+          status: enable
+        log-auto-deletion:
+          retention: days
+          runat: 3 #2:00
+          value: 300
+          status: enable
+        quarantine-files-auto-deletion:
+          retention: days
+          runat: 4 #2:00
+          value: 400
+          status: enable
+        report-auto-deletion:
+          retention: days
+          runat: 5 #2:00
+          value: 500
+          status: enable
