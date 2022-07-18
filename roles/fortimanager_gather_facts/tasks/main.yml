@@ -39,14 +39,6 @@
     facts:
         selector: system_performance
 
-- name: Get FortiManager facts firewall_profilegroup
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: firewall_profilegroup
-        params:
-          profile-group: ""
-          adom: ""
-
 - name: Get FortiManager facts system_admin_profile
   fortinet.fortimanager.fmgr_fact:
     facts:
