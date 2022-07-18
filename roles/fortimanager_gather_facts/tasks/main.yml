@@ -26,102 +26,46 @@
             adom: "{{ fortigate_vdom }}"
             device: ""
 
-# - name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
-#   fortinet.fortimanager.fmgr_fact:
-#     facts:
-#         selector: cli_fmupdate_analyzer_virusreport
-
-# - name: Get FortiAnalyzer facts cli_fmupdate_service
-#   fortinet.fortimanager.fmgr_fact:
-#     facts:
-#         selector: cli_fmupdate_service
-
-- name: Get FortiAnalyzer facts cli_system_admin_user
+- name: Get FortiAnalyzer facts system_interface
   fortinet.fortimanager.fmgr_fact:
     facts:
-        selector: cli_system_admin_user
-        params: 
+        selector: system_interface
+        params:
+            interface: ""
+
+- name: Get FortiAnalyzer facts system_locallog_setting
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: system_locallog_setting
+
+- name: Get FortiAnalyzer facts system_performance
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: system_performance
+
+- name: Get FortiAnalyzer facts firewall_profilegroup
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: firewall_profilegroup
+
+- name: Get FortiAnalyzer facts system_admin_profile
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: system_admin_profile
+
+- name: Get FortiAnalyzer facts system_admin_user
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: system_admin_user
+        params:
           user: ""
 
-- name: Get FortiAnalyzer facts cli_system_connector
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_connector
-
-- name: Get FortiAnalyzer facts cli_system_dns
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_dns
-
-- name: Get FortiAnalyzer facts cli_system_fortiview_setting
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_fortiview_setting
-
-- name: Get FortiAnalyzer facts cli_system_global
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_global
-
-- name: Get FortiAnalyzer facts cli_system_interface
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_interface
-        params:
-          interface: ""
-
-- name: Get FortiAnalyzer facts cli_system_locallog_setting
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_locallog_setting
-
-- name: Get FortiAnalyzer facts cli_system_locallog_disk_setting
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_locallog_disk_setting
-
-- name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_filter
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_locallog_fortianalyzer_filter
-
-- name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_setting
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_locallog_fortianalyzer_setting
-
-- name: Get FortiAnalyzer facts cli_system_log_settings
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_log_settings
-
-- name: Get FortiAnalyzer facts cli_system_log_alert
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_log_alert
-
-- name: Get FortiAnalyzer facts cli_system_log_interfacestats
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_log_interfacestats
-  
-- name: Get FortiAnalyzer facts cli_system_performance
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_performance
-  
-- name: Get FortiAnalyzer facts cli_system_report_setting
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_report_setting
-  
-- name: Get FortiAnalyzer facts cli_system_status
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: cli_system_status
-  
 - name: Get FortiAnalyzer facts sys_status
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: sys_status
+        params:
+          user: ""
+
+
 
