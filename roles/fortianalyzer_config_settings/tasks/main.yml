@@ -50,9 +50,13 @@
       profileid: MyProfile
       description: This is MyProfile description... 
       system-setting: read
+      adom-switch: read
+      device-manager: read-write
+      update-incidents: read-write
       realtime-monitor: read-write
       execute-playbook: read-write
       fabric-viewer: read
+      report-viewer: read-write
       run-report: read-write
       triage-events: read-write
       update-incidents: read-write
