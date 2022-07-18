@@ -1,5 +1,9 @@
 ---
 
+- name: debug
+  debug:
+    var: hostname
+
 - name: Get FortiManager facts
   fortinet.fortimanager.fmgr_fact:
     facts:

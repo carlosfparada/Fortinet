@@ -31,3 +31,4 @@ fortigate_vdom: "root"
 
 fortianalyzer_ip: "172.16.1.213"
 fortigate_ip: "172.16.1.212"
+fortimanager_ip: "172.16.1.211"
