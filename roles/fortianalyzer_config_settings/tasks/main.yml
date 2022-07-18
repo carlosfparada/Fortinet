@@ -59,4 +59,5 @@
       report-viewer: read-write
       run-report: read-write
       triage-events: read-write
+      datamask-custom-fields: all
     state: present
