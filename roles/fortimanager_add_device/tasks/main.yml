@@ -9,7 +9,7 @@
         adm_pass: admin
         ip: "{{ fortigate_ip }}"
         name: "FortiGate-VM64-KVM"
-        sn: "FGVMEVPAYOCISQ99"
+        #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         os_type: fos
         os_ver: unknown
