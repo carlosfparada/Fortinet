@@ -1,7 +1,7 @@
 ---
 
-
-- name: Probe Fortigate device from FortiManager 
+# FortiAnalyzer
+- name: Probe FortiAnalyzer device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
     #bypass_validation: True
     dvm_cmd_discover_device:
@@ -11,11 +11,39 @@
         ip: "{{ fortianalyzer_ip }}"
   register: _probed_device
 
-- name: Debug FortiGate device probing
+- name: Debug FortiAnalyzer device probing
   debug:
     var: _probed_device
 
 - name: Add FortiAnalyzer device to FortiManager
+  fortinet.fortimanager.fmgr_dvm_cmd_add_device:
+    dvm_cmd_add_device:
+      adom: "{{ fortigate_vdom }}"
+      device:
+        adm_usr: '{{ _probed_device.meta.response_data.device.adm_usr }}'
+        adm_pass: '{{ _probed_device.meta.response_data.device.adm_pass }}'
+        desc: 'The device is added using Ansible'
+        ip: '{{ _probed_device.meta.response_data.device.ip }}'
+        mgmt_mode: 'fmg'
+        name: '{{ _probed_device.meta.response_data.device.name }}'
+        sn: '{{ _probed_device.meta.response_data.device.sn }}'
+
+# FortiGate
+- name: Probe FortiGate device from FortiManager 
+  fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
+    #bypass_validation: True
+    dvm_cmd_discover_device:
+      device:
+        adm_pass: admin
+        adm_usr: admin
+        ip: "{{ fortigate_ip }}"
+  register: _probed_device
+
+- name: Debug FortiGate device probing
+  debug:
+    var: _probed_device
+
+- name: Add FortiGate device to FortiManager
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
       adom: "{{ fortigate_vdom }}"
