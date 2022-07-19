@@ -22,7 +22,7 @@
       device:
         adm_pass: admin
         adm_usr: admin
-        ip: "{{ fortigate_ip }}"
+        ip: "{{ fortianalyzer_ip }}"
   register: _probed_device
 
 - name: Debug FortiGate device probing
