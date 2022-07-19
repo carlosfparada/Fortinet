@@ -24,6 +24,6 @@
   gather_facts: no
   roles:
     #- fortimanager_gather_facts
-    - fortimanager_add_device
-  
+    #- fortimanager_add_device
+    - fortimanager_config_settings
   

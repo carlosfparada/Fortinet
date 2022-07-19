@@ -3,7 +3,7 @@
 
 # Device Management
 
-- name: Creation of a Device Group
+- name: Creation of a FortiAnalyzer Device Group
   fortinet.fortianalyzer.faz_dvmdb_group:
     adom: "{{ fortigate_vdom }}"
     dvmdb_group:
@@ -12,7 +12,7 @@
       type: normal
     state: present
 
-- name: Add the Fortigate as Group member
+- name: Add FortiGate as Group member
   fortinet.fortianalyzer.faz_dvmdb_group_objectmember:
     adom: "{{ fortigate_vdom }}"
     dvmdb_group_objectmember:

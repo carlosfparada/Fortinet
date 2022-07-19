@@ -1,10 +1,9 @@
 ---
 
-
 # Device Management
 
-- name: Creation of a Device Group
-  fortinet.fortianalyzer.faz_dvmdb_group:
+- name: Creation of a FortiManager Device Group
+  fortinet.fortimanager.fmgr_dvmdb_group:
     adom: "{{ fortigate_vdom }}"
     dvmdb_group:
       name: Group1
@@ -12,11 +11,11 @@
       type: normal
     state: present
 
-- name: Add the Fortigate as Group member
-  fortinet.fortianalyzer.faz_dvmdb_group_objectmember:
+- name: Add FortiManager as a Group member
+  fortinet.fortimanager.fmgr_dvmdb_group_objectmember:
     adom: "{{ fortigate_vdom }}"
     dvmdb_group_objectmember:
-      name: "FortiGate-VM64-KVM"
+      name: "FAZVM64-KVM"
       vdom: "{{ fortigate_vdom }}"
     group: Group1
     state: present
