@@ -1,7 +1,7 @@
 ---
 
 - name: Add FortiGate device to FortiManager
-  fortinet.fortianalyzer.fmgr_dvm_cmd_add_device:
+  fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
       adom: "{{ fortigate_vdom }}"
       device:
@@ -14,7 +14,7 @@
         device action: "promote_unreg"
 
 - name: Probe Fortigate device from FortiManager 
-  fortinet.fortianalyzer.fmgr_dvm_cmd_add_device:
+  fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_discover_device:
       device:
         adm_pass: admin
@@ -22,6 +22,6 @@
         ip: "{{ fortigate_ip }}"
   register: _probed_device
 
-- name: Probe FortiGate device
+- name: Debug FortiGate device probing
   debug:
     var: _probed_device
