@@ -67,27 +67,3 @@
       profileid: MyProfile
       two-factor-auth: disable
     state: present
-
-- name: Create System Settings Log File Management (Advanced -> File Management)
-  fortinet.fortimanager.fmgr_system_autodelete:
-    system_autodelete:
-      log-auto-deletion:
-        retention: days
-        runat: 2 #2:00
-        value: 200
-        status: enable
-      report-auto-deletion:
-        retention: days
-        runat: 3 #3:00
-        value: 300
-        status: enable
-      dlp-files-auto-deletion:
-        retention: days
-        runat: 4 #4:00
-        value: 400
-        status: enable
-      quarantine-files-auto-deletion:
-        retention: days
-        runat: 5 #2:00
-        value: 500
-        status: enable
