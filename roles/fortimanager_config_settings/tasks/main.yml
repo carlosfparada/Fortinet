@@ -23,8 +23,8 @@
 # System Settings
 
 - name: Config System Settings (Admin -> Admin Settings)
-  fortinet.fortimanager.fmgr_cli_system_admin_setting:
-    cli_system_admin_setting:
+  fortinet.fortimanager.fmgr_system_admin_setting:
+    system_admin_setting:
       idle_timeout: 28800
       idle_timeout_api: 28800
       idle_timeout_gui: 28800
@@ -44,8 +44,8 @@
       show-log-forwarding: disable
 
 - name: Create System Settings profile (Admin -> Profile)
-  fortinet.fortimanager.fmgr_cli_system_admin_profile:
-    cli_system_admin_profile:
+  fortinet.fortimanager.fmgr_system_admin_profile:
+    system_admin_profile:
       profileid: MyProfile
       description: This is MyProfile created by Ansible
       system-setting: read
@@ -61,8 +61,8 @@
     state: present
 
 - name: Create System Settings admin (Admin -> Administrators)
-  fortinet.fortimanager.fmgr_cli_system_admin_user:
-    cli_system_admin_user:
+  fortinet.fortimanager.fmgr_system_admin_user:
+    system_admin_user:
       userid: myadmin
       description: 'My admin user created by Ansible'
       change-password: disable
@@ -72,8 +72,8 @@
     state: present
 
 - name: Create System Settings Log File Management (Advanced -> File Management)
-  fortinet.fortimanager.fmgr_cli_system_autodelete:
-    cli_system_autodelete:
+  fortinet.fortimanager.fmgr_system_autodelete:
+    system_autodelete:
       log-auto-deletion:
         retention: days
         runat: 2 #2:00
