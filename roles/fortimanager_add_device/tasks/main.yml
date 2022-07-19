@@ -18,6 +18,7 @@
 - name: Probe Fortigate device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
     dvm_cmd_discover_device:
+      bypass_validation: True
       device:
         adm_pass: admin
         adm_usr: admin
