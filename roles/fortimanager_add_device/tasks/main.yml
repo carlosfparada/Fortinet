@@ -11,6 +11,7 @@
         name: "FortiGate-VM64-KVM"
         #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
+        os_type: fos
         device action: "add_model"
 
 - name: Probe Fortigate device from FortiManager 
