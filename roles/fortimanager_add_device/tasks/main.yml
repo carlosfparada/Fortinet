@@ -3,7 +3,6 @@
 # FortiAnalyzer
 - name: Probe FortiAnalyzer device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
-    #bypass_validation: True
     dvm_cmd_discover_device:
       device:
         adm_pass: admin
@@ -31,7 +30,6 @@
 # FortiGate
 - name: Probe FortiGate device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
-    #bypass_validation: True
     dvm_cmd_discover_device:
       device:
         adm_pass: admin
