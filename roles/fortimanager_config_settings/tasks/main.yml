@@ -1,0 +1,97 @@
+---
+
+
+# Device Management
+
+- name: Creation of a Device Group
+  fortinet.fortianalyzer.faz_dvmdb_group:
+    adom: "{{ fortigate_vdom }}"
+    dvmdb_group:
+      name: Group1
+      os_type: unknown
+      type: normal
+    state: present
+
+- name: Add the Fortigate as Group member
+  fortinet.fortianalyzer.faz_dvmdb_group_objectmember:
+    adom: "{{ fortigate_vdom }}"
+    dvmdb_group_objectmember:
+      name: "FortiGate-VM64-KVM"
+      vdom: "{{ fortigate_vdom }}"
+    group: Group1
+    state: present
+
+# System Settings
+
+- name: Config System Settings (Admin -> Admin Settings)
+  fortinet.fortianalyzer.faz_cli_system_admin_setting:
+    cli_system_admin_setting:
+      idle_timeout: 28800
+      idle_timeout_api: 28800
+      idle_timeout_gui: 28800
+      webadmin_language: english
+      https_port: 443
+      http_port: 80
+      gui-theme: green
+      access-banner: disable
+      admin-https-redirect: disable
+      objects-force-deletion: disable
+      shell-access: disable
+      show-add-multiple: disable
+      show-checkbox-in-table: disable
+      show-device-import-export: disable
+      show-fct-manager: disable
+      show-hostname: disable
+      show-log-forwarding: disable
+
+- name: Create System Settings profile (Admin -> Profile)
+  fortinet.fortianalyzer.faz_cli_system_admin_profile:
+    cli_system_admin_profile:
+      profileid: MyProfile
+      description: This is MyProfile created by Ansible
+      system-setting: read
+      adom-switch: read
+      device-manager: read-write
+      update-incidents: read-write
+      realtime-monitor: read-write
+      execute-playbook: read-write
+      fabric-viewer: read
+      report-viewer: read-write
+      run-report: read-write
+      triage-events: read-write
+    state: present
+
+- name: Create System Settings admin (Admin -> Administrators)
+  fortinet.fortianalyzer.faz_cli_system_admin_user:
+    cli_system_admin_user:
+      userid: myadmin
+      description: 'My admin user created by Ansible'
+      change-password: disable
+      email-address: 'myadmin@ansible.com'
+      profileid: MyProfile
+      two-factor-auth: disable
+    state: present
+
+- name: Create System Settings Log File Management (Advanced -> File Management)
+  fortinet.fortianalyzer.faz_cli_system_autodelete:
+    cli_system_autodelete:
+      log-auto-deletion:
+        retention: days
+        runat: 2 #2:00
+        value: 200
+        status: enable
+      report-auto-deletion:
+        retention: days
+        runat: 3 #3:00
+        value: 300
+        status: enable
+      dlp-files-auto-deletion:
+        retention: days
+        runat: 4 #4:00
+        value: 400
+        status: enable
+      quarantine-files-auto-deletion:
+        retention: days
+        runat: 5 #2:00
+        value: 500
+        status: enable
