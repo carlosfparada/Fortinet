@@ -3,6 +3,10 @@
 - debug:
     var: hosts
 
+- debug:
+    var: hosts['fortigate-1']
+
+
 # FortiAnalyzer
 - name: Probe FortiAnalyzer device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
