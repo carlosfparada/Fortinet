@@ -8,24 +8,24 @@
         adm_pass: admin
         adm_usr: admin
         ip: "{{ fortianalyzer_ip }}"
-  register: _probed_device
+  register: _probed_fortianalyzer
 
 - name: Debug FortiAnalyzer device probing
   debug:
-    var: _probed_device
+    var: _probed_fortianalyzer
 
 - name: Add FortiAnalyzer device to FortiManager
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
       adom: "{{ fortigate_vdom }}"
       device:
-        adm_usr: '{{ _probed_device.meta.response_data.device.adm_usr }}'
-        adm_pass: '{{ _probed_device.meta.response_data.device.adm_pass }}'
+        adm_usr: '{{ _probed_fortianalyzer.meta.response_data.device.adm_usr }}'
+        adm_pass: '{{ _probed_fortianalyzer.meta.response_data.device.adm_pass }}'
         desc: 'The device is added using Ansible'
-        ip: '{{ _probed_device.meta.response_data.device.ip }}'
+        ip: '{{ _probed_fortianalyzer.meta.response_data.device.ip }}'
         mgmt_mode: 'fmg'
-        name: '{{ _probed_device.meta.response_data.device.name }}'
-        sn: '{{ _probed_device.meta.response_data.device.sn }}'
+        name: '{{ _probed_fortianalyzer.meta.response_data.device.name }}'
+        sn: '{{ _probed_fortianalyzer.meta.response_data.device.sn }}'
   ignore_errors: true
 
 # FortiGate
@@ -36,21 +36,21 @@
         adm_pass: admin
         adm_usr: admin
         ip: "{{ fortigate_ip }}"
-  register: _probed_device
+  register: _probed_fortigate
 
 - name: Debug FortiGate device probing
   debug:
-    var: _probed_device
+    var: _probed_fortigate
 
 - name: Add FortiGate device to FortiManager
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
       adom: "{{ fortigate_vdom }}"
       device:
-        adm_usr: '{{ _probed_device.meta.response_data.device.adm_usr }}'
-        adm_pass: '{{ _probed_device.meta.response_data.device.adm_pass }}'
+        adm_usr: '{{ _probed_fortigate.meta.response_data.device.adm_usr }}'
+        adm_pass: '{{ _probed_fortigate.meta.response_data.device.adm_pass }}'
         desc: 'The device is added using Ansible'
-        ip: '{{ _probed_device.meta.response_data.device.ip }}'
+        ip: '{{ _probed_fortigate.meta.response_data.device.ip }}'
         mgmt_mode: 'fmg'
-        name: '{{ _probed_device.meta.response_data.device.name }}'
-        sn: '{{ _probed_device.meta.response_data.device.sn }}'
+        name: '{{ _probed_fortigate.meta.response_data.device.name }}'
+        sn: '{{ _probed_fortigate.meta.response_data.device.sn }}'
