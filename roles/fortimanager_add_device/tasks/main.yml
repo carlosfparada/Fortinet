@@ -12,6 +12,7 @@
         sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         os_type: fos
+        os_ver: 7.0
         device action: "add_model"
 
 - name: Probe Fortigate device from FortiManager 
