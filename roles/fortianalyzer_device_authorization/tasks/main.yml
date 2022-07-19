@@ -7,7 +7,7 @@
       device:
         adm_usr: admin
         adm_pass: admin
-        ip: "{{ fortigate_ip }}"
+        ip: "{{ hostvars['fortigate-1'].ansible_host }}"
         name: "FortiGate-VM64-KVM"
         #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz

@@ -6,8 +6,8 @@
     #access_token: "{{ fortigate_token }}"
     log_fortianalyzer_setting:
       certificate_verification: "enable"
-      server: "{{ fortianalyzer_ip }}"
-      source_ip: "{{ fortigate_ip }}"
+      server: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
+      source_ip: "{{ hostvars['fortigate-1'].ansible_host }}"
       reliable: enable
       upload_option: realtime
       status: enable

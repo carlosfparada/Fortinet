@@ -29,5 +29,3 @@
 fortigate_vdom: "root"
 #fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 
-fortianalyzer_ip: "172.16.1.213"
-fortigate_ip: "172.16.1.212"

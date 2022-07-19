@@ -1,14 +1,5 @@
 ---
 
-- debug:
-    msg: "{{ hostvars['fortigate-1'].ansible_host }}"
-
-- debug:
-    msg: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
-
-- debug:
-    msg: "{{ hostvars['fortimanager-1'].ansible_host }}"
-
 # FortiAnalyzer
 - name: Probe FortiAnalyzer device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
@@ -16,7 +7,7 @@
       device:
         adm_pass: admin
         adm_usr: admin
-        ip: "{{ fortianalyzer_ip }}"
+        ip: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
   register: _probed_fortianalyzer
 
 - name: Debug FortiAnalyzer device probing
@@ -44,7 +35,7 @@
       device:
         adm_pass: admin
         adm_usr: admin
-        ip: "{{ fortigate_ip }}"
+        ip: "{{ hostvars['fortigate-1'].ansible_host }}"
   register: _probed_fortigate
 
 - name: Debug FortiGate device probing
