@@ -23,7 +23,7 @@
   connection: httpapi
   gather_facts: no
   roles:
-    - fortimanager_gather_facts
+    #- fortimanager_gather_facts
     - fortimanager_add_device
   
   

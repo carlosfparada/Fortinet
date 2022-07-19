@@ -9,7 +9,7 @@
         adm_pass: admin
         ip: "{{ fortigate_ip }}"
         name: "FortiGate-VM64-KVM"
-        #sn: "FGVMEVPAYOCISQ99"
+        sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         os_type: fos
         device action: "add_model"
@@ -17,6 +17,7 @@
 - name: Probe Fortigate device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_discover_device:
+      adom: "{{ fortigate_vdom }}"
       device:
         adm_pass: admin
         adm_usr: admin
