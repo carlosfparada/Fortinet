@@ -26,6 +26,7 @@
         mgmt_mode: 'fmg'
         name: '{{ _probed_device.meta.response_data.device.name }}'
         sn: '{{ _probed_device.meta.response_data.device.sn }}'
+  ignore_errors: true
 
 # FortiGate
 - name: Probe FortiGate device from FortiManager 
