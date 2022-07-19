@@ -41,7 +41,7 @@
       show-device-import-export: disable
       show-fct-manager: disable
       show-hostname: disable
-      show-log-forwarding: disable
+      #show-log-forwarding: disable
 
 - name: Create System Settings profile (Admin -> Profile)
   fortinet.fortimanager.fmgr_system_admin_profile:
