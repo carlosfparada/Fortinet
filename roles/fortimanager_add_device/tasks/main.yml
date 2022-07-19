@@ -1,10 +1,10 @@
 ---
 
 - debug:
-    var: hosts
+    var: hostvars
 
 - debug:
-    var: hosts['fortigate-1']
+    var: hostvars['fortigate-1']
 
 
 # FortiAnalyzer
