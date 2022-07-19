@@ -1,13 +1,13 @@
 ---
 
 - debug:
-    msg: "hostvars['fortigate-1'].ansible_host"
+    msg: "{{ hostvars['fortigate-1'].ansible_host }}"
 
 - debug:
-    msg: "hostvars['fortianalyzer-1'].ansible_host"
+    msg: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
 
 - debug:
-    msg: "hostvars['fortimanager-1'].ansible_host"
+    msg: "{{ hostvars['fortimanager-1'].ansible_host }}"
 
 # FortiAnalyzer
 - name: Probe FortiAnalyzer device from FortiManager 
