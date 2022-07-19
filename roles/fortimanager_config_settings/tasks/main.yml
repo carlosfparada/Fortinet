@@ -41,7 +41,6 @@
       show-device-import-export: disable
       show-fct-manager: disable
       show-hostname: disable
-      #show-log-forwarding: disable
 
 - name: Create System Settings profile (Admin -> Profile)
   fortinet.fortimanager.fmgr_system_admin_profile:
@@ -49,15 +48,13 @@
       profileid: MyProfile
       description: This is MyProfile created by Ansible
       system-setting: read
-      adom-switch: read
+      adom-lock: read
+      adom-policy-packages: read-write
+      device-config: read-write
       device-manager: read-write
-      update-incidents: read-write
-      realtime-monitor: read-write
-      execute-playbook: read-write
-      fabric-viewer: read
-      report-viewer: read-write
-      run-report: read-write
-      triage-events: read-write
+      fgd_center: read-write
+      fgd-center-licensing: read-write
+      fgd-center-fmw-mgmt: read-write
     state: present
 
 - name: Create System Settings admin (Admin -> Administrators)
