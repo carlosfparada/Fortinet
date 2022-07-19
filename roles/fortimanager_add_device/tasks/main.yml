@@ -21,7 +21,7 @@
       device:
         adm_usr: '{{ _probed_fortianalyzer.meta.response_data.device.adm_usr }}'
         adm_pass: '{{ _probed_fortianalyzer.meta.response_data.device.adm_pass }}'
-        desc: 'The device is added using Ansible'
+        desc: 'The device was added using Ansible'
         ip: '{{ _probed_fortianalyzer.meta.response_data.device.ip }}'
         mgmt_mode: 'fmg'
         name: '{{ _probed_fortianalyzer.meta.response_data.device.name }}'
@@ -49,7 +49,7 @@
       device:
         adm_usr: '{{ _probed_fortigate.meta.response_data.device.adm_usr }}'
         adm_pass: '{{ _probed_fortigate.meta.response_data.device.adm_pass }}'
-        desc: 'The device is added using Ansible'
+        desc: 'The device was added using Ansible'
         ip: '{{ _probed_fortigate.meta.response_data.device.ip }}'
         mgmt_mode: 'fmg'
         name: '{{ _probed_fortigate.meta.response_data.device.name }}'
