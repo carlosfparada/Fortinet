@@ -25,5 +25,13 @@
   roles:
     #- fortimanager_gather_facts
     #- fortimanager_add_device
-    - fortimanager_config_settings
+    #- fortimanager_config_settings
   
+- name: VMware deployment roles
+  hosts: vmware-1
+  connection: local
+  gather_facts: no
+  roles:
+    - vmware_deploy_fortigate
+    #- vmware_deploy_fortianalyzer
+    #- vmware_deploy_fortimanager
