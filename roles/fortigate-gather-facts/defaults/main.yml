@@ -26,6 +26,6 @@
 #   UI: Policy & Objects -> Firewall Policy
 #   CLI: show firewall policy 
 
-fortigate_vdom: "root"
+domain: "root"
 #fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 
