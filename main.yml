@@ -24,17 +24,17 @@
     - fortigate-create-rules
     - fortigate-connect-fortianalyzer
 
-# - name: Fortinet FortiAnalyser roles
-#   hosts: fortianalyzer
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{environment}}.yml"
-#   roles:
-#     - fortianalyzer_device_authorization
-#     - fortianalyzer_config_settings
-#     - fortianalyzer_gather_facts
+- name: Fortinet FortiAnalyser roles
+  hosts: fortianalyzer
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{environment}}.yml"
+  roles:
+    - fortianalyzer_device_authorization
+    - fortianalyzer_config_settings
+    - fortianalyzer_gather_facts
   
 # - name: Fortinet FortiManager roles
 #   hosts: fortimanager
