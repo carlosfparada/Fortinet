@@ -1,13 +1,13 @@
 ---
 
-# - name: Fortinet FortiGate roles
-#   hosts: fortigate-1
-#   connection: httpapi
-#   gather_facts: no  
-#   roles:
-#     - fortigate-gather-facts
-#     - fortigate-create-rules
-#     - fortigate-connect-fortianalyzer  
+- name: Fortinet FortiGate roles
+  hosts: fortigate-1
+  connection: httpapi
+  gather_facts: no  
+  roles:
+    - fortigate-gather-facts
+    - fortigate-create-rules
+    - fortigate-connect-fortianalyzer  
 
 # - name: Fortinet FortiAnalyser roles
 #   hosts: fortianalyzer-1
@@ -18,20 +18,20 @@
 #     - fortianalyzer_config_settings
 #     - fortianalyzer_gather_facts
   
-- name: Fortinet FortiManager roles
-  hosts: fortimanager-1
-  connection: httpapi
-  gather_facts: no
-  roles:
-    #- fortimanager_gather_facts
-    #- fortimanager_add_device
-    #- fortimanager_config_settings
+# - name: Fortinet FortiManager roles
+#   hosts: fortimanager-1
+#   connection: httpapi
+#   gather_facts: no
+#   roles:
+#     - fortimanager_gather_facts
+#     - fortimanager_add_device
+#     - fortimanager_config_settings
   
-- name: VMware deployment roles
-  hosts: vmware-1
-  connection: local
-  gather_facts: no
-  roles:
-    - vmware_deploy_fortigate
-    #- vmware_deploy_fortianalyzer
-    #- vmware_deploy_fortimanager
+# - name: VMware deployment roles
+#   hosts: vmware-1
+#   connection: local
+#   gather_facts: no
+#   roles:
+#     - vmware_deploy_fortigate
+#     - vmware_deploy_fortianalyzer
+#     - vmware_deploy_fortimanager
