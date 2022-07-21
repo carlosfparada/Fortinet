@@ -3,12 +3,12 @@
 - name: FortiAnalyzer to Authorize Fortigate add
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
     dvm_cmd_add_device:
-      adom: "{{ fortigate_vdom }}"
+      adom: "{{ domain }}"
       device:
         adm_usr: admin
         adm_pass: admin
-        ip: "{{ hostvars['fortigate-1'].ansible_host }}"
-        name: "FortiGate-VM64-KVM"
+        ip: "{{ hostvars[fortigate].ansible_host }}"
+        name: "{{ fortigate_name }}"
         #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         device action: "promote_unreg"

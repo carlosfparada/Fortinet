@@ -2,4 +2,5 @@
 
 domain: "root"
 #fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
+fortigate_name: "FortiGate-VM64-KVM"
 

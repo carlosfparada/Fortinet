@@ -7,7 +7,7 @@
       device:
         adm_pass: admin
         adm_usr: admin
-        ip: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
+        ip: "{{ hostvars[fortianalyzer].ansible_host }}"
   register: _probed_fortianalyzer
 
 - name: Debug FortiAnalyzer device probing
@@ -17,7 +17,7 @@
 - name: Add FortiAnalyzer device to FortiManager
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
-      adom: "{{ fortigate_vdom }}"
+      adom: "{{ domain }}"
       device:
         adm_usr: '{{ _probed_fortianalyzer.meta.response_data.device.adm_usr }}'
         adm_pass: '{{ _probed_fortianalyzer.meta.response_data.device.adm_pass }}'
@@ -35,7 +35,7 @@
       device:
         adm_pass: admin
         adm_usr: admin
-        ip: "{{ hostvars['fortigate-1'].ansible_host }}"
+        ip: "{{ hostvars[fortigate].ansible_host }}"
   register: _probed_fortigate
 
 - name: Debug FortiGate device probing
@@ -45,7 +45,7 @@
 - name: Add FortiGate device to FortiManager
   fortinet.fortimanager.fmgr_dvm_cmd_add_device:
     dvm_cmd_add_device:
-      adom: "{{ fortigate_vdom }}"
+      adom: "{{ domain }}"
       device:
         adm_usr: '{{ _probed_fortigate.meta.response_data.device.adm_usr }}'
         adm_pass: '{{ _probed_fortigate.meta.response_data.device.adm_pass }}'

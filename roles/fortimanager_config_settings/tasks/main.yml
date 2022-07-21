@@ -4,7 +4,7 @@
 
 - name: Creation of a FortiManager Device Group
   fortinet.fortimanager.fmgr_dvmdb_group:
-    adom: "{{ fortigate_vdom }}"
+    adom: "{{ domain }}"
     dvmdb_group:
       name: Group1
       os_type: unknown
@@ -13,10 +13,10 @@
 
 - name: Add FortiManager as a Group member
   fortinet.fortimanager.fmgr_dvmdb_group_objectmember:
-    adom: "{{ fortigate_vdom }}"
+    adom: "{{ domain }}"
     dvmdb_group_objectmember:
-      name: "FAZVM64-KVM"
-      vdom: "{{ fortigate_vdom }}"
+      name: "{{ fortianalyzer_name }}"
+      vdom: "{{ domain }}"
     group: Group1
     state: present
 

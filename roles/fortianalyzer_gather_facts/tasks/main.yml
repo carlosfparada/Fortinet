@@ -1,18 +1,18 @@
 ---
 
-- name: "Get FortiAnalyzer facts dvmdb_adom {{ fortigate_vdom }}"
+- name: "Get FortiAnalyzer facts dvmdb_adom {{ domain }}"
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: dvmdb_adom
         params:
-          adom: "{{ fortigate_vdom }}"
+          adom: "{{ domain }}"
 
 - name: Get FortiAnalyzer facts dvmdb_device
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: dvmdb_device
         params:
-            adom: "{{ fortigate_vdom }}"
+            adom: "{{ domain }}"
             device: ""
 
 - name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
