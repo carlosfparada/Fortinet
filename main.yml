@@ -8,9 +8,9 @@
     - include_vars: vars/eve-ng.yml 
     #- include_vars: vars/vmware.yml 
   roles:
-    - fortigate-gather-facts
-    - fortigate-create-rules
-    - fortigate-connect-fortianalyzer  
+    - role: fortigate-gather-facts
+    - role: fortigate-create-rules
+    - role: fortigate-connect-fortianalyzer  
 
 # - name: Fortinet FortiAnalyser roles
 #   hosts: fortianalyzer-1
