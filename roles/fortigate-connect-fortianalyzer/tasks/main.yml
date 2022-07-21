@@ -2,12 +2,12 @@
 
 - name: Connect Fortinet FortiGate to FortiAnalyzer
   fortinet.fortios.fortios_log_fortianalyzer_setting:
-    vdom: "{{ fortigate_vdom }}"
+    vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     log_fortianalyzer_setting:
       certificate_verification: "enable"
-      server: "{{ hostvars['fortianalyzer-1'].ansible_host }}"
-      source_ip: "{{ hostvars['fortigate-1'].ansible_host }}"
+      server: "{{ hostvars[fortianalyzer].ansible_host }}"
+      source_ip: "{{ hostvars[fortigate].ansible_host }}"
       reliable: enable
       upload_option: realtime
       status: enable
