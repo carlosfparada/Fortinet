@@ -6,7 +6,6 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - eve-ng.yml
     - "{{environment}}.yml"
   roles:
     - fortigate-gather-facts
@@ -17,6 +16,9 @@
 #   hosts: fortianalyzer
 #   connection: httpapi
 #   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{environment}}.yml"
 #   roles:
 #     - fortianalyzer_device_authorization
 #     - fortianalyzer_config_settings
@@ -26,6 +28,9 @@
 #   hosts: fortimanager
 #   connection: httpapi
 #   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{environment}}.yml"
 #   roles:
 #     - fortimanager_gather_facts
 #     - fortimanager_add_device
@@ -35,6 +40,9 @@
 #   hosts: vmware
 #   connection: local
 #   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{environment}}.yml"
 #   roles:
 #     - vmware_deploy_fortigate
 #     - vmware_deploy_fortianalyzer
