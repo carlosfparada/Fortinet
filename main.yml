@@ -4,7 +4,7 @@
   hosts: "{{ fortigate }}"
   connection: httpapi
   gather_facts: no
-  pre-tasks:
+  pre_tasks:
     - include_vars: vars/eve-ng.yml 
     #- include_vars: vars/vmware.yml 
   roles:
