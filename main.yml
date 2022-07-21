@@ -1,22 +1,18 @@
 ---
 
 - name: Fortinet FortiGate roles
-  hosts: "{{ fortigate }}"
+  hosts: fortigate
   connection: httpapi
   gather_facts: no
-  pre_tasks:
-    - include_vars: vars/eve-ng.yml 
-    #- include_vars: vars/vmware.yml 
   vars_files: 
     - vars/eve-ng.yml
   roles:
-    - role: fortigate-gather-facts
-      #when: 
-    - role: fortigate-create-rules
-    - role: fortigate-connect-fortianalyzer
+    - fortigate-gather-facts
+    - fortigate-create-rules
+    - fortigate-connect-fortianalyzer
 
 # - name: Fortinet FortiAnalyser roles
-#   hosts: fortianalyzer-1
+#   hosts: fortianalyzer
 #   connection: httpapi
 #   gather_facts: no
 #   roles:
@@ -25,7 +21,7 @@
 #     - fortianalyzer_gather_facts
   
 # - name: Fortinet FortiManager roles
-#   hosts: fortimanager-1
+#   hosts: fortimanager
 #   connection: httpapi
 #   gather_facts: no
 #   roles:
@@ -34,7 +30,7 @@
 #     - fortimanager_config_settings
   
 # - name: VMware deployment roles
-#   hosts: vmware-1
+#   hosts: vmware
 #   connection: local
 #   gather_facts: no
 #   roles:
