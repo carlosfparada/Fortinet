@@ -1,6 +1,6 @@
 ---
 
-- name: FortiAnalyzer to delete Fortigate
+- name: FortiAnalyzer to delete FortiGate device
   fortinet.fortianalyzer.faz_dvm_cmd_del_device:
     dvm_cmd_del_device:
       adom: "{{ domain }}"
