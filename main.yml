@@ -1,5 +1,17 @@
 ---
 
+# - name: VMware deployment roles
+#   hosts: vmware
+#   connection: local
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{environment}}.yml"
+#   roles:
+#     - vmware_deploy_fortigate
+#     - vmware_deploy_fortianalyzer
+#     - vmware_deploy_fortimanager
+
 - name: Fortinet FortiGate roles
   hosts: fortigate
   connection: httpapi
@@ -36,14 +48,3 @@
 #     - fortimanager_add_device
 #     - fortimanager_config_settings
   
-# - name: VMware deployment roles
-#   hosts: vmware
-#   connection: local
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{environment}}.yml"
-#   roles:
-#     - vmware_deploy_fortigate
-#     - vmware_deploy_fortianalyzer
-#     - vmware_deploy_fortimanager
