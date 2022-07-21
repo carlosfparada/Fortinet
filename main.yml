@@ -3,7 +3,9 @@
 - name: Fortinet FortiGate roles
   hosts: "{{ fortigate }}"
   connection: httpapi
-  gather_facts: no
+  gather_facts: 
+  vars: 
+    fortigate: fortigate-1
   tasks:
     - include_vars: vars/eve-ng.yml 
     #- include_vars: vars/vmware.yml 
