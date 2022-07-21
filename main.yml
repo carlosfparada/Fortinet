@@ -7,10 +7,13 @@
   pre_tasks:
     - include_vars: vars/eve-ng.yml 
     #- include_vars: vars/vmware.yml 
+  vars_files: 
+    - vars/eve-ng.yml
   roles:
     - role: fortigate-gather-facts
+      #when: 
     - role: fortigate-create-rules
-    - role: fortigate-connect-fortianalyzer  
+    - role: fortigate-connect-fortianalyzer
 
 # - name: Fortinet FortiAnalyser roles
 #   hosts: fortianalyzer-1
