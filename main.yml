@@ -32,9 +32,10 @@
     - main.yml
     - "{{environment}}.yml"
   roles:
+    - fortianalyzer_gather_facts
     - fortianalyzer_device_authorization
     - fortianalyzer_config_settings
-    - fortianalyzer_gather_facts
+    - fortianalyzer_device_removal
   
 - name: Fortinet FortiManager roles
   hosts: fortimanager

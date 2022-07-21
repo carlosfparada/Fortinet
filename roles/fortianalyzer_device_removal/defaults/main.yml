@@ -1,0 +1,32 @@
+---
+# Generate Token: https://docs.fortinet.com/document/forticonverter/6.2.1/online-help/866905/connect-fortigate-device-via-api-token
+# Step 1: Create an administrator profile
+#   On the FortiGate GUI, select System > Admin Profiles > Create New.
+#   Create a New Profile.
+#   Enter a profile name and enable all the Read/Write permissions. Please note the profile name, it will be used in Step 2.
+#   Click OK
+# Step 2: Create a REST API Admin
+#   On the FortiGate GUI, select System > Administrators > Create New > REST API Admin.
+#   Enter the API-user's name and select the profile name you created from Step 1.
+#   The trusted host must be specified to ensure that the machine of your FortiConverter installed can reach the FortiGate.
+#   Click OK and an API token will be generated.
+#   Make a note of the API token as it’s only shown once and cannot be retrieved.
+#   Click Close to complete creation of the REST API Admin.
+# Regenerate an API token for API-user:
+#   In FortiGate GUI,
+#     Go to System > Administrators.
+#     Edit your REST API admin user
+#     Click Regenerate.
+#   In CLI console, use the CLI command below:
+#     execute api-user generate-key [API user name]
+#
+# Token: 1xf70f03r00c8p5fH5chpn5GQ7rhmQ
+#
+# View firewall policies (rules):
+#   UI: Policy & Objects -> Firewall Policy
+#   CLI: show firewall policy 
+
+domain: "root"
+#fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
+fortigate_name: "FortiGate-VM64-KVM"
+
