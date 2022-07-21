@@ -4,10 +4,4 @@
   fortinet.fortianalyzer.faz_dvm_cmd_del_device:
     dvm_cmd_del_device:
       adom: "{{ domain }}"
-      device:
-        adm_usr: admin
-        adm_pass: admin
-        ip: "{{ hostvars[fortigate].ansible_host }}"
-        name: "{{ fortigate_name }}"
-        #sn: "FGVMEVPAYOCISQ99"
-        mgmt_mode: faz
+      device: "{{ fortigate_name }}"
