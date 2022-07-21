@@ -5,7 +5,9 @@
   connection: httpapi
   gather_facts: no
   vars_files: 
-    - vars/eve-ng.yml
+    - ./vars/main.yml
+    - ./vars/eve-ng.yml
+    #- "./vars/{{inventory}}.yml"
   roles:
     - fortigate-gather-facts
     - fortigate-create-rules
