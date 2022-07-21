@@ -6,7 +6,7 @@
 #   gather_facts: no
 #   vars_files: 
 #     - main.yml
-#     - "{{environment}}.yml"
+#     - "{{infra}}.yml"
 #   roles:
 #     - vmware_deploy_fortigate
 #     - vmware_deploy_fortianalyzer
@@ -18,7 +18,7 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - "{{environment}}.yml"
+    - "{{infra}}.yml"
   roles:
     - fortigate-gather-facts
     - fortigate-create-rules
@@ -30,7 +30,7 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - "{{environment}}.yml"
+    - "{{infra}}.yml"
   roles:
     - fortianalyzer_gather_facts
     - fortianalyzer_device_authorization
@@ -43,7 +43,7 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - "{{environment}}.yml"
+    - "{{infra}}.yml"
   roles:
     - fortimanager_gather_facts
     - fortimanager_add_device

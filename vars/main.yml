@@ -1,2 +1,2 @@
-environment: eve-ng
-#environment: vmware
+infra: eve-ng
+#infra: vmware
