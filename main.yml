@@ -35,7 +35,7 @@
     - fortianalyzer_gather_facts
     - fortianalyzer_device_authorization
     - fortianalyzer_config_settings
-    - fortianalyzer_device_removal
+    - fortianalyzer_device_removal  # to avoid next errors
   
 - name: Fortinet FortiManager roles
   hosts: fortimanager
