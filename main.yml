@@ -36,15 +36,15 @@
     - fortianalyzer_config_settings
     - fortianalyzer_gather_facts
   
-# - name: Fortinet FortiManager roles
-#   hosts: fortimanager
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{environment}}.yml"
-#   roles:
-#     - fortimanager_gather_facts
-#     - fortimanager_add_device
-#     - fortimanager_config_settings
+- name: Fortinet FortiManager roles
+  hosts: fortimanager
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{environment}}.yml"
+  roles:
+    - fortimanager_gather_facts
+    - fortimanager_add_device
+    - fortimanager_config_settings
   
