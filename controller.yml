@@ -8,4 +8,4 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - controller_artifacts_creation
+    - controller_create_artifacts

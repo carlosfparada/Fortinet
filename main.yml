@@ -8,7 +8,7 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - controller_artifacts_creation
+    - controller_create_artifacts
 
 # - name: VMware deployment roles
 #   hosts: vmware
