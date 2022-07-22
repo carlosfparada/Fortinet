@@ -12,3 +12,8 @@
         sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         device action: "promote_unreg"
+  register: _add_fortigate
+
+- name: Debug FortiAnalyzer to Authorize Fortigate add
+  debug:
+    var: _add_fortigate
