@@ -10,7 +10,7 @@
     name: Fortinet Execution Environment
     image: quay.io/rh_ee_cparada/ee-supported-rh-cparada-fortinet
     pull: always
-    credential: quay.io Credentials
+    credential: "Credentials: quay.io"
     state: present
 
 # Create Project
