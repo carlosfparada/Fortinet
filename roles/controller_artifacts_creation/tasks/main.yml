@@ -60,7 +60,7 @@
     organization: Default
     job_type: run
     inventory: "Inventory: Fortinet"
-    project: Fortinet Project
+    project: "(auto) Fortinet Project"
     playbook: vmware.yml
     credentials:
       - Fortinet Credentials
@@ -77,7 +77,7 @@
     organization: Default
     job_type: run
     inventory: "Inventory: Fortinet"
-    project: Fortinet Project
+    project: "(auto) Fortinet Project"
     playbook: fortigate.yml
     credentials:
       - Fortinet Credentials
@@ -94,7 +94,7 @@
     organization: Default
     job_type: run
     inventory: "Inventory: Fortinet"
-    project: Fortinet Project
+    project: "(auto) Fortinet Project"
     playbook: fortianalyzer.yml
     credentials:
       - Fortinet Credentials
@@ -111,7 +111,7 @@
     organization: Default
     job_type: run
     inventory: "Inventory: Fortinet"
-    project: Fortinet Project
+    project: "(auto) Fortinet Project"
     playbook: fortianalyzer-wa.yml
     credentials:
       - Fortinet Credentials
@@ -128,7 +128,7 @@
     organization: Default
     job_type: run
     inventory: "Inventory: Fortinet"
-    project: Fortinet Project
+    project: "(auto) Fortinet Project"
     playbook: fortimanager.yml
     credentials:
       - Fortinet Credentials
