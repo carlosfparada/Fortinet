@@ -38,7 +38,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Credentials
+    name: "(auto) Fortinet Credentials"
     description: Created by Ansible Automation
     organization: Default
     credential_type: Machine
@@ -55,7 +55,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Job Template vmware
+    name: "(auto) Fortinet Job Template vmware"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -72,7 +72,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Job Template fortigate
+    name: "(auto) Fortinet Job Template fortigate"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -89,7 +89,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Job Template fortianalyzer
+    name: "(auto) Fortinet Job Template fortianalyzer"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -106,7 +106,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Job Template fortianalyzer-wa
+    name: "(auto) Fortinet Job Template fortianalyzer-wa"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -123,7 +123,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: (auto) Fortinet Job Template fortimanager
+    name: "(auto) Fortinet Job Template fortimanager"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
