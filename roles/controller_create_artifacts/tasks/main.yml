@@ -138,3 +138,53 @@
     credentials:
       - "(auto) Fortinet Credentials"
     state: present
+
+- name: Create Job Workflow Template
+  awx.awx.workflow_job_template:
+    validate_certs: no
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: "(auto) Fortinet Job Template workflow"
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
+    inventory: "Inventory: Fortinet"
+    project: "(auto) Fortinet Project"
+    credentials:
+      - "(auto) Fortinet Credentials"
+    workflow_nodes:
+      - identifier: "(auto) Fortinet Job Template 1. vmware"
+        unified_job_template:
+          name: "(auto) Fortinet Job Template 1. vmware"
+          type: job_template
+        related:
+          success_nodes:
+            - identifier: "(auto) Fortinet Job Template 2. fortigate"
+      - identifier: "(auto) Fortinet Job Template 2. fortigate"
+        unified_job_template:
+          name: "(auto) Fortinet Job Template 2. fortigate"
+          type: job_template
+        related:
+          success_nodes:
+            - identifier: "(auto) Fortinet Job Template 3. fortianalyzer"
+      - identifier: "(auto) Fortinet Job Template 3. fortianalyzer"
+        unified_job_template:
+          name: "(auto) Fortinet Job Template 3. fortianalyzer"
+          type: job_template
+        related:
+          success_nodes:
+            - identifier: "(auto) Fortinet Job Template 4. fortianalyzer-wa"
+      - identifier: "(auto) Fortinet Job Template 4. fortianalyzer-wa"
+        unified_job_template:
+          name: "(auto) Fortinet Job Template 4. fortianalyzer-wa"
+          type: job_template
+        related:
+          success_nodes:
+            - identifier: "(auto) Fortinet Job Template 5. fortimanager"
+      - identifier: "(auto) Fortinet Job Template 5. fortimanager"
+        unified_job_template:
+          name: "(auto) Fortinet Job Template 5. fortimanager"
+          type: job_template
+    state: present
