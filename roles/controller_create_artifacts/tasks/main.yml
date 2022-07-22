@@ -148,12 +148,7 @@
     name: "(auto) Fortinet Job Template workflow"
     description: Created by Ansible Automation
     organization: Default
-    job_type: run
-    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
-    project: "(auto) Fortinet Project"
-    credentials:
-      - "(auto) Fortinet Credentials"
     workflow_nodes:
       - identifier: "(auto) Fortinet Job Template 1. vmware"
         unified_job_template:
