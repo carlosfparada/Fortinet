@@ -49,7 +49,7 @@
 
 # Create Templates
 
-- name: Create Job Template wmware
+- name: Create Job Template 1. wmware
   awx.awx.job_template:
     validate_certs: no
     controller_host: "{{ controller_host }}"
@@ -67,7 +67,7 @@
       - "(auto) Fortinet Credentials"
     state: present
 
-- name: Create Job Template fortigate
+- name: Create Job Template 2. fortigate
   awx.awx.job_template:
     validate_certs: no
     controller_host: "{{ controller_host }}"
@@ -85,7 +85,7 @@
       - "(auto) Fortinet Credentials"
     state: present
 
-- name: Create Job Template fortianalyzer
+- name: Create Job Template 3. fortianalyzer
   awx.awx.job_template:
     validate_certs: no
     controller_host: "{{ controller_host }}"
@@ -103,7 +103,7 @@
       - "(auto) Fortinet Credentials"
     state: present
 
-- name: Create Job Template fortianalyzer-wa
+- name: Create Job Template 4. fortianalyzer-wa
   awx.awx.job_template:
     validate_certs: no
     controller_host: "{{ controller_host }}"
@@ -121,7 +121,7 @@
       - "(auto) Fortinet Credentials"
     state: present
 
-- name: Create Job Template fortimanager
+- name: Create Job Template 5. fortimanager
   awx.awx.job_template:
     validate_certs: no
     controller_host: "{{ controller_host }}"
