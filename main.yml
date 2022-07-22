@@ -1,5 +1,15 @@
 ---
 
+- name: Controller artifacts roles
+  hosts: controller
+  connection: local
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - controller_artifacts_creation
+
 # - name: VMware deployment roles
 #   hosts: vmware
 #   connection: local
