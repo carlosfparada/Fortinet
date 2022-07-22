@@ -2,17 +2,17 @@
 
 # Create Execution Environment
 
-# - name: Create Execution Environment
-#   awx.awx.execution_environment:
-#     validate_certs: no
-#     controller_host: "{{ controller_host }}"
-#     controller_username: "{{ controller_username }}"
-#     controller_password: "{{ controller_password }}"
-#     name: (auto) Fortinet Execution Environment
-#     image: quay.io/rh_ee_cparada/ee-supported-rh-cparada-fortinet
-#     pull: always
-#     credential: "Credentials: quay.io"
-#     state: present
+- name: Create Execution Environment
+  awx.awx.execution_environment:
+    validate_certs: no
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: "(auto) Fortinet Execution Environment"
+    image: quay.io/rh_ee_cparada/ee-supported-rh-cparada-fortinet
+    pull: always
+    credential: "Credentials: quay.io"
+    state: present
 
 # Create Project
 
@@ -59,6 +59,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
     project: "(auto) Fortinet Project"
     playbook: vmware.yml
@@ -76,6 +77,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
     project: "(auto) Fortinet Project"
     playbook: fortigate.yml
@@ -93,6 +95,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
     project: "(auto) Fortinet Project"
     playbook: fortianalyzer.yml
@@ -110,6 +113,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
     project: "(auto) Fortinet Project"
     playbook: fortianalyzer-wa.yml
@@ -127,6 +131,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
+    execution_environment: "(auto) Fortinet Execution Environment"
     inventory: "Inventory: Fortinet"
     project: "(auto) Fortinet Project"
     playbook: fortimanager.yml
