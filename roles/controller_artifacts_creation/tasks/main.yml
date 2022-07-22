@@ -63,7 +63,7 @@
     project: "(auto) Fortinet Project"
     playbook: vmware.yml
     credentials:
-      - Fortinet Credentials
+      - "(auto) Fortinet Credentials"
     state: present
 
 - name: Create Job Template fortigate
@@ -80,7 +80,7 @@
     project: "(auto) Fortinet Project"
     playbook: fortigate.yml
     credentials:
-      - Fortinet Credentials
+      - "(auto) Fortinet Credentials"
     state: present
 
 - name: Create Job Template fortianalyzer
@@ -97,7 +97,7 @@
     project: "(auto) Fortinet Project"
     playbook: fortianalyzer.yml
     credentials:
-      - Fortinet Credentials
+      - "(auto) Fortinet Credentials"
     state: present
 
 - name: Create Job Template fortianalyzer-wa
@@ -114,7 +114,7 @@
     project: "(auto) Fortinet Project"
     playbook: fortianalyzer-wa.yml
     credentials:
-      - Fortinet Credentials
+      - "(auto) Fortinet Credentials"
     state: present
 
 - name: Create Job Template fortimanager
@@ -131,5 +131,5 @@
     project: "(auto) Fortinet Project"
     playbook: fortimanager.yml
     credentials:
-      - Fortinet Credentials
+      - "(auto) Fortinet Credentials"
     state: present
