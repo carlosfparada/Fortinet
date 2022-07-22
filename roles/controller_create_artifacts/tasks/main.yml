@@ -55,7 +55,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: "(auto) Fortinet Job Template vmware"
+    name: "(auto) Fortinet Job Template 1. vmware"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -73,7 +73,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: "(auto) Fortinet Job Template fortigate"
+    name: "(auto) Fortinet Job Template 2. fortigate"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -91,7 +91,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: "(auto) Fortinet Job Template fortianalyzer"
+    name: "(auto) Fortinet Job Template 3. fortianalyzer"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -109,7 +109,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: "(auto) Fortinet Job Template fortianalyzer-wa"
+    name: "(auto) Fortinet Job Template 4. fortianalyzer-wa"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -127,7 +127,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: "(auto) Fortinet Job Template fortimanager"
+    name: "(auto) Fortinet Job Template 5. fortimanager"
     description: Created by Ansible Automation
     organization: Default
     job_type: run
