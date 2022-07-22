@@ -1,13 +1,13 @@
 ---
 
-# - name: VMware deployment roles
-#   hosts: vmware
-#   connection: local
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{infra}}.yml"
-#   roles:
-#     - vmware_deploy_fortigate
-#     - vmware_deploy_fortianalyzer
-#     - vmware_deploy_fortimanager
+- name: VMware deployment roles
+  hosts: vmware
+  connection: local
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+  #  - vmware_deploy_fortigate
+  #  - vmware_deploy_fortianalyzer
+  #  - vmware_deploy_fortimanager
