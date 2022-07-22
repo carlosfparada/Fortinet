@@ -7,7 +7,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Execution Environment
+    name: (auto) Fortinet Execution Environment
     image: quay.io/rh_ee_cparada/ee-supported-rh-cparada-fortinet
     pull: always
     credential: "Credentials: quay.io"
@@ -20,7 +20,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Project
+    name: (auto) Fortinet Project
     description: Created by Ansible Automation
     organization: Default
     scm_update_on_launch: True
@@ -35,7 +35,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Credentials
+    name: (auto) Fortinet Credentials
     description: Created by Ansible Automation
     organization: Default
     credential_type: Machine
@@ -51,7 +51,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Job Template vmware
+    name: (auto) Fortinet Job Template vmware
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -67,7 +67,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Job Template fortigate
+    name: (auto) Fortinet Job Template fortigate
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -83,7 +83,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Job Template fortianalyzer
+    name: (auto) Fortinet Job Template fortianalyzer
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -99,7 +99,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Job Template fortianalyzer-wa
+    name: (auto) Fortinet Job Template fortianalyzer-wa
     description: Created by Ansible Automation
     organization: Default
     job_type: run
@@ -115,7 +115,7 @@
     controller_host: "{{ controller_host }}"
     controller_username: "{{ controller_username }}"
     controller_password: "{{ controller_password }}"
-    name: Fortinet Job Template fortimanager
+    name: (auto) Fortinet Job Template fortimanager
     description: Created by Ansible Automation
     organization: Default
     job_type: run
