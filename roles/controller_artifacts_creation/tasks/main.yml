@@ -59,7 +59,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
-    inventory: Fortinet Inventory
+    inventory: "Inventory: Fortinet"
     project: Fortinet Project
     playbook: vmware.yml
     credentials:
@@ -76,7 +76,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
-    inventory: Fortinet Inventory
+    inventory: "Inventory: Fortinet"
     project: Fortinet Project
     playbook: fortigate.yml
     credentials:
@@ -93,7 +93,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
-    inventory: Fortinet Inventory
+    inventory: "Inventory: Fortinet"
     project: Fortinet Project
     playbook: fortianalyzer.yml
     credentials:
@@ -110,7 +110,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
-    inventory: Fortinet Inventory
+    inventory: "Inventory: Fortinet"
     project: Fortinet Project
     playbook: fortianalyzer-wa.yml
     credentials:
@@ -127,7 +127,7 @@
     description: Created by Ansible Automation
     organization: Default
     job_type: run
-    inventory: Fortinet Inventory
+    inventory: "Inventory: Fortinet"
     project: Fortinet Project
     playbook: fortimanager.yml
     credentials:
