@@ -43,8 +43,8 @@
     organization: Default
     credential_type: Machine
     inputs:
-      username: "{{ username }}"
-      password: "{{ password }}"
+      username: "{{ fortinet_username }}"
+      password: "{{ fortinet_password }}"
     state: present
 
 # Create Templates
