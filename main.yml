@@ -35,8 +35,17 @@
     - fortianalyzer_gather_facts
     - fortianalyzer_device_authorization
     - fortianalyzer_config_settings
-    - fortianalyzer_device_removal  # to avoid next errors
-  
+
+- name: Fortinet FortiAnalyzer roles (workaround)
+  hosts: fortianalyzer
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - fortianalyzer_fortigate_removal  # to avoid next errors
+
 - name: Fortinet FortiManager roles
   hosts: fortimanager
   connection: httpapi
@@ -46,6 +55,7 @@
     - "{{infra}}.yml"
   roles:
     - fortimanager_gather_facts
-    - fortimanager_add_device
+    #- fortimanager_add_fortigate
+    - fortimanager_add_fortianalyzer
     - fortimanager_config_settings
   

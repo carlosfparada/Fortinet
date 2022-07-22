@@ -1,0 +1,27 @@
+---
+
+- name: Probe FortiGate device from FortiManager 
+  fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
+    dvm_cmd_discover_device:
+      device:
+        adm_pass: admin
+        adm_usr: admin
+        ip: "{{ hostvars[fortigate].ansible_host }}"
+  register: _probed_fortigate
+
+- name: Debug FortiGate device probing
+  debug:
+    var: _probed_fortigate
+
+- name: Add FortiGate device to FortiManager
+  fortinet.fortimanager.fmgr_dvm_cmd_add_device:
+    dvm_cmd_add_device:
+      adom: "{{ domain }}"
+      device:
+        adm_usr: '{{ _probed_fortigate.meta.response_data.device.adm_usr }}'
+        adm_pass: '{{ _probed_fortigate.meta.response_data.device.adm_pass }}'
+        desc: 'The device was added using Ansible'
+        ip: '{{ _probed_fortigate.meta.response_data.device.ip }}'
+        mgmt_mode: 'fmg'
+        name: '{{ _probed_fortigate.meta.response_data.device.name }}'
+        sn: '{{ _probed_fortigate.meta.response_data.device.sn }}'
