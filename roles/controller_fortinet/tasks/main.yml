@@ -1,0 +1,127 @@
+---
+
+# Create Execution Environment
+
+- name: Create Execution Environment
+  awx.awx.execution_environment:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Execution Environment
+    image: quay.io/rh_ee_cparada/ee-supported-rh-cparada-fortinet
+    pull: always
+    credential: quay.io Credentials
+    state: present
+
+# Create Project
+
+- name: Create Project
+  awx.awx.project:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Project
+    description: Created by Ansible Automation
+    organization: Default
+    scm_update_on_launch: True
+    scm_type: git
+    scm_url: "https://github.com/carlosfparada/Fortinet.git"
+    state: present
+
+# Create Credentials
+
+- name: Create Credentials
+  awx.awx.credential:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Credentials
+    description: Created by Ansible Automation
+    organization: Default
+    credential_type: Machine
+    inputs:
+      username: "{{ username }}"
+      password: "{{ password }}"
+    state: present
+
+# Create Templates
+
+- name: Create Job Template wmware
+  awx.awx.job_template:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Job Template vmware
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    inventory: Fortinet Inventory
+    project: Fortinet Project
+    playbook: vmware.yml
+    credentials:
+      - Fortinet Credentials
+    state: present
+
+- name: Create Job Template fortigate
+  awx.awx.job_template:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Job Template fortigate
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    inventory: Fortinet Inventory
+    project: Fortinet Project
+    playbook: fortigate.yml
+    credentials:
+      - Fortinet Credentials
+    state: present
+
+- name: Create Job Template fortianalyzer
+  awx.awx.job_template:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Job Template fortianalyzer
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    inventory: Fortinet Inventory
+    project: Fortinet Project
+    playbook: fortianalyzer.yml
+    credentials:
+      - Fortinet Credentials
+    state: present
+
+- name: Create Job Template fortianalyzer-wa
+  awx.awx.job_template:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Job Template fortianalyzer-wa
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    inventory: Fortinet Inventory
+    project: Fortinet Project
+    playbook: fortianalyzer-wa.yml
+    credentials:
+      - Fortinet Credentials
+    state: present
+
+- name: Create Job Template fortimanager
+  awx.awx.job_template:
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: Fortinet Job Template fortimanager
+    description: Created by Ansible Automation
+    organization: Default
+    job_type: run
+    inventory: Fortinet Inventory
+    project: Fortinet Project
+    playbook: fortimanager.yml
+    credentials:
+      - Fortinet Credentials
+    state: present
