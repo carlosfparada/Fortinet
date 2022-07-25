@@ -5,7 +5,7 @@ ansible_connection: vmware_tools
 vm_template: fortigate
 vm_cluster: cluster1
 vm_datastore: datastore2
-vm_folder: DC1
+vm_folder: DC1/cluster1
 ansible_vmware_guest_path: DC1/vm
 ansible_vmware_tools_user: admin
 ansible_vmware_tools_password: admin
