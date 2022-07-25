@@ -55,10 +55,10 @@
   delegate_to: localhost
 
 - set_fact:
-  source_vm_id: "{{ vm_info.value[0].vm }}"
-  cluster_id: '{{ cluster_info.value[0].cluster }}'
-  datastore_id: '{{ datastore_info.value[0].datastore }}'
-  folder_id: '{{ folder_info.value[0].folder }}'
+    source_vm_id: "{{ vm_info.value[0].vm }}"
+    cluster_id: '{{ cluster_info.value[0].cluster }}'
+    datastore_id: '{{ datastore_info.value[0].datastore }}'
+    folder_id: '{{ folder_info.value[0].folder }}'
 
 - name: deploy | clone from template
   vmware.vmware_rest.vcenter_vm:
