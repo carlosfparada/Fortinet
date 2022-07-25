@@ -1,71 +1,71 @@
 ---
 
-- name: Controller artifacts roles
-  hosts: controller
-  connection: local
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"
-  roles:
-    - controller_create_artifacts
-
-# - name: VMware deployment roles
-#   hosts: vmware
+# - name: Controller artifacts roles
+#   hosts: controller
 #   connection: local
 #   gather_facts: no
 #   vars_files: 
 #     - main.yml
 #     - "{{infra}}.yml"
 #   roles:
-#     - vmware_deploy_fortigate
-#     - vmware_deploy_fortianalyzer
-#     - vmware_deploy_fortimanager
+#     - controller_create_artifacts
 
-- name: Fortinet FortiGate roles
-  hosts: fortigate
-  connection: httpapi
+- name: VMware deployment roles
+  hosts: vmware
+  connection: local
   gather_facts: no
   vars_files: 
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortigate-gather-facts
-    - fortigate-create-rules
-    - fortigate-connect-fortianalyzer
+    - vmware_deploy_fortigate
+    # - vmware_deploy_fortianalyzer
+    # - vmware_deploy_fortimanager
 
-- name: Fortinet FortiAnalyzer roles
-  hosts: fortianalyzer
-  connection: httpapi
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"
-  roles:
-    - fortianalyzer_gather_facts
-    - fortianalyzer_device_authorization
-    - fortianalyzer_config_settings
+# - name: Fortinet FortiGate roles
+#   hosts: fortigate
+#   connection: httpapi
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"
+#   roles:
+#     - fortigate-gather-facts
+#     - fortigate-create-rules
+#     - fortigate-connect-fortianalyzer
 
-- name: Fortinet FortiAnalyzer roles (workaround)
-  hosts: fortianalyzer
-  connection: httpapi
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"
-  roles:
-    - fortianalyzer_fortigate_removal  # to avoid next errors
+# - name: Fortinet FortiAnalyzer roles
+#   hosts: fortianalyzer
+#   connection: httpapi
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"
+#   roles:
+#     - fortianalyzer_gather_facts
+#     - fortianalyzer_device_authorization
+#     - fortianalyzer_config_settings
 
-- name: Fortinet FortiManager roles
-  hosts: fortimanager
-  connection: httpapi
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"
-  roles:
-    - fortimanager_gather_facts
-    #- fortimanager_add_fortigate   # not supported by FortiManager
-    - fortimanager_add_fortianalyzer
-    - fortimanager_config_settings
+# - name: Fortinet FortiAnalyzer roles (workaround)
+#   hosts: fortianalyzer
+#   connection: httpapi
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"
+#   roles:
+#     - fortianalyzer_fortigate_removal  # to avoid next errors
+
+# - name: Fortinet FortiManager roles
+#   hosts: fortimanager
+#   connection: httpapi
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"
+#   roles:
+#     - fortimanager_gather_facts
+#     #- fortimanager_add_fortigate   # not supported by FortiManager
+#     - fortimanager_add_fortianalyzer
+#     - fortimanager_config_settings
   
