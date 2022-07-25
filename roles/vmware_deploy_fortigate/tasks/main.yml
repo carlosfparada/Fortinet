@@ -1,5 +1,8 @@
 ---
 
+- debug: 
+    msg: "{{ lookup('env','VMWARE_HOST') }}"
+
 - name: deploy | get template 
   vmware.vmware_rest.vcenter_vm_info:
     vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
