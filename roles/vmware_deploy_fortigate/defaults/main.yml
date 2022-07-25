@@ -1,2 +1,6 @@
 ---
 
+vm_template: fortigate
+vm_cluster: cluster1  # DC1
+vm_datastore: datastore2
+
