@@ -114,14 +114,15 @@
 #     ansible_connection: local
 
 - name: Look up the VM called test_vm1 in the inventory
-  register: search_result
   vmware.vmware_rest.vcenter_vm_info:
     vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
     vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     filter_names:
     - "{{ vm_name }}"
-
+    vcenter_validate_certs: False
+  register: search_result
+    
 - name: Collect information about a specific VM
   vmware.vmware_rest.vcenter_vm_info:
     vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
