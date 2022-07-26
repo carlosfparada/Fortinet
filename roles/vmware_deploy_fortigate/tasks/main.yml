@@ -56,7 +56,7 @@
       size_MiB: "{{ vm_ram }}"
     source: "{{ source_vm_id }}"
     state: clone
-    power_on: yes
+    power_on: no
   delegate_to: localhost
 
 - name: Sleep for 20 seconds and continue with play
@@ -94,13 +94,11 @@
       - 192.168.1.31
   delegate_to: localhost
 
-
-
-# - name: Start the VM
-#   vmware.vmware_rest.vcenter_vm_power:
-#     state: start
-#     vm: "{{ vm_info_new.value[0].vm }}"
-#   delegate_to: localhost
+- name: Start the VM
+  vmware.vmware_rest.vcenter_vm_power:
+    state: start
+    vm: "{{ vm_info_new.value[0].vm }}"
+  delegate_to: localhost
 
 # - name: Wait until SSH port is UP
 #   wait_for:
