@@ -77,8 +77,7 @@
 - name: Start the VM
   vmware.vmware_rest.vcenter_vm_power:
     state: start
-    #vm: "{{ vm_info_new.value[0].vm }}"
-    vm: "vm-13051"
+    vm: "{{ vm_info_new.value[0].vm }}"
 
 # - name: Wait until SSH port is UP
 #   wait_for:
