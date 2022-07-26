@@ -1,15 +1,10 @@
 ---
 
-- name: Build a list of all the folders
-  vmware.vmware_rest.vcenter_vmtemplate_libraryitems_info:
-  register: my_folders
-
 - name: deploy | get template 
   vmware.vmware_rest.vcenter_vm_info:
     vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
     vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
-    folders: "DC1/vm/Templates"
     #filter_names:
     #- "{{ vm_template }}"
     vcenter_validate_certs: False
