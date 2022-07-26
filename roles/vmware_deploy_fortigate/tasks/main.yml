@@ -101,9 +101,9 @@
 
 
 - debug:
-  var: vm_info_new
+    var: vm_info_new
 - debug:
-  var: vm_info_new.value[0].vm
+    var: vm_info_new.value[0].vm
 
 - name: Start the VM
   vmware.vmware_rest.vcenter_vm_power:
