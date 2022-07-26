@@ -1,8 +1,7 @@
 ---
 
 - name: Build a list of all the folders
-  vmware.vmware_rest.vcenter_folder_info:
-    filter_type: DATASTORE
+  vmware.vmware_rest.vcenter_vmtemplate_libraryitems_info:
   register: my_folders
 
 - name: deploy | get template 
