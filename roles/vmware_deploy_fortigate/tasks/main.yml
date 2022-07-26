@@ -88,13 +88,13 @@
     timeout: 20
   delegate_to: localhost
 
-- name: deploy | get template vm "{{ vm_name }}.{{ domain }}"
+- name: deploy | get template vm "{{ vm_name }}"
   vmware.vmware_rest.vcenter_vm_info:
     vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
     vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     filter_names:
-    - "{{ vm_name }}.{{ domain }}"
+    - "{{ vm_name }}"
     vcenter_validate_certs: False
   register: vm_info_new
   delegate_to: localhost
@@ -102,12 +102,12 @@
 - name: Customize the VM
   vmware.vmware_rest.vcenter_vm_guest_customization:
     vm: "{{ vm_info_new.value[0].vm }}"
-    configuration_spec:
-      linux_config:
-        domain: "my-lab.local"
-        hostname:
-          fixed_name: "{{ vm_name }}"
-          type: FIXED
+    # configuration_spec:
+    #   linux_config:
+    #     domain: "my-lab.local"
+    #     hostname:
+    #       fixed_name: "{{ vm_name }}"
+    #       type: FIXED
     interfaces:
     - adapter:
         ipv4:
