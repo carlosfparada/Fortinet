@@ -9,5 +9,5 @@
     - "{{infra}}.yml"
   roles:
     - vmware_deploy_fortigate
-  #  - vmware_deploy_fortianalyzer
-  #  - vmware_deploy_fortimanager
+    - vmware_deploy_fortianalyzer
+    - vmware_deploy_fortimanager
