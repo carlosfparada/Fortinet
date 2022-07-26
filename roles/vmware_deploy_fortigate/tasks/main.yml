@@ -17,7 +17,7 @@
     vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     filter_names:
-    #- "{{ vm_cluster }}"
+    - "{{ vm_cluster }}"
     vcenter_validate_certs: False
   register: cluster_info
   delegate_to: localhost
@@ -39,7 +39,7 @@
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     vcenter_validate_certs: False
     filter_names:
-    #- "{{ vm_datastore }}"
+    - "{{ vm_datastore }}"
   register: datastore_info
   delegate_to: localhost
 
@@ -50,7 +50,7 @@
     vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
     vcenter_validate_certs: False
     filter_names:
-    #- '{{ vm_folder }}'
+    - '{{ vm_folder }}'
   register: folder_info
   delegate_to: localhost
 
