@@ -71,6 +71,9 @@
   register: vm_info_new
   delegate_to: localhost
 
+- debug:
+    msg: "{{ vm_info_new.value[0].vm|type_debug }}"
+
 - name: Start the VM
   vmware.vmware_rest.vcenter_vm_power:
     state: start
