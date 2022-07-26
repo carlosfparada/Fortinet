@@ -29,8 +29,8 @@
 
 - name: deploy | get folder info
   vmware.vmware_rest.vcenter_folder_info:
-    #filter_names:
-    #- '{{ vm_folder }}'
+    filter_names:
+    - '{{ vm_folder }}'
   register: folder_info
   delegate_to: localhost
 
