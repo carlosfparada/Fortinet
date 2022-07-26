@@ -70,8 +70,8 @@
       cluster: "{{ cluster_id }}"
       datastore: "{{ datastore_id }}"
       folder: "{{ folder_id }}"
-    name: "aa{{ vm_name }}.{{ domain }}"
-    guest_OS: "RHEL_8_64"
+    name: "{{ vm_name }}"
+    #guest_OS: "RHEL_8_64"
     cpu:
       hot_add_enabled: true
       count: "{{ vm_cpu }}"
