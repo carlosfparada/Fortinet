@@ -56,7 +56,7 @@
       size_MiB: "{{ vm_ram }}"
     source: "{{ source_vm_id }}"
     state: clone
-    power_on: yes
+    power_on: no
   delegate_to: localhost
 
 - name: Sleep for 20 seconds and continue with play
