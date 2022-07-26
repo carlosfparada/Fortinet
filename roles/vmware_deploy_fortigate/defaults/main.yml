@@ -15,6 +15,6 @@ vm_name: fortigate-1
 vm_template: fortigate
 vm_cluster: cluster1
 vm_datastore: datastore2
-vm_folder: vm/
+vm_folder: /vm
 vm_cpu: 1
 vm_ram: 2
