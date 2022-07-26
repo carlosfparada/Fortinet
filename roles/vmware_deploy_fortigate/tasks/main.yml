@@ -74,6 +74,7 @@
     #   dns_suffix_list: []
     #   dns_servers:
     #   - 192.168.1.31
+  delegate_to: localhost
 
 # - name: Sleep for 20 seconds and continue with play
 #   wait_for:
