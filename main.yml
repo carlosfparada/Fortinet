@@ -19,8 +19,8 @@
     - "{{infra}}.yml"
   roles:
     - vmware_deploy_fortigate
-    # - vmware_deploy_fortianalyzer
-    # - vmware_deploy_fortimanager
+    - vmware_deploy_fortianalyzer
+    - vmware_deploy_fortimanager
 
 # - name: Fortinet FortiGate roles
 #   hosts: fortigate
