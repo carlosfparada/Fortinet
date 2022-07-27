@@ -5,9 +5,11 @@
   connection: local
   gather_facts: no
   tasks:
-    #- set_fact:
-    - debug:
-        var: item
-      loop: groups[all]
 
+  - set_fact:
+      aaa: "{{ item | regex_search('^fortinet-1(.*)$', '\\1'), first }}"
+    loop: "{{ groups['all'] }}"
+    when: item | regex_search("^(fortinet-1)(.*)$")
 
+  - debug:
+      var: aaa
