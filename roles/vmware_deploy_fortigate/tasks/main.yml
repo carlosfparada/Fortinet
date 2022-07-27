@@ -110,6 +110,11 @@
     vm: "{{ vm_info_new.value[0].vm }}"
   delegate_to: localhost
 
+- name: Gather info about all customization specification
+  community.vmware.vmware_guest_customization_info:
+  delegate_to: localhost
+  register: all_custom_spec_info
+
 # - name: Wait until SSH port is UP
 #   wait_for:
 #     port: 22
