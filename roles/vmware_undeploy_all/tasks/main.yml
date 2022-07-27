@@ -11,8 +11,9 @@
 
 # - name: Start the VM
 #   vmware.vmware_rest.vcenter_vm_power:
-#     state: start
-#     vm: "{{ vm_info_new.value[0].vm }}"
+#     state: stop
+#     vm: '{{ item.vm }}'
+#   with_items: '{{ vms_info.value }}'
 #   delegate_to: localhost
 
 - name: Delete some VM
@@ -20,3 +21,4 @@
     state: absent
     vm: '{{ item.vm }}'
   with_items: '{{ vms_info.value }}'
+  delegate_to: localhost
