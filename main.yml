@@ -19,20 +19,20 @@
     - "{{infra}}.yml"
   roles:
     - vmware_deploy_fortigate
-    - vmware_deploy_fortianalyzer
-    - vmware_deploy_fortimanager
+  #  - vmware_deploy_fortianalyzer
+  #  - vmware_deploy_fortimanager
 
-# - name: Fortinet FortiGate roles
-#   hosts: fortigate-1
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{infra}}.yml"
-#   roles:
-#     - fortigate-gather-facts
-#     - fortigate-create-rules
-#     - fortigate-connect-fortianalyzer
+- name: Fortinet FortiGate roles
+  hosts: fortigate-1
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - fortigate-gather-facts
+    - fortigate-create-rules
+    - fortigate-connect-fortianalyzer
 
 # - name: Fortinet FortiAnalyzer roles
 #   hosts: fortianalyzer-1
