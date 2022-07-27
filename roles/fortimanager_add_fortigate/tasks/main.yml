@@ -8,6 +8,7 @@
         adm_usr: admin
         ip: "{{ hostvars[fortigate].ansible_host }}"
   register: _probed_fortigate
+  ignore_errors: true
 
 - name: Debug FortiGate device probing
   debug:
