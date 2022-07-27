@@ -1,7 +1,7 @@
 ---
 
 - name: Fortinet FortiAnalyzer roles (workaround)
-  hosts: fortianalyzer
+  hosts: fortianalyzer-1
   connection: httpapi
   gather_facts: no
   vars_files: 

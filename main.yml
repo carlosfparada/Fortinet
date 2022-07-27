@@ -1,7 +1,7 @@
 ---
 
 # - name: Controller artifacts roles
-#   hosts: controller
+#   hosts: controller-1
 #   connection: local
 #   gather_facts: no
 #   vars_files: 
@@ -11,7 +11,7 @@
 #     - controller_create_artifacts
 
 - name: VMware deployment roles
-  hosts: vmware
+  hosts: vsphere-1
   connection: local
   gather_facts: no
   vars_files: 
@@ -23,7 +23,7 @@
     - vmware_deploy_fortimanager
 
 # - name: Fortinet FortiGate roles
-#   hosts: fortigate
+#   hosts: fortigate-1
 #   connection: httpapi
 #   gather_facts: no
 #   vars_files: 
@@ -35,7 +35,7 @@
 #     - fortigate-connect-fortianalyzer
 
 # - name: Fortinet FortiAnalyzer roles
-#   hosts: fortianalyzer
+#   hosts: fortianalyzer-1
 #   connection: httpapi
 #   gather_facts: no
 #   vars_files: 
@@ -47,7 +47,7 @@
 #     - fortianalyzer_config_settings
 
 # - name: Fortinet FortiAnalyzer roles (workaround)
-#   hosts: fortianalyzer
+#   hosts: fortianalyzer-1
 #   connection: httpapi
 #   gather_facts: no
 #   vars_files: 
@@ -57,7 +57,7 @@
 #     - fortianalyzer_fortigate_removal  # to avoid next errors
 
 # - name: Fortinet FortiManager roles
-#   hosts: fortimanager
+#   hosts: fortimanager-1
 #   connection: httpapi
 #   gather_facts: no
 #   vars_files: 
