@@ -9,14 +9,14 @@
   register: vms_info
   delegate_to: localhost
 
-- name: Start the VM
+- name: undeploy | stop the VM
   vmware.vmware_rest.vcenter_vm_power:
     state: stop
     vm: "{{ item.vm }}"
   with_items: '{{ vms_info.value }}'
   delegate_to: localhost
 
-- name: Delete Fortinet VM
+- name: undeploy | undeploy the VM
   vmware.vmware_rest.vcenter_vm:
     state: absent
     vm: "{{ item.vm }}"
