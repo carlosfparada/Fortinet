@@ -29,6 +29,12 @@
 domain: "root"
 #fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 
+ansible_network_os: fortinet.fortios.fortios
+ansible_connection: httpapi
+ansible_httpapi_use_ssl: no
+ansible_httpapi_validate_certs: no
+ansible_httpapi_port: 80
+
 fg_services:
   dns-tcp: service-dns-tcp
   dns-udp: service-dns-udp

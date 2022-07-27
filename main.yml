@@ -19,8 +19,8 @@
     - "{{infra}}.yml"
   roles:
     - vmware_deploy_fortigate
-  #  - vmware_deploy_fortianalyzer
-  #  - vmware_deploy_fortimanager
+    - vmware_deploy_fortianalyzer
+    - vmware_deploy_fortimanager
 
 - name: Fortinet FortiGate roles
   hosts: fortigate-1
@@ -34,38 +34,38 @@
     - fortigate-create-rules
     - fortigate-connect-fortianalyzer
 
-# - name: Fortinet FortiAnalyzer roles
-#   hosts: fortianalyzer-1
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{infra}}.yml"
-#   roles:
-#     - fortianalyzer_gather_facts
-#     - fortianalyzer_device_authorization
-#     - fortianalyzer_config_settings
+- name: Fortinet FortiAnalyzer roles
+  hosts: fortianalyzer-1
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - fortianalyzer_gather_facts
+    - fortianalyzer_device_authorization
+    - fortianalyzer_config_settings
 
-# - name: Fortinet FortiAnalyzer roles (workaround)
-#   hosts: fortianalyzer-1
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{infra}}.yml"
-#   roles:
-#     - fortianalyzer_fortigate_removal  # to avoid next errors
+- name: Fortinet FortiAnalyzer roles (workaround)
+  hosts: fortianalyzer-1
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - fortianalyzer_fortigate_removal  # to avoid next errors
 
-# - name: Fortinet FortiManager roles
-#   hosts: fortimanager-1
-#   connection: httpapi
-#   gather_facts: no
-#   vars_files: 
-#     - main.yml
-#     - "{{infra}}.yml"
-#   roles:
-#     - fortimanager_gather_facts
-#     #- fortimanager_add_fortigate   # not supported by FortiManager
-#     - fortimanager_add_fortianalyzer
-#     - fortimanager_config_settings
+- name: Fortinet FortiManager roles
+  hosts: fortimanager-1
+  connection: httpapi
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - fortimanager_gather_facts
+    #- fortimanager_add_fortigate   # not supported by FortiManager
+    - fortimanager_add_fortianalyzer
+    - fortimanager_config_settings
   
