@@ -6,14 +6,6 @@
       enc-algorithm: low
       ssl-low-encryption: enable
       oftp-ssl-protocol: tlsv1.0
-  ignore_errors: true
-
-- name: Config System Global
-  fortinet.fortianalyzer.faz_cli_system_global:
-    cli_system_global:
-      enc-algorithm: low
-      ssl-low-encryption: enable
-      oftp-ssl-protocol: tlsv1.0
 
 - name: FortiAnalyzer to Authorize Fortigate add
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
@@ -24,7 +16,6 @@
         adm_pass: admin
         ip: "{{ hostvars[fortigate].ansible_host }}"
         name: "{{ fortigate_name }}"
-        #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         device action: "promote_unreg"
   register: _add_fortigate
