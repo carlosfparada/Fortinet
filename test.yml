@@ -7,9 +7,15 @@
   tasks:
 
   - set_fact:
-      fortigate: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\1'), first }}"
+      fortigate1: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\1'), first }}"
+      fortigate2: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\2'), second }}"
+      fortigate3: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\1'), second }}"
     loop: "{{ groups['all'] }}"
     when: item | regex_search("^fortigate-1_(.*)$")
 
   - debug:
-      var: fortigate
+      var: fortigate1
+  - debug:
+      var: fortigate2
+  - debug:
+      var: fortigate3
