@@ -8,7 +8,7 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortigate-gather-facts
     - fortigate-create-rules
     - fortigate-connect-fortianalyzer
+    - fortigate-gather-facts
 

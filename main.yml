@@ -30,9 +30,9 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortigate-gather-facts
     - fortigate-create-rules
     - fortigate-connect-fortianalyzer
+    - fortigate-gather-facts
 
 - name: Fortinet FortiAnalyzer roles
   hosts: fortianalyzer-1
@@ -42,9 +42,9 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortianalyzer_gather_facts
-    - fortianalyzer_device_authorization
     - fortianalyzer_config_settings
+    - fortianalyzer_device_authorization
+    - fortianalyzer_gather_facts
 
 - name: Fortinet FortiAnalyzer roles (workaround)
   hosts: fortianalyzer-1
@@ -64,8 +64,8 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortimanager_gather_facts
+    - fortimanager_config_settings
     #- fortimanager_add_fortigate   # not supported by FortiManager
     - fortimanager_add_fortianalyzer
-    - fortimanager_config_settings
+    - fortimanager_gather_facts
   
