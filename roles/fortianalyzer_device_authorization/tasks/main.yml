@@ -6,6 +6,7 @@
       enc-algorithm: low
       ssl-low-encryption: enable
       oftp-ssl-protocol: tlsv1.0
+  ignore_errors: true
 
 - name: FortiAnalyzer to Authorize Fortigate add
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
