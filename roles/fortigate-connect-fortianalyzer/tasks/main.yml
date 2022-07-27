@@ -5,13 +5,12 @@
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     log_fortianalyzer_setting:
-      certificate_verification: disable
+      #certificate_verification: disable
       server: "{{ hostvars[fortianalyzer].ansible_host }}"
       source_ip: "{{ hostvars[fortigate].ansible_host }}"
-      reliable: disable
+      reliable: enable
       upload_option: realtime
       status: enable
-      ssl_min_proto_version: SSLv3
   register: _fortinet_log_settings
 
 - name: Debug FortiGate connect FortiAnalyzer logs settings
