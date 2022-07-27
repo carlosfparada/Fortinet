@@ -11,7 +11,7 @@ vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
 vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
 
 # fortinet
-fortigate_vm: fovmrtigate-1
+fortigate_vm: fortigate-1
 fortianalyzer_vm: fortianalyzer-1
 fortimanager_vm: fortimanager-1
 
