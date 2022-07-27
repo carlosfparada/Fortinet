@@ -16,7 +16,7 @@
 #   with_items: '{{ vms_info.value }}'
 #   delegate_to: localhost
 
-- name: Delete some VM
+- name: Delete Fortinet VM
   vmware.vmware_rest.vcenter_vm:
     state: absent
     vm: '{{ item.vm }}'
