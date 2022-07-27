@@ -3,5 +3,5 @@ fortianalyzer: fortianalyzer-1
 fortimanager: fortimanager-1
 domain: "root"
 fortigate_name: "FortiGate-VM64"
-fortianalyzer_name: "FAZVM64-KVM"
+fortianalyzer_name: "FAZVM64"
 fortimanager_name: "FortiManager-VM64"
