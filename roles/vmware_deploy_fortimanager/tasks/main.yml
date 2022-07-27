@@ -108,8 +108,3 @@
 #     delay: 20
 #   vars:
 #     ansible_connection: local
-
-- name: Sleep for 30 seconds and continue with play
-  wait_for:
-    timeout: 30
-  delegate_to: localhost
