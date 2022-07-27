@@ -1,7 +1,7 @@
 ---
 
 domain: "root"
-fortigate_name: "FortiGate-VM64-KVM"
+fortigate_name: "FortiGate-VM64"
 
 ansible_network_os: fortinet.fortianalyzer.fortianalyzer
 ansible_connection: httpapi
