@@ -81,7 +81,7 @@
           userdata: blabla
         type: CLOUDINIT
     interfaces:
-    # - adapter:
+    - adapter:
     #     ipv4:
     #       type: STATIC
     #       gateways:
@@ -89,7 +89,7 @@
     #       ip_address: "{{ vm_ip }}"
     #       prefix: 24
     global_DNS_settings:
-      # dns_suffix_list: []
+      dns_suffix_list: []
       # dns_servers:
       # - 192.168.1.31
   delegate_to: localhost
