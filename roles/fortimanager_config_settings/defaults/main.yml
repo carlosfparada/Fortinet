@@ -27,5 +27,10 @@
 #   CLI: show firewall policy 
 
 domain: "root"
-#fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 fortianalyzer_name: "FAZVM64-KVM"
+
+ansible_network_os: fortinet.fortimanager.fortimanager
+ansible_connection: httpapi
+ansible_httpapi_use_ssl: no
+ansible_httpapi_validate_certs: no
+ansible_httpapi_port: 80

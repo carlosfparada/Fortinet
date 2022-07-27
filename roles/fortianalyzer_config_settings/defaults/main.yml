@@ -1,6 +1,10 @@
 ---
 
 domain: "root"
-#fortigate_token: 8dxz00ht3jstbs84Hfr0NHjr151Njf
 fortigate_name: "FortiGate-VM64-KVM"
 
+ansible_network_os: fortinet.fortianalyzer.fortianalyzer
+ansible_connection: httpapi
+ansible_httpapi_use_ssl: no
+ansible_httpapi_validate_certs: no
+ansible_httpapi_port: 80
