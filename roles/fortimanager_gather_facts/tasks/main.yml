@@ -53,7 +53,3 @@
         params:
           user: ""
 
-# - name: Get FortiManager facts sys_status
-#   fortinet.fortimanager.fmgr_fact:
-#     facts:
-#         selector: sys_status
