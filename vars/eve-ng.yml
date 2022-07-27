@@ -4,3 +4,4 @@ fortimanager: fortimanager-1
 domain: "root"
 fortigate_name: "FortiGate-VM64"
 fortianalyzer_name: "FAZVM64-KVM"
+fortimanager_name: "FortiManager-VM64"
