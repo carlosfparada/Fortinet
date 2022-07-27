@@ -11,7 +11,7 @@
       reliable: disable
       upload_option: realtime
       status: enable
-      #ssl_min_proto_version: SSLv3
+      ssl_min_proto_version: SSLv3
   register: _fortinet_log_settings
 
 - name: Debug FortiGate connect FortiAnalyzer logs settings
