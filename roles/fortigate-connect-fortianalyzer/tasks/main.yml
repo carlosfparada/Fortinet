@@ -8,9 +8,10 @@
       certificate_verification: disable
       server: "{{ hostvars[fortianalyzer].ansible_host }}"
       source_ip: "{{ hostvars[fortigate].ansible_host }}"
-      reliable: enable
+      reliable: disable
       upload_option: realtime
       status: enable
+      #ssl_min_proto_version: SSLv3
   register: _fortinet_log_settings
 
 - name: Debug FortiGate connect FortiAnalyzer logs settings
