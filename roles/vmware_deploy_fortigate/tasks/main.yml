@@ -94,28 +94,6 @@
 #       - 192.168.1.31
 #   delegate_to: localhost
 
-- name: Add VMware Attribute Definition
-  community.vmware.vmware_guest_custom_attribute_defs:
-    state: present
-    attribute_key: MyAttribute
-  delegate_to: localhost
-  register: defs
-
-- name: Add virtual machine custom attributes
-  community.vmware.vmware_guest_custom_attributes:
-    name: "{{ vm_name }}"
-    state: present
-    attributes:
-      - name: MyAttribute
-        value: MyValue
-  delegate_to: localhost
-  register: attributes
-
-- name: Gather info about all customization specification
-  community.vmware.vmware_guest_customization_info:
-  delegate_to: localhost
-  register: all_custom_spec_info
-
 - name: Start the VM
   vmware.vmware_rest.vcenter_vm_power:
     state: start
