@@ -7,9 +7,9 @@
   tasks:
 
   - set_fact:
-      aaa: "{{ item | regex_search('^fortigate-1_(.*)$', '\\1'), first }}"
+      fortigate: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\1'), first }}"
     loop: "{{ groups['all'] }}"
-    when: item | regex_search("^(fortinet-1)(.*)$")
+    when: item | regex_search("^fortigate-1_(.*)$")
 
   - debug:
       var: aaa
