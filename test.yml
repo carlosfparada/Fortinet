@@ -8,6 +8,6 @@
     #- set_fact:
     - debug:
         var: item
-      with_items: hostvars
+      loop: groups[all]
 
 
