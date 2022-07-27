@@ -11,7 +11,7 @@
       type: normal
     state: present
 
-- name: Add FortiManager as a Group member
+- name: Add FortiAnalyzer as a Group member
   fortinet.fortimanager.fmgr_dvmdb_group_objectmember:
     adom: "{{ domain }}"
     dvmdb_group_objectmember:
