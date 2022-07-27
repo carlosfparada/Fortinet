@@ -75,11 +75,11 @@
   vmware.vmware_rest.vcenter_vm_guest_customization:
     vm: "{{ vm_info_new.value[0].vm }}"
     configuration_spec:
-      linux_config:
-        domain: "redhat"
-        hostname:
-          fixed_name: "{{ vm_name }}"
-          type: FIXED
+      cloud_config:
+        cloudinit:
+          metadata: blabla
+          userdata: blabla
+        type: CLOUDINIT
     interfaces:
     - adapter:
         ipv4:
