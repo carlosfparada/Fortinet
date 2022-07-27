@@ -1,0 +1,13 @@
+---
+
+- name: VMware deployment roles
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    #- set_fact:
+    - debug:
+        var: item
+      with_items: hostvars
+
+
