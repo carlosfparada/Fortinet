@@ -1,0 +1,16 @@
+---
+
+- name: undeploy | get template vm
+  vmware.vmware_rest.vcenter_vm_info:
+    filter_names:
+    - "{{ fortigate_name }}"
+    - "{{ fortianalyzer_name }}"
+    - "{{ fortimanager_name }}"
+  register: vms_info
+  delegate_to: localhost
+
+# - name: Delete some VM
+#   vmware.vmware_rest.vcenter_vm:
+#     state: absent
+#     vm: '{{ item.vm }}'
+#   with_items: '{{ vms_info.value }}'

@@ -1,0 +1,11 @@
+---
+
+- name: VMware undeployment roles
+  hosts: vsphere-1
+  connection: local
+  gather_facts: no
+  vars_files: 
+    - main.yml
+    - "{{infra}}.yml"
+  roles:
+    - vmware_undeploy_all

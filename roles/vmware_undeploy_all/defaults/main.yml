@@ -1,0 +1,18 @@
+---
+
+# all
+ansible_vmware_validate_certs: no
+ansible_connection: vmware_tools
+ansible_vmware_guest_path: "DC1/vm/"
+ansible_vmware_tools_user: admin
+ansible_vmware_tools_password: admin
+vcenter_hostname: "{{ lookup('env','VMWARE_HOST') }}"
+vcenter_username: "{{ lookup('env','VMWARE_USER') }}"
+vcenter_password: "{{ lookup('env','VMWARE_PASSWORD') }}"
+
+# fortinet
+fortigate_name: fortigate-1
+fortianalyzer_name: fortianalyzer-1
+fortimanager_name: fortimanager-1
+
+
