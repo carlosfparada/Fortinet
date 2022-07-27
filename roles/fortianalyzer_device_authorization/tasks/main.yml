@@ -24,7 +24,7 @@
         adm_pass: admin
         ip: "{{ hostvars[fortigate].ansible_host }}"
         name: "{{ fortigate_name }}"
-        sn: "FGVMEVPAYOCISQ99"
+        #sn: "FGVMEVPAYOCISQ99"
         mgmt_mode: faz
         device action: "promote_unreg"
   register: _add_fortigate
