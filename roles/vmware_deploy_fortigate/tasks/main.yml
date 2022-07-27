@@ -100,7 +100,6 @@
     vm: "{{ vm_info_new.value[0].vm }}"
   delegate_to: localhost
 
-
 # - name: Wait until SSH port is UP
 #   wait_for:
 #     port: 22
