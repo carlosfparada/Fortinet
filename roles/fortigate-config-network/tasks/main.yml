@@ -17,7 +17,7 @@
     system_interface:
       name: port2
       interface: port2
-      ip: 10.1.1.1 255.255.255.0
+      ip: 10.2.2.2 255.255.255.0
       allowaccess: ping
   register: _ip_address1
 
@@ -29,7 +29,7 @@
     system_interface:
       name: port3
       interface: port3
-      ip: 10.2.2.2 255.255.255.0
+      ip: 10.3.3.3 255.255.255.0
       allowaccess: ping
   register: _ip_address2
 
@@ -41,8 +41,8 @@
     router_static:
       device: port2
       src: "0.0.0.0 0.0.0.0"
-      dst: "10.3.3.0 255.255.255.0"
-      gateway: 10.1.1.1
+      dst: "10.12.12.0 255.255.255.0"
+      gateway: 10.12.12.1
   register: _ip_route1
 
 - name: Configure IP static routing 2
@@ -53,6 +53,6 @@
     router_static:
       device: port3
       src: "0.0.0.0 0.0.0.0"
-      dst: "10.4.4.0 255.255.255.0"
-      gateway: 10.2.2.1
+      dst: "10.13.13.0 255.255.255.0"
+      gateway: 10.3.3.1
   register: _ip_route2
