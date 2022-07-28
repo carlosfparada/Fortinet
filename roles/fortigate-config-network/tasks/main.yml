@@ -46,17 +46,17 @@
         obj_id: 2
   register: _ip_address2
 
-- name: Configure IP static routing 1
-  fortinet.fortios.fortios_router_static:
-    vdom: "{{ domain }}"
-    #access_token: "{{ fortigate_token }}"
-    state: absent
-    router_static:
-      device: port2
-      src: "0.0.0.0 0.0.0.0"
-      dst: "10.3.3.0 255.255.255.0"
-      gateway: 10.1.1.1
-  register: _ip_route1
+# - name: Configure IP static routing 1
+#   fortinet.fortios.fortios_router_static:
+#     vdom: "{{ domain }}"
+#     #access_token: "{{ fortigate_token }}"
+#     state: absent
+#     router_static:
+#       device: port2
+#       src: "0.0.0.0 0.0.0.0"
+#       dst: "10.3.3.0 255.255.255.0"
+#       gateway: 10.1.1.1
+#   register: _ip_route1
 
 - name: Configure IP static routing 2
   fortinet.fortios.fortios_router_static:
