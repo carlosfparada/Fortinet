@@ -2,7 +2,12 @@
 
 - name: Refresh inventory
   ansible.builtin.meta: refresh_inventory
-  
+
+- name: Sleep for 20 seconds and continue with play
+  wait_for:
+    timeout: 20
+  delegate_to: localhost
+
 - name: Get FortiGate node
   set_fact:
     fortigate: "{{ item }}"
