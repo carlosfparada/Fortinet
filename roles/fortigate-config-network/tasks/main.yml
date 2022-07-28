@@ -1,7 +1,7 @@
 ---
 
 - debug:
-    var: hostvars[groups['fortianalyzer'][0]].ansible_host
+    var: ansible_host
 
 - name: Configure IPv4 addresses
   fortinet.fortios.fortios_system_interface:
