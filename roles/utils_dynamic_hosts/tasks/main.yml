@@ -10,6 +10,7 @@
   add_host:
     name: "{{ fortigate }}"
     groups: fortigate
+  when: fortigate is defined
 
 - name: Get FortiAnalyzer node
   set_fact:
@@ -21,6 +22,7 @@
   add_host:
     name: "{{ fortianalyzer }}"
     groups: fortianalyzer
+  when: fortianalyzer is defined
 
 - name: Get FortiManager node
   set_fact:
@@ -32,6 +34,7 @@
   add_host:
     name: "{{ fortimanager }}"
     groups: fortimanager
+  when: fortimanager is defined
 
 - name: Get vSphere node
   set_fact:
@@ -43,6 +46,7 @@
   add_host:
     name: "{{ vsphere }}"
     groups: vsphere
+  when: vsphere is defined
 
 - name: Get Controller node
   set_fact:
@@ -54,3 +58,4 @@
   add_host:
     name: "{{ controller }}"
     groups: controller
+  when: controller is defined
