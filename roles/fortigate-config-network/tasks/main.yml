@@ -5,6 +5,7 @@
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     state: present
+    enable_log: true
     firewall_address:
       name: port2
       interface: port2
@@ -24,6 +25,7 @@
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     state: present
+    enable_log: true
     firewall_address:
       name: port3
       interface: port3
