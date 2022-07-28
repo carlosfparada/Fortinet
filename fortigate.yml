@@ -7,39 +7,6 @@
   roles:
     - utils_dynamic_hosts
 
-  # tasks:
-  # - name: Get FortiGate node
-  #   set_fact:
-  #     fortigate: "{{ item }}"
-  #   loop: "{{ groups['all'] }}"
-  #   when: item | regex_search("^fortigate-1_(.*)$")
-
-  # - name: Add FortiGate node to the fortigate group
-  #   add_host:
-  #     name: "{{ fortigate }}"
-  #     groups: fortigate
-
-  # - name: Get FortiAnalyzer node
-  #   set_fact:
-  #     fortianalyzer: "{{ item }}"
-  #   loop: "{{ groups['all'] }}"
-  #   when: item | regex_search("^fortianalyzer-1_(.*)$") 
-
-  # - name: Add FortiAnalyzer node to the fortianalyzer group
-  #   add_host:
-  #     name: "{{ fortianalyzer }}"
-  #     groups: fortianalyzer
-
-  # - name: Get FortiManager node
-  #   set_fact:
-  #     fortimanager: "{{ item }}"
-  #   loop: "{{ groups['all'] }}"
-  #   when: item | regex_search("^fortimanager-1_(.*)$") 
-
-  # - name: Add FortiManager node to the fortimanager group
-  #   add_host:
-  #     name: "{{ fortimanager }}"
-  #     groups: fortimanager
 
 - name: Fortinet FortiGate roles
   hosts: fortigate
