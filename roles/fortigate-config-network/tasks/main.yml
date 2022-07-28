@@ -17,6 +17,7 @@
     router_static:
       "{{ item }}"
   loop: "{{ ipv4_routing }}"
+  ignore_errors: true
 
 
 # - name: Configure IP address 1
