@@ -15,7 +15,7 @@
       var: fortigate
 
   - debug:
-      var: hostvars[localhost]
+      var: hostvars['localhost']
 
 - name: Fortinet FortiGate roles
   #hosts: fortigate-1
