@@ -5,7 +5,7 @@
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     selectors:
-      - selector: "system_interface"
+      #- selector: "system_interface"
       - selector: "firewall_address"
   register: _fortinet_facts
 
