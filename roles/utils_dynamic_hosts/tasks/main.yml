@@ -1,5 +1,8 @@
 ---
 
+- name: Refresh inventory
+  ansible.builtin.meta: refresh_inventory
+  
 - name: Get FortiGate node
   set_fact:
     fortigate: "{{ item }}"

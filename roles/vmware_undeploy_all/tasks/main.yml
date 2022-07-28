@@ -1,8 +1,5 @@
 ---
 
-- name: Refresh inventory
-  ansible.builtin.meta: refresh_inventory
-
 - name: undeploy | get template vm
   vmware.vmware_rest.vcenter_vm_info:
     filter_names:

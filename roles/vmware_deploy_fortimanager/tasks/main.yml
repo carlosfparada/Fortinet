@@ -113,6 +113,3 @@
   wait_for:
     timeout: 20
   delegate_to: localhost
-
-- name: Refresh inventory
-  ansible.builtin.meta: refresh_inventory
