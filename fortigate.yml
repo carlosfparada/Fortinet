@@ -19,7 +19,7 @@
 
 - name: Fortinet FortiGate roles
   #hosts: fortigate-1
-  hosts: "{{ fortigate }}"
+  hosts: fortigate
   connection: httpapi
   gather_facts: no
   vars_files: 
