@@ -11,6 +11,9 @@
     loop: "{{ groups['all'] }}"
     when: item | regex_search("^fortigate-1_(.*)$") 
 
+    - debug:
+        var: fortigate
+
 - name: Fortinet FortiGate roles
   #hosts: fortigate-1
   hosts: "{{ fortigate }}"
