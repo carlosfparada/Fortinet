@@ -15,11 +15,11 @@
       var: fortigate
 
   - debug:
-      var: hostvars['localhost']
+      var: hostvars['localhost'].fortigate
 
 - name: Fortinet FortiGate roles
   #hosts: fortigate-1
-  hosts: fortigate
+  hosts: hostvars['localhost'].fortigate
   connection: httpapi
   gather_facts: no
   vars_files: 
@@ -35,3 +35,4 @@
         var: fortigate
     - debug:
         var: hostvars[localhost]
+
