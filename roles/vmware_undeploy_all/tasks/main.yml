@@ -22,3 +22,6 @@
     vm: "{{ item.vm }}"
   with_items: '{{ vms_info.value }}'
   delegate_to: localhost
+
+- name: Refresh inventory
+  ansible.builtin.meta: refresh_inventory

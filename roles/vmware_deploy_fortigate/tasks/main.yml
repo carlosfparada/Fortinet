@@ -108,3 +108,6 @@
 #     delay: 20
 #   vars:
 #     ansible_connection: local
+
+- name: Refresh inventory
+  ansible.builtin.meta: refresh_inventory
