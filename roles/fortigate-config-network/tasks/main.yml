@@ -10,7 +10,7 @@
       name: port2
       interface: port2
       list: 
-        ip: 10.1.1.1
+      - ip: 10.1.1.1
         net_id: 255.255.255.0
   register: _ip_address1
 
@@ -24,7 +24,7 @@
       name: port3
       interface: port3
       list: 
-        ip: 10.2.2.2
+      - ip: 10.2.2.2
         net_id: 255.255.255.0
   register: _ip_address2
 
