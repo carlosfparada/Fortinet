@@ -1,7 +1,19 @@
 ---
 
+- name: VMware deployment roles
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - set_fact:
+      #fortigate: "{{ item | regex_search('^(fortigate-1)_(.*)$', '\\1')}}"
+      fortigate: "{{ item }}"
+    loop: "{{ groups['all'] }}"
+    when: item | regex_search("^fortigate-1_(.*)$") 
+
 - name: Fortinet FortiGate roles
-  hosts: fortigate-1
+  #hosts: fortigate-1
+  hosts: "{{ fortigate }}"
   connection: httpapi
   gather_facts: no
   vars_files: 
