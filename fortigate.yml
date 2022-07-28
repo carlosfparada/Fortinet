@@ -24,4 +24,6 @@
     - fortigate-create-rules
     - fortigate-connect-fortianalyzer
     - fortigate-gather-facts
-
+  tasks:
+    - debug:
+        var: fortigate
