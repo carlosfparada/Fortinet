@@ -42,7 +42,7 @@
       device: port2
       src: "0.0.0.0 0.0.0.0"
       dst: "10.12.12.0 255.255.255.0"
-      gateway: 10.12.12.1
+      gateway: 10.2.2.1
   register: _ip_route1
 
 - name: Configure IP static routing 2

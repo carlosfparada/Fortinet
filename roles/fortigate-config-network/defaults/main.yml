@@ -34,3 +34,24 @@ ansible_connection: httpapi
 ansible_httpapi_use_ssl: no
 ansible_httpapi_validate_certs: no
 ansible_httpapi_port: 80
+
+
+ipv4_address:
+  - name: port2
+    interface: port2
+    ip: 10.2.2.2 255.255.255.0
+    allowaccess: ping
+  - name: port3
+    interface: port2
+    ip: 10.3.3.3 255.255.255.0
+    allowaccess: ping
+
+ipv4_route:
+  - device: port2
+    src: "0.0.0.0 0.0.0.0"
+    dst: "10.12.12.0 255.255.255.0"
+    gateway: 10.2.2.1
+  - device: port3
+    src: "0.0.0.0 0.0.0.0"
+    dst: "10.13.13.0 255.255.255.0"
+    gateway: 10.3.3.1
