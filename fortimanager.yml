@@ -9,7 +9,7 @@
 
 
 - name: Fortinet FortiManager roles
-  hosts: fortimanager-1
+  hosts: fortimanager
   connection: httpapi
   gather_facts: no
   vars_files: 
