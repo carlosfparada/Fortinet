@@ -10,7 +10,7 @@
       interface: port2
       associated_interface: port2
       list: 
-      - ip: 10.1.1.1
+      - ip: 10.1.1.1 255.255.255.0
         net_id: 255.255.255.0
         obj_id: 1
   register: _ip_address1
@@ -25,7 +25,7 @@
       interface: port3
       associated_interface: port3
       list: 
-      - ip: 10.2.2.2
+      - ip: 10.2.2.2 255.255.255.0
         net_id: 255.255.255.0
         obj_id: 2
   register: _ip_address2
