@@ -9,7 +9,7 @@
 
 
 - name: VMware undeployment roles
-  hosts: vsphere-1
+  hosts: vsphere
   connection: local
   gather_facts: no
   vars_files: 

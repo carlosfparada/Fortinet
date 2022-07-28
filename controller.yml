@@ -1,7 +1,14 @@
 ---
 
+- name: Get dynamic Fortinet nodes and assign them to groups
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - utils_dynamic_hosts
+
 - name: Controller artifacts roles
-  hosts: controller-1
+  hosts: controller
   connection: local
   gather_facts: no
   vars_files: 

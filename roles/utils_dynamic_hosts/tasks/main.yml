@@ -32,3 +32,25 @@
   add_host:
     name: "{{ fortimanager }}"
     groups: fortimanager
+
+- name: Get vSphere node
+  set_fact:
+    vsphere: "{{ item }}"
+  loop: "{{ groups['all'] }}"
+  when: item | regex_search("^VMware vCenter Server_(.*)$") 
+
+- name: Add vSphere node to the vsphere group
+  add_host:
+    name: "{{ vsphere }}"
+    groups: vsphere
+
+- name: Get Controller node
+  set_fact:
+    controller: "{{ item }}"
+  loop: "{{ groups['all'] }}"
+  when: item | regex_search("^aap2-ctrl1.my-lab.local_(.*)$") 
+
+- name: Add Controller node to the controller group
+  add_host:
+    name: "{{ controller }}"
+    groups: controller
