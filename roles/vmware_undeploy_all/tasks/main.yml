@@ -1,5 +1,8 @@
 ---
 
+- name: Refresh inventory
+  ansible.builtin.meta: refresh_inventory
+
 - name: undeploy | get template vm
   vmware.vmware_rest.vcenter_vm_info:
     filter_names:
@@ -22,6 +25,3 @@
     vm: "{{ item.vm }}"
   with_items: '{{ vms_info.value }}'
   delegate_to: localhost
-
-- name: Refresh inventory
-  ansible.builtin.meta: refresh_inventory
