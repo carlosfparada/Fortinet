@@ -18,7 +18,7 @@
       name: port2
       interface: port2
       ip: 10.2.2.2 255.255.255.0
-      allowaccess: ping
+      #allowaccess: ping
   register: _ip_address1
 
 - name: Configure IP address 2
@@ -30,7 +30,7 @@
       name: port3
       interface: port3
       ip: 10.3.3.3 255.255.255.0
-      allowaccess: ping
+      #allowaccess: ping
   register: _ip_address2
 
 - name: Configure IP static routing 1
