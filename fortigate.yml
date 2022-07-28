@@ -1,6 +1,6 @@
 ---
 
-- name: VMware deployment roles
+- name: Get FortiGate name from repo
   hosts: localhost
   connection: local
   gather_facts: no
