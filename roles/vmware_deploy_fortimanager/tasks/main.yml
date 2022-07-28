@@ -59,9 +59,9 @@
     power_on: no
   delegate_to: localhost
 
-- name: Sleep for 20 seconds and continue with play
+- name: Sleep for 10 seconds and continue with play
   wait_for:
-    timeout: 20
+    timeout: 10
   delegate_to: localhost
 
 - name: deploy | get template vm
@@ -108,6 +108,11 @@
 #     delay: 20
 #   vars:
 #     ansible_connection: local
+
+- name: Sleep for 20 seconds and continue with play
+  wait_for:
+    timeout: 20
+  delegate_to: localhost
 
 - name: Refresh inventory
   ansible.builtin.meta: refresh_inventory
