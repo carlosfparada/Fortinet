@@ -19,12 +19,12 @@
       name: port2
       interface: port2
       associated_interface: port2
-      start_ip: 10.1.1.1
-      end_ip: 10.1.1.1
-      subnet: 255.255.255.0
+      # start_ip: 10.1.1.1
+      # end_ip: 10.1.1.1
+      # subnet: 255.255.255.0
       type: ipmask
       list: 
-      - ip: 10.1.1.1
+      - ip: 10.1.1.1 255.255.255.0
         net_id: 255.255.255.0
         obj_id: 1
   register: _ip_address1
