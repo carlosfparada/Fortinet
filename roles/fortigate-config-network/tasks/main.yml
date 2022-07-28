@@ -1,0 +1,51 @@
+---
+
+- name: Configure IP address port2
+  fortinet.fortios.fortios_firewall_address:
+    vdom: "{{ domain }}"
+    #access_token: "{{ fortigate_token }}"
+    state: present
+    firewall_address:
+      allow_routing: enable
+      interface: "port2"
+      list: 
+        ip: 10.1.1.1
+        net_id: 255.255.255.0
+  register: _ip_address1
+
+- name: Configure IP address port3
+  fortinet.fortios.fortios_firewall_address:
+    vdom: "{{ domain }}"
+    #access_token: "{{ fortigate_token }}"
+    state: present
+    firewall_address:
+      allow_routing: enable
+      interface: "port3"
+      list: 
+        ip: 10.2.2.2
+        net_id: 255.255.255.0
+  register: _ip_address2
+
+- name: Configure IP static routing 3
+  fortinet.fortios.fortios_router_static:
+    vdom: "{{ domain }}"
+    #access_token: "{{ fortigate_token }}"
+    state: present
+    router_static:
+      device: port2
+      dst: "10.3.3.0 255.255.255.0"
+      src: "0.0.0.0 0.0.0.0"
+      gateway: 10.1.1.1
+  register: _ip_route1
+
+- name: Configure IP static routing 3
+  fortinet.fortios.fortios_router_static:
+    vdom: "{{ domain }}"
+    #access_token: "{{ fortigate_token }}"
+    state: present
+    router_static:
+      device: port3
+      dst: "10.4.4.0 255.255.255.0"
+      src: "0.0.0.0 0.0.0.0"
+      gateway: 10.2.2.1
+  register: _ip_route2
