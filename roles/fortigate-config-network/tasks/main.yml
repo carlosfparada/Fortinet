@@ -1,49 +1,68 @@
 ---
 
-- name: Configure IP address 1
+- name: Configure IPv4 addresses
   fortinet.fortios.fortios_system_interface:
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     state: present
     system_interface:
-      name: port2
-      interface: port2
-      ip: 10.2.2.2 255.255.255.0
-      allowaccess: ping
-  register: _ip_address1
+      "{{ item }}"
+  loop: "{{ ipv4_address }}"
 
-- name: Configure IP address 2
-  fortinet.fortios.fortios_system_interface:
-    vdom: "{{ domain }}"
-    #access_token: "{{ fortigate_token }}"
-    state: present
-    system_interface:
-      name: port3
-      interface: port3
-      ip: 10.3.3.3 255.255.255.0
-      allowaccess: ping
-  register: _ip_address2
-
-- name: Configure IP static routing 1
+- name: Configure IPv4 static routing
   fortinet.fortios.fortios_router_static:
     vdom: "{{ domain }}"
     #access_token: "{{ fortigate_token }}"
     state: present
     router_static:
-      device: port2
-      src: "0.0.0.0 0.0.0.0"
-      dst: "10.12.12.0 255.255.255.0"
-      gateway: 10.2.2.1
-  register: _ip_route1
+      "{{ item }}"
+  loop: "{{ ipv4_routing }}"
 
-- name: Configure IP static routing 2
-  fortinet.fortios.fortios_router_static:
-    vdom: "{{ domain }}"
-    #access_token: "{{ fortigate_token }}"
-    state: present
-    router_static:
-      device: port3
-      src: "0.0.0.0 0.0.0.0"
-      dst: "10.13.13.0 255.255.255.0"
-      gateway: 10.3.3.1
-  register: _ip_route2
+
+# - name: Configure IP address 1
+#   fortinet.fortios.fortios_system_interface:
+#     vdom: "{{ domain }}"
+#     #access_token: "{{ fortigate_token }}"
+#     state: present
+#     system_interface:
+#       name: port2
+#       interface: port2
+#       ip: 10.2.2.2 255.255.255.0
+#       allowaccess: ping
+#   register: _ip_address1
+
+# - name: Configure IP address 2
+#   fortinet.fortios.fortios_system_interface:
+#     vdom: "{{ domain }}"
+#     #access_token: "{{ fortigate_token }}"
+#     state: present
+#     system_interface:
+#       name: port3
+#       interface: port3
+#       ip: 10.3.3.3 255.255.255.0
+#       allowaccess: ping
+#   register: _ip_address2
+
+# - name: Configure IP static routing 1
+#   fortinet.fortios.fortios_router_static:
+#     vdom: "{{ domain }}"
+#     #access_token: "{{ fortigate_token }}"
+#     state: present
+#     router_static:
+#       device: port2
+#       src: "0.0.0.0 0.0.0.0"
+#       dst: "10.12.12.0 255.255.255.0"
+#       gateway: 10.2.2.1
+#   register: _ip_route1
+
+# - name: Configure IP static routing 2
+#   fortinet.fortios.fortios_router_static:
+#     vdom: "{{ domain }}"
+#     #access_token: "{{ fortigate_token }}"
+#     state: present
+#     router_static:
+#       device: port3
+#       src: "0.0.0.0 0.0.0.0"
+#       dst: "10.13.13.0 255.255.255.0"
+#       gateway: 10.3.3.1
+#   register: _ip_route2
