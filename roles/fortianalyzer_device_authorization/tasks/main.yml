@@ -14,7 +14,7 @@
       device:
         adm_usr: admin
         adm_pass: admin
-        ip: "{{ hostvars[fortigate].ansible_host }}"
+        ip: "{{ hostvars[groups['fortigate'][0]].ansible_host }}"
         name: "{{ fortigate_name }}"
         mgmt_mode: faz
         device action: "promote_unreg"
