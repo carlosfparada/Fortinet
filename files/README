@@ -1,0 +1,6 @@
+
+VM (stopped) -> Edit -> VM Options -> Advanced -> Edit Configurations ->  Add parameter
+guestinfo.userdata.encoding = base64
+guestinfo.userdata = <base64>
+
+<base64> - linux> base64 cloudinit-fortinet.json
