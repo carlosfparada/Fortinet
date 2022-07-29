@@ -17,7 +17,7 @@
     - "{{infra}}.yml"
   roles:
     - fortimanager_add_fortianalyzer
-    - fortimanager_config_settings
     - fortimanager_add_fortigate   # not supported by FortiManager
+    - fortimanager_config_settings
     - fortimanager_gather_facts
   
