@@ -7,7 +7,6 @@
   roles:
     - utils_dynamic_hosts
 
-
 - name: Fortinet FortiManager roles
   hosts: fortimanager
   connection: httpapi
@@ -17,7 +16,7 @@
     - "{{infra}}.yml"
   roles:
     - fortimanager_add_fortianalyzer
-    - fortimanager_add_fortigate   # not supported by FortiManager
+    - fortimanager_add_fortigate   # not supported by FortiManager trial license
     - fortimanager_config_settings
     - fortimanager_gather_facts
   

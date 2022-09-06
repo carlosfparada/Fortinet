@@ -1,6 +1,6 @@
 ---
 
-- name: Probe FortiAnalyzer device from FortiManager 
+- name: Discovering FortiAnalyzer device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
     dvm_cmd_discover_device:
       device:
@@ -9,7 +9,7 @@
         ip: "{{ hostvars[groups['fortianalyzer'][0]].ansible_host }}"
   register: _probed_fortianalyzer
 
-- name: Debug FortiAnalyzer device probing
+- name: Debug FortiAnalyzer device discovery
   debug:
     var: _probed_fortianalyzer
 

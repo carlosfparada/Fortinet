@@ -1,6 +1,6 @@
 ---
 
-- name: Probe FortiGate device from FortiManager 
+- name: Discovering FortiGate device from FortiManager 
   fortinet.fortimanager.fmgr_dvm_cmd_discover_device:
     dvm_cmd_discover_device:
       device:
@@ -10,7 +10,7 @@
   register: _probed_fortigate
   ignore_errors: true
 
-- name: Debug FortiGate device probing
+- name: Debug FortiGate device discovery
   debug:
     var: _probed_fortigate
 
@@ -26,4 +26,4 @@
         mgmt_mode: 'fmg'
         name: '{{ _probed_fortigate.meta.response_data.device.name }}'
         sn: '{{ _probed_fortigate.meta.response_data.device.sn }}'
-  ignore_errors: true # not idempotent if already exists
+  ignore_errors: true # will fail

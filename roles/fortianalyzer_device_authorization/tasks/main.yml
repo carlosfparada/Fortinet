@@ -1,6 +1,6 @@
 ---
 
-- name: Config System Global
+- name: Config System Global (needed > Fortinet 6.0)
   fortinet.fortianalyzer.faz_cli_system_global:
     cli_system_global:
       enc-algorithm: low

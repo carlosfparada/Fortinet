@@ -7,7 +7,6 @@
   roles:
     - utils_dynamic_hosts
 
-
 - name: Fortinet FortiAnalyzer roles
   hosts: fortianalyzer
   connection: httpapi
