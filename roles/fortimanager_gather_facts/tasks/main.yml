@@ -39,12 +39,12 @@
     facts:
         selector: system_performance
 
-- name: Get FortiManager facts system_admin_profile
-  fortinet.fortimanager.fmgr_fact:
-    facts:
-        selector: system_admin_profile
-        params: 
-          profile: ""
+# - name: Get FortiManager facts system_admin_profile
+#   fortinet.fortimanager.fmgr_fact:
+#     facts:
+#         selector: system_admin_profile
+#         params: 
+#           profile: ""
 
 - name: Get FortiManager facts system_admin_user
   fortinet.fortimanager.fmgr_fact:

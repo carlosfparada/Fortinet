@@ -1,11 +1,11 @@
 ---
 
-- name: Config System Global (needed > Fortinet 6.0)
-  fortinet.fortianalyzer.faz_cli_system_global:
-    cli_system_global:
-      enc-algorithm: low
-      ssl-low-encryption: enable
-      oftp-ssl-protocol: tlsv1.0
+# - name: Config System Global (needed > Fortinet 6.0)
+#   fortinet.fortianalyzer.faz_cli_system_global:
+#     cli_system_global:
+#       enc-algorithm: low
+#       ssl-low-encryption: enable
+#       oftp-ssl-protocol: tlsv1.0
 
 - name: FortiAnalyzer to Authorize Fortigate add
   fortinet.fortianalyzer.faz_dvm_cmd_add_device:
