@@ -8,7 +8,7 @@
     - utils_dynamic_hosts
 
 - name: Kill job
-  hosts: 192.168.1.21
+  hosts: controller
   connection: local
   gather_facts: no
   tasks: 
