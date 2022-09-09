@@ -17,12 +17,12 @@
       validate_certs: no
       controller_host: 192.168.1.21
       controller_username: admin
-      controller_password: admin
+      controller_password: redhat
       job_id: 3903
   - name: Cancel job
     awx.awx.job_cancel:
       validate_certs: no
       controller_host: 192.168.1.21
       controller_username: admin
-      controller_password: admin
+      controller_password: redhat
       job_id: 3894
