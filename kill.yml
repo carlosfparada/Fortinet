@@ -15,4 +15,6 @@
   - name: Cancel job
     awx.awx.job_cancel:
       job_id: 3903
-
+  - name: Cancel job
+    awx.awx.job_cancel:
+      job_id: 3894
