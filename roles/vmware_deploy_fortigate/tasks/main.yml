@@ -78,15 +78,6 @@
     vm: "{{ vm_info_new.value[0].vm }}"
   delegate_to: localhost
 
-- name: Get details about instance network interface IP
-  vmware.vmware_rest.appliance_networking_interfaces_info:
-    interface_name: port1
-  register: _port1_net
-
-- name: Debug Management IP
-  debug:
-    var: _port1_net
-
 - name: Sleep for 30 seconds and continue with play
   wait_for:
     timeout: 30
