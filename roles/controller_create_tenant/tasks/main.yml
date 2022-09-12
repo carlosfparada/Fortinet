@@ -1,0 +1,28 @@
+---
+
+# Create Credentials
+
+- name: "Create Controller Tenant User '{{ controller_tenant_username }}'"
+  awx.awx.user:
+    validate_certs: no
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    username: "{{ controller_tenant_username }}"
+    password: "{{ controller_tenant_password }}"
+    organization: Default
+    state: present
+
+- name: "Add 'execute' permissions to tenant '{{ controller_tenant_username }}'"
+  role:
+    user: "{{ controller_tenant_username }}"
+    role: execute
+    job_templates:
+      - "Fortinet: undeploy nodes"
+      - "Fortinet: 0. create tenant"
+	    - "Fortinet: 1. deploy nodes"	
+	    - "Fortinet: 2. fortigate node"
+	    - "Fortinet: 3. fortianalyzer node"
+	    - "Fortinet: 4. fortimanager node"
+	    - "Fortinet: workflow" 
+    state: present
