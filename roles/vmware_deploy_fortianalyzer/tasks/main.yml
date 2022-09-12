@@ -1,46 +1,47 @@
 ---
 
-- name: deploy | get template 
+- name: Get template 
   vmware.vmware_rest.vcenter_vm_info:
     filter_names:
     - "{{ vm_template }}"
   register: vm_info
   delegate_to: localhost
 
-- name: deploy | get cluster info
+- name: Get cluster info
   vmware.vmware_rest.vcenter_cluster_info:
     filter_names:
     - "{{ vm_cluster }}"
   register: cluster_info
   delegate_to: localhost
 
-- name: deploy | get Resource info for {{ vm_cluster }}
+- name: Get Resource info for {{ vm_cluster }}
   vmware.vmware_rest.vcenter_cluster_info:
     cluster: "{{ cluster_info.value[0].cluster }}"
   register: resource_pool_info
   delegate_to: localhost
 
-- name: deploy | get datastore info
+- name: Get datastore info
   vmware.vmware_rest.vcenter_datastore_info:
     filter_names:
     - "{{ vm_datastore }}"
   register: datastore_info
   delegate_to: localhost
 
-- name: deploy | get folder info
+- name: Get folder info
   vmware.vmware_rest.vcenter_folder_info:
     filter_names:
     - '{{ vm_folder }}'
   register: folder_info
   delegate_to: localhost
 
-- set_fact:
+- name: Set facts
+  set_fact:
     source_vm_id: "{{ vm_info.value[0].vm }}"
     cluster_id: '{{ cluster_info.value[0].cluster }}'
     datastore_id: '{{ datastore_info.value[0].datastore }}'
     folder_id: '{{ folder_info.value[0].folder }}'
 
-- name: deploy | clone from template
+- name: Clone from template
   vmware.vmware_rest.vcenter_vm:
     placement:
       cluster: "{{ cluster_id }}"
@@ -64,7 +65,7 @@
     timeout: 10
   delegate_to: localhost
 
-- name: deploy | get template vm
+- name: Get VM instance details
   vmware.vmware_rest.vcenter_vm_info:
     filter_names:
     - "{{ vm_name }}"
