@@ -14,6 +14,26 @@
     state: present
 
 
+# Create Templates
+
+- name: "Create Job Template 'Fortinet: 2. deploy nodes ({{ controller_tenant_username }})'"
+  awx.awx.job_template:
+    validate_certs: no
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    name: "Fortinet: 2. deploy nodes ({{ controller_tenant_username }})"
+    description: Job Template for tenant '{{ controller_tenant_username }}'""
+    organization: Default
+    job_type: run
+    execution_environment: "EE: Collections Support Fortinet"
+    inventory: "Fortinet/VMWare Inventory dynamic"
+    project: "Fortinet Project"
+    playbook: vmware.yml
+    credentials:
+      - "Fortinet Credentials"
+    state: present
+
 # Assign User tenant permissions
 
 - name: "Add 'execute' permissions to tenant '{{ controller_tenant_username }}'"
@@ -21,10 +41,10 @@
     user: "{{ controller_tenant_username }}"
     role: execute
     job_templates:
-      - "Fortinet: 2. deploy nodes"	
-      - "Fortinet: 3. fortigate node"
-      - "Fortinet: 4. fortianalyzer node"
-      - "Fortinet: 5. fortimanager node"
+      - "Fortinet: 2. deploy nodes ({{ controller_tenant_username }})"	
+      - "Fortinet: 3. fortigate node ({{ controller_tenant_username }})"
+      - "Fortinet: 4. fortianalyzer node ({{ controller_tenant_username }})"
+      - "Fortinet: 5. fortimanager node ({{ controller_tenant_username }})"
     state: present
 
 - name: "Add 'read' permissions to tenant '{{ controller_tenant_username }}'"
