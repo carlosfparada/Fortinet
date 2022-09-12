@@ -16,3 +16,4 @@
     - "{{infra}}.yml"
   roles:
     - controller_create_artifacts
+    - controller_create_tenant
