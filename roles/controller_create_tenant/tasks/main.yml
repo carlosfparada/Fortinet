@@ -18,11 +18,25 @@
     user: "{{ controller_tenant_username }}"
     role: execute
     job_templates:
-      - "Fortinet: undeploy nodes"
-      - "Fortinet: 0. create tenant"
-	    - "Fortinet: 1. deploy nodes"	
-	    - "Fortinet: 2. fortigate node"
-	    - "Fortinet: 3. fortianalyzer node"
-	    - "Fortinet: 4. fortimanager node"
-	    - "Fortinet: workflow" 
+      - "Fortinet: 2. deploy nodes"	
+      - "Fortinet: 3. fortigate node"
+      - "Fortinet: 4. fortianalyzer node"
+      - "Fortinet: 5. fortimanager node"
+    state: present
+
+- name: "Add 'read' permissions to tenant '{{ controller_tenant_username }}'"
+  role:
+    user: "{{ controller_tenant_username }}"
+    role: read
+    credentials:
+      - "Fortinet Credentials	Machine"	
+      - "Fortinet vSphere Credentials"
+    projects:
+      - "Fortinet Project"
+    inventories:
+      - "Fortinet/VMWare Inventory dynamic"
+    job_templates:
+      - "Fortinet: 0. undeploy tenant/nodes"	
+      - "Fortinet: 1. create tenant"
+      - "Fortinet: workflow"
     state: present
