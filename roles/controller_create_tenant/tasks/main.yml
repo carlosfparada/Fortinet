@@ -17,7 +17,7 @@
 # Assign User tenant permissions
 
 - name: "Add 'execute' permissions to tenant '{{ controller_tenant_username }}'"
-  role:
+  awx.awx.role:
     user: "{{ controller_tenant_username }}"
     role: execute
     job_templates:
@@ -28,7 +28,7 @@
     state: present
 
 - name: "Add 'read' permissions to tenant '{{ controller_tenant_username }}'"
-  role:
+  awx.awx.role:
     user: "{{ controller_tenant_username }}"
     role: read
     credentials:
