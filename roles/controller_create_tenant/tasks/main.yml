@@ -34,6 +34,7 @@
       - "Fortinet Credentials"
     state: present
 
+
 # Assign User tenant permissions
 
 - name: "Add 'execute' permissions to tenant '{{ controller_tenant_username }}'"
