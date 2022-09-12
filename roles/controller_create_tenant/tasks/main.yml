@@ -1,6 +1,6 @@
 ---
 
-# Create Credentials
+# Create User tenant
 
 - name: "Create Controller Tenant User '{{ controller_tenant_username }}'"
   awx.awx.user:
@@ -12,6 +12,9 @@
     password: "{{ controller_tenant_password }}"
     organization: Default
     state: present
+
+
+# Assign User tenant permissions
 
 - name: "Add 'execute' permissions to tenant '{{ controller_tenant_username }}'"
   role:
