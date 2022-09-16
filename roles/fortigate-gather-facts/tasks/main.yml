@@ -9,7 +9,8 @@
     #  - selector: "system_interface"
     #  - selector: "firewall_address"
   register: _fortinet_facts
-
+  ignore_errors: yes
+  
 - name: Debug FortiGate Facts
   debug:
     var: _fortinet_facts

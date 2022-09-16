@@ -6,6 +6,7 @@
         selector: dvmdb_adom
         params:
           adom: "{{ domain }}"
+  ignore_errors: yes
 
 - name: "Get FortiManager facts dvmdb_adom {{ domain }}"
   fortinet.fortimanager.fmgr_fact:
@@ -13,6 +14,7 @@
         selector: dvmdb_adom
         params:
           adom: "{{ domain }}"
+  ignore_errors: yes
 
 - name: Get FortiManager facts dvmdb_device
   fortinet.fortimanager.fmgr_fact:
@@ -21,6 +23,7 @@
         params:
             adom: "{{ domain }}"
             device: ""
+  ignore_errors: yes
 
 - name: Get FortiManager facts system_interface
   fortinet.fortimanager.fmgr_fact:
@@ -28,23 +31,27 @@
         selector: system_interface
         params:
             interface: ""
+  ignore_errors: yes
 
 - name: Get FortiManager facts system_locallog_setting
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_locallog_setting
+  ignore_errors: yes
 
 - name: Get FortiManager facts system_performance
   fortinet.fortimanager.fmgr_fact:
     facts:
         selector: system_performance
+  ignore_errors: yes
 
-# - name: Get FortiManager facts system_admin_profile
-#   fortinet.fortimanager.fmgr_fact:
-#     facts:
-#         selector: system_admin_profile
-#         params: 
-#           profile: ""
+- name: Get FortiManager facts system_admin_profile
+  fortinet.fortimanager.fmgr_fact:
+    facts:
+        selector: system_admin_profile
+        params: 
+          profile: ""
+  ignore_errors: yes
 
 - name: Get FortiManager facts system_admin_user
   fortinet.fortimanager.fmgr_fact:
@@ -52,4 +59,4 @@
         selector: system_admin_user
         params:
           user: ""
-
+  ignore_errors: yes

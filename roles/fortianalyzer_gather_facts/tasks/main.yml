@@ -6,6 +6,7 @@
         selector: dvmdb_adom
         params:
           adom: "{{ domain }}"
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts dvmdb_device
   fortinet.fortianalyzer.faz_fact:
@@ -14,16 +15,19 @@
         params:
             adom: "{{ domain }}"
             device: ""
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_fmupdate_analyzer_virusreport
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_fmupdate_analyzer_virusreport
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_fmupdate_service
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_fmupdate_service
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_admin_user
   fortinet.fortianalyzer.faz_fact:
@@ -31,26 +35,31 @@
         selector: cli_system_admin_user
         params: 
           user: ""
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_connector
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_connector
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_dns
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_dns
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_fortiview_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_fortiview_setting
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_global
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_global
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_interface
   fortinet.fortianalyzer.faz_fact:
@@ -58,59 +67,70 @@
         selector: cli_system_interface
         params:
           interface: ""
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_locallog_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_locallog_setting
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_locallog_disk_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_locallog_disk_setting
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_filter
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_locallog_fortianalyzer_filter
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_locallog_fortianalyzer_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_locallog_fortianalyzer_setting
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_log_settings
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_log_settings
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_log_alert
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_log_alert
+  ignore_errors: yes
 
 - name: Get FortiAnalyzer facts cli_system_log_interfacestats
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_log_interfacestats
-  
+  ignore_errors: yes
+
 - name: Get FortiAnalyzer facts cli_system_performance
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_performance
-  
+  ignore_errors: yes
+
 - name: Get FortiAnalyzer facts cli_system_report_setting
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_report_setting
-  
+  ignore_errors: yes
+
 - name: Get FortiAnalyzer facts cli_system_status
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: cli_system_status
-  
+  ignore_errors: yes
+
 - name: Get FortiAnalyzer facts sys_status
   fortinet.fortianalyzer.faz_fact:
     facts:
         selector: sys_status
-
+  ignore_errors: yes
