@@ -1,0 +1,12 @@
+---
+
+- name: Configure admin password
+  fortinet.fortios.fortios_system_admin:
+    vdom: "{{ domain }}"
+    state: present
+    system_admin:
+      status: enable
+      type: password
+      name: admin
+      password: "{{ new_password }}"
+

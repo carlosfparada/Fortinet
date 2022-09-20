@@ -1,29 +1,19 @@
 ---
 
-- name: Configure admin password
-  fortinet.fortios.fortios_system_admin:
+- name: Configure IPv4 addresses
+  fortinet.fortios.fortios_system_interface:
     vdom: "{{ domain }}"
     state: present
-    system_admin:
-      status: enable
-      type: password
-      name: admin
-      password: admin2
+    system_interface:
+      "{{ item }}"
+  loop: "{{ ipv4_address }}"
 
-# - name: Configure IPv4 addresses
-#   fortinet.fortios.fortios_system_interface:
-#     vdom: "{{ domain }}"
-#     state: present
-#     system_interface:
-#       "{{ item }}"
-#   loop: "{{ ipv4_address }}"
-
-# - name: Configure IPv4 static routing
-#   fortinet.fortios.fortios_router_static:
-#     vdom: "{{ domain }}"
-#     state: present
-#     router_static:
-#       "{{ item }}"
-#   loop: "{{ ipv4_routing }}"
-#   ignore_errors: true
+- name: Configure IPv4 static routing
+  fortinet.fortios.fortios_router_static:
+    vdom: "{{ domain }}"
+    state: present
+    router_static:
+      "{{ item }}"
+  loop: "{{ ipv4_routing }}"
+  ignore_errors: true
 
