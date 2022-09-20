@@ -36,3 +36,4 @@ ansible_httpapi_validate_certs: no
 ansible_httpapi_port: 80
 
 new_password: admin
+serial: FGVMEVNKJT8HJD62
