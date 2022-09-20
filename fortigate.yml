@@ -15,7 +15,7 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - fortigate-setup
+    - fortigate-initial-setup
     # - fortigate-config-network
     # - fortigate-create-rules
     # - fortigate-connect-fortianalyzer

@@ -5,8 +5,7 @@
     vdom: "{{ domain }}"
     state: present
     system_admin:
-      status: enable
-      type: password
       name: admin
       password: "{{ new_password }}"
+      force_password_change: "disable"
 
