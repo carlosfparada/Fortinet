@@ -13,9 +13,9 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - "{{infra}}.yml"
+    - "{{infra}}.yml"  
   roles:
-    - fortigate_initial_setup
+    # - fortigate_initial_setup
     - fortigate_config_network
     - fortigate_create_rules
     - fortigate_connect_fortianalyzer
