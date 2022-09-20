@@ -3,27 +3,27 @@
 - name: Configure user password
   fortinet.fortios.fortios_user_local:
     vdom: "{{ domain }}"
-    state: "present"
+    state: present
     user_local:
+      status: enable
+      type: password
       name: admin
       passwd: admin2
 
-- name: Configure IPv4 addresses
-  fortinet.fortios.fortios_system_interface:
-    vdom: "{{ domain }}"
-    #access_token: "{{ fortigate_token }}"
-    state: present
-    system_interface:
-      "{{ item }}"
-  loop: "{{ ipv4_address }}"
+# - name: Configure IPv4 addresses
+#   fortinet.fortios.fortios_system_interface:
+#     vdom: "{{ domain }}"
+#     state: present
+#     system_interface:
+#       "{{ item }}"
+#   loop: "{{ ipv4_address }}"
 
-- name: Configure IPv4 static routing
-  fortinet.fortios.fortios_router_static:
-    vdom: "{{ domain }}"
-    #access_token: "{{ fortigate_token }}"
-    state: present
-    router_static:
-      "{{ item }}"
-  loop: "{{ ipv4_routing }}"
-  ignore_errors: true
+# - name: Configure IPv4 static routing
+#   fortinet.fortios.fortios_router_static:
+#     vdom: "{{ domain }}"
+#     state: present
+#     router_static:
+#       "{{ item }}"
+#   loop: "{{ ipv4_routing }}"
+#   ignore_errors: true
 
