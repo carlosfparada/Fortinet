@@ -1,5 +1,13 @@
 ---
 
+- name: Configure user password
+  fortinet.fortios.fortios_user_local:
+    vdom: "{{ domain }}"
+    state: "present"
+    user_local:
+      name: admin
+      passwd: admin2
+
 - name: Configure IPv4 addresses
   fortinet.fortios.fortios_system_interface:
     vdom: "{{ domain }}"
