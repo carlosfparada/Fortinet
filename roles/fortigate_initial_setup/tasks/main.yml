@@ -14,3 +14,13 @@
 #     vdom:  "{{ vdom }}"
 #     registration_forticare:
 #       registration_code: "{{ serial }}"
+
+- name: Update VM license using uploaded file (reboots immediately if successful).
+  fortios_system_vmlicense:
+    vdom:  "{{ vdom }}"
+    system_vmlicense:
+      file_content: "{{ encoded_license }}"
+  vars:
+    license_file: ./FGVMXXXXXX-VM00.lic
+    license_file_content: "{{ lookup( 'file', license_file) }}"
+    encoded_license: "{{ license_file_content | string | b64encode }}"
