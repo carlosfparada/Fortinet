@@ -9,12 +9,12 @@
       password: "{{ new_password }}"
       force_password_change: "disable"
 
-- name: Update VM license using uploaded file (reboots immediately if successful).
-  fortinet.fortios.fortios_system_vmlicense:
-    vdom:  "{{ vdom }}"
-    system_vmlicense:
-      file_content: "{{ encoded_license }}"
-  vars:
-    license_file: ./FGVMXXXXXX-VM00.lic
-    license_file_content: "{{ lookup( 'file', license_file) }}"
-    encoded_license: "{{ license_file_content | string | b64encode }}"
+# - name: Update VM license using uploaded file (reboots immediately if successful).
+#   fortinet.fortios.fortios_system_vmlicense:
+#     vdom:  "{{ vdom }}"
+#     system_vmlicense:
+#       file_content: "{{ encoded_license }}"
+#   vars:
+#     license_file: ./FGVMXXXXXX-VM00.lic
+#     license_file_content: "{{ lookup( 'file', license_file) }}"
+#     encoded_license: "{{ license_file_content | string | b64encode }}"
