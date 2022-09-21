@@ -10,7 +10,7 @@
       force_password_change: "disable"
 
 - name: Update VM license using uploaded file (reboots immediately if successful).
-  fortios_system_vmlicense:
+  fortinet.fortios.fortios_system_vmlicense:
     vdom:  "{{ vdom }}"
     system_vmlicense:
       file_content: "{{ encoded_license }}"
