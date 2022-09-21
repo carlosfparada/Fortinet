@@ -9,8 +9,8 @@
       password: "{{ new_password }}"
       force_password_change: "disable"
 
-- name: Add a FortiCare license in FortiGate
-  fortinet.fortios.fortios_registration_forticare:
-    vdom:  "{{ vdom }}"
-    registration_forticare:
-      registration_code: "{{ serial }}"
+# - name: Add a FortiCare license in FortiGate
+#   fortinet.fortios.fortios_registration_forticare:
+#     vdom:  "{{ vdom }}"
+#     registration_forticare:
+#       registration_code: "{{ serial }}"
