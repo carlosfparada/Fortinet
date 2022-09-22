@@ -13,7 +13,7 @@
       'FortiGate-VM64 # ': "exit" 
   no_log: false # hide passwords on logs  
 
-- name: "Change admin password {{ ansible_password }}"
+- name: "Change admin password"
   ansible.builtin.expect:
     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
     responses:
