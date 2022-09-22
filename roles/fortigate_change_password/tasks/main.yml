@@ -8,4 +8,5 @@
       name: admin
       password: "{{ new_password }}"
       force_password_change: "disable"
-
+  ignore_errors: yes
+  
