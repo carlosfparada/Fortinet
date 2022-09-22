@@ -3,14 +3,13 @@
 # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
 - name: Change initial pasword
   ansible.builtin.expect:
-    command: "ssh -o StrictHostKeyChecking=no admin@192.168.1.139"
-    #command: "ssh admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
     responses:
       # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
       # 'You are forced to change your password. Please input a new password.'
       'New Password:': "{{ new_password }}" 
       'Confirm Password:': "{{ new_password }}"
-  no_log: true # hide passwords on logs  
+  no_log: false # hide passwords on logs  
 
 
 # - name: Update VM license using uploaded file (reboots immediately if successful).
