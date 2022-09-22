@@ -35,6 +35,6 @@ ansible_httpapi_use_ssl: no
 ansible_httpapi_validate_certs: no
 ansible_httpapi_port: 80
 
-init_password: init_admin
-new_password: admin
+init_password: admin
+new_password: admin_new
 

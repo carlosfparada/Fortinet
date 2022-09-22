@@ -1,15 +1,15 @@
 ---
 
 # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
-- name: Change initial pasword
-  ansible.builtin.expect:
-    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
-    responses:
-      # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
-      # 'You are forced to change your password. Please input a new password.'
-      'New Password:': "{{ init_password }}" 
-      'Confirm Password:': "{{ init_password }}"
-  no_log: false # hide passwords on logs  
+# - name: Change initial pasword
+#   ansible.builtin.expect:
+#     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+#     responses:
+#       # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
+#       # 'You are forced to change your password. Please input a new password.'
+#       'New Password:': "{{ init_password }}" 
+#       'Confirm Password:': "{{ init_password }}"
+#   no_log: false # hide passwords on logs  
 
 - name: Change pasword
   ansible.builtin.expect:
@@ -17,9 +17,10 @@
     responses:
       '.* password': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
-      'FortiGate-VM64 (admin) # ': "edit admin"
-      'FortiGate-VM64 (admin) # ': "set password {{ new_password }}"
-      'FortiGate-VM64 (admin) # ': "end"
+      'FortiGate-VM64 (admin) # ': "edit admin\nset password {{ new_password }}\nend"
+      # 'FortiGate-VM64 (admin) # ': "edit admin"
+      # 'FortiGate-VM64 (admin) # ': "set password {{ new_password }}"
+      # 'FortiGate-VM64 (admin) # ': "end"
   no_log: false # hide passwords on logs  
 
 # - name: Update VM license using uploaded file (reboots immediately if successful).
