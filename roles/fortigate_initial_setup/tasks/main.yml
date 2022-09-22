@@ -1,5 +1,6 @@
 ---
 
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
 - name: Case insensitive password string match
   ansible.builtin.expect:
     command: "ssh admin@192.168.1.139"
@@ -21,7 +22,6 @@
 #       password: "{{ new_password }}"
 #       force_password_change: "disable"
 
-https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
 
 
 # - name: Update VM license using uploaded file (reboots immediately if successful).
