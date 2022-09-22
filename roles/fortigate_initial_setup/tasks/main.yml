@@ -11,18 +11,6 @@
       'Confirm Password:': "{{ new_password }}"
   no_log: false # hide passwords on logs  
 
-- name: Change admin password
-  fortinet.fortios.fortios_system_admin:
-    vdom: "{{ domain }}"
-    state: present
-    system_admin:
-      name: admin2
-      password: admin2
-      force_password_change: "disable"
-  ignore_errors: yes
-
-
-
 # - name: Update VM license using uploaded file (reboots immediately if successful).
 #   fortinet.fortios.fortios_system_vmlicense:
 #     vdom:  "{{ vdom }}"
