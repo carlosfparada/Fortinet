@@ -40,6 +40,19 @@
   no_log: false # hide passwords on logs  
   ignore_errors: true
 
+- name: Change admin password 2
+  ansible.builtin.expect:
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    responses:
+      'password': "{{ init_password }}" 
+      'FortiGate-VM64 # ': "config system admin"
+      'FortiGate-VM64 \(admin\) #':
+        - "edit admin"
+        - "set password {{ new_password }}"
+        - "end"
+  no_log: false # hide passwords on logs  
+  ignore_errors: true
+
 # - name: Update VM license using uploaded file (reboots immediately if successful).
 #   fortinet.fortios.fortios_system_vmlicense:
 #     vdom:  "{{ vdom }}"
