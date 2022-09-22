@@ -1,6 +1,6 @@
 ---
 
-- name: Configure admin password
+- name: Change admin password
   fortinet.fortios.fortios_system_admin:
     vdom: "{{ domain }}"
     state: present
