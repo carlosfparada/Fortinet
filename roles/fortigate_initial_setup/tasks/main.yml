@@ -27,7 +27,8 @@
   ansible.builtin.expect:
     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
     responses:
-      '.* password': "{{ init_password }}" 
+      #'.* password': "{{ init_password }}" 
+      'password': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
       'FortiGate-VM64 \(admin\) #':
         - "edit admin"
