@@ -1,5 +1,6 @@
 ---
 
+# https://stackoverflow.com/questions/71186804/ansible-to-run-commands-via-ssh-on-remote-hosts
 # - name: Gather facts (asa)
 #   ansible.netcommon.cli_command:
 #     command:
@@ -24,9 +25,9 @@
     responses:
       '.* password': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
-      'FortiGate-VM64 (admin) #': "edit admin"
-      'FortiGate-VM64 (admin) #': "set password {{ new_password }}"
-      'FortiGate-VM64 (admin) #': "end"
+      'FortiGate-VM64 \(admin\) #': "edit admin"
+      'FortiGate-VM64 \(admin\) #': "set password {{ new_password }}"
+      'FortiGate-VM64 \(admin\) #': "end"
       #'FortiGate-VM64 # ': "exit"
   no_log: false # hide passwords on logs  
 
@@ -36,7 +37,7 @@
     responses:
       '.* password': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
-      'FortiGate-VM64 (admin) #':
+      'FortiGate-VM64 \(admin\) #':
         - "edit admin"
         - "set password {{ new_password }}"
         - "end"
