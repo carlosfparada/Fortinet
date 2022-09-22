@@ -1,5 +1,10 @@
 ---
 
+# - name: Gather facts (asa)
+#   ansible.netcommon.cli_command:
+#     command:
+#       - show
+
 # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
 # https://www.mail-archive.com/ansible-project@googlegroups.com/msg39525.html 
 - name: Set admin initial password
@@ -37,6 +42,7 @@
         - "end"
   no_log: false # hide passwords on logs 
 
+      
 # - name: Update VM license
 #   ansible.builtin.expect:
 #     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
