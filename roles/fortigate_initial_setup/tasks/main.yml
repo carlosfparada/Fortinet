@@ -19,10 +19,10 @@
     responses:
       '.* password': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
-      'FortiGate-VM64 \(admin\) #':
-        - "edit admin"
-        - "set password {{ new_password }}"
-        - "end"
+      'FortiGate-VM64 (admin) #': "edit admin"
+      'FortiGate-VM64 (admin) #': "set password {{ new_password }}"
+      'FortiGate-VM64 (admin) #': "end"
+      'FortiGate-VM64 # ': "exit"
   no_log: false # hide passwords on logs  
 
   
