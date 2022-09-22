@@ -17,7 +17,7 @@
     system_admin:
       name: new_admin
       password: pass
-      accprofile: super_user
+      accprofile: super_admin
       force_password_change: "disable"
   ignore_errors: yes
 
