@@ -8,8 +8,8 @@
     - utils_dynamic_hosts
 
 - name: Fortinet FortiGate roles
-  hosts: fortigate
-  connection: httpapi
+  hosts: localhost
+  connection: local
   gather_facts: no
   vars_files: 
     - main.yml

@@ -1,13 +1,28 @@
 ---
 
-- name: Configure admin password
-  fortinet.fortios.fortios_system_admin:
-    vdom: "{{ domain }}"
-    state: present
-    system_admin:
-      name: admin
-      password: "{{ new_password }}"
-      force_password_change: "disable"
+- name: Case insensitive password string match
+  ansible.builtin.expect:
+    command: "ssh admin@192.168.1.139"
+    #command: "ssh admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    responses:
+      'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
+      #'You are forced to change your password. Please input a new password.'
+      'New Password:': "{{ new_password }}" 
+      'Confirm Password:': "{{ new_password }}"
+    no_log: true # hide passwords on logs
+    delegate_to: localhost
+
+# - name: Configure admin password
+#   fortinet.fortios.fortios_system_admin:
+#     vdom: "{{ domain }}"
+#     state: present
+#     system_admin:
+#       name: admin
+#       password: "{{ new_password }}"
+#       force_password_change: "disable"
+
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
+
 
 # - name: Update VM license using uploaded file (reboots immediately if successful).
 #   fortinet.fortios.fortios_system_vmlicense:
