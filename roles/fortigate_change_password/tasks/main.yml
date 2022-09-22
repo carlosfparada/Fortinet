@@ -15,23 +15,23 @@
     vdom: "{{ domain }}"
     state: present
     system_admin:
-      name: admin2
-      password: admin2
+      name: new_admin
+      password: pass
       accprofile: super_user
       force_password_change: "disable"
   ignore_errors: yes
 
-- name: Change admin2 password
+- name: Change new_admin password
   fortinet.fortios.fortios_system_admin:
     vdom: "{{ domain }}"
     state: present
     system_admin:
-      name: admin2
-      password: admin3
+      name: new_admin
+      password: new_pass
       force_password_change: "disable"
   ignore_errors: yes
 
-- name: Change admin password
+- name: Remove admin password
   fortinet.fortios.fortios_system_admin:
     vdom: "{{ domain }}"
     state: absent
