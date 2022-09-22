@@ -29,3 +29,11 @@
       password: admin3
       force_password_change: "disable"
   ignore_errors: yes
+
+- name: Change admin password
+  fortinet.fortios.fortios_system_admin:
+    vdom: "{{ domain }}"
+    state: absent
+    system_admin:
+      name: admin
+  ignore_errors: yes
