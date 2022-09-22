@@ -1,7 +1,7 @@
 ---
 
 # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
-# - name: Change initial pasword
+# - name: Set admin initial pasword
 #   ansible.builtin.expect:
 #     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
 #     responses:
@@ -11,7 +11,7 @@
 #       'Confirm Password:': "{{ init_password }}"
 #   no_log: false # hide passwords on logs  
 
-- name: Change pasword
+- name: Change admin password
   ansible.builtin.expect:
     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
     responses:
