@@ -15,7 +15,7 @@
     - main.yml
     - "{{infra}}.yml"  
   roles:
-    - fortigate_change_password
+    # - fortigate_change_password # no permissions via API
     - fortigate_config_network
     - fortigate_create_rules
     - fortigate_connect_fortianalyzer

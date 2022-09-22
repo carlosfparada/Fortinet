@@ -1,5 +1,7 @@
 ---
 
+# no permissions via Fortinet API
+
 - name: Change admin password
   fortinet.fortios.fortios_system_admin:
     vdom: "{{ domain }}"
