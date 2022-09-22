@@ -9,4 +9,23 @@
       password: "{{ new_password }}"
       force_password_change: "disable"
   ignore_errors: yes
-  
+
+- name: Create admin2 admin
+  fortinet.fortios.fortios_system_admin:
+    vdom: "{{ domain }}"
+    state: present
+    system_admin:
+      name: admin2
+      password: admin2
+      force_password_change: "disable"
+  ignore_errors: yes
+
+- name: Change admin2 password
+  fortinet.fortios.fortios_system_admin:
+    vdom: "{{ domain }}"
+    state: present
+    system_admin:
+      name: admin2
+      password: admin3
+      force_password_change: "disable"
+  ignore_errors: yes
