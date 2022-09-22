@@ -33,6 +33,7 @@
         - "edit admin"
         - "set password {{ new_password }}"
         - "end"
+        - "end"
   no_log: false # hide passwords on logs 
 
       
