@@ -9,8 +9,8 @@
       #'You are forced to change your password. Please input a new password.'
       'New Password:': "{{ new_password }}" 
       'Confirm Password:': "{{ new_password }}"
-    no_log: true # hide passwords on logs
-    delegate_to: localhost
+  no_log: true # hide passwords on logs
+  delegate_to: localhost
 
 # - name: Configure admin password
 #   fortinet.fortios.fortios_system_admin:
