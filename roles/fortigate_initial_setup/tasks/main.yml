@@ -42,7 +42,7 @@
     responses:
       '.* password': "{{ new_password }}" 
       'FortiGate-VM64 # ': "execute restore vmlicense ftp {{ lic_filemame }} {{ lic_ftp_server }}"
-      'Do you want to continue\? \(y/n\)': "y"
+      #'Do you want to continue\? \(y/n\)': "y"
   no_log: false # hide passwords on logs 
   ignore_errors: yes
 
