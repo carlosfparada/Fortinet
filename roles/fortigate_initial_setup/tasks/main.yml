@@ -36,15 +36,17 @@
   no_log: false # hide passwords on logs 
 
       
-# - name: Update VM license
-#   ansible.builtin.expect:
-#     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
-#     responses:
-#       '.* password': "{{ init_password }}" 
-#       'FortiGate-VM64 # ': "execute restore vmlicense ftp {{ filenmame }} {{ftp_server}}"
-#   no_log: false # hide passwords on logs 
+- name: Update VM license
+  ansible.builtin.expect:
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    responses:
+      '.* password': "{{ new_password }}" 
+      'FortiGate-VM64 # ': "execute restore vmlicense ftp {{ lic_filemame }} {{ lic_ftp_server }}"
+  no_log: false # hide passwords on logs 
+  ignore_errors: yes
 
 # Deprecated
+# - name: Update VM license
 #   fortinet.fortios.fortios_system_vmlicense:
 #     vdom:  "{{ vdom }}"
 #     system_vmlicense:

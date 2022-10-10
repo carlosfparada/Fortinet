@@ -38,3 +38,5 @@ ansible_httpapi_port: 80
 init_password: admin_init
 new_password: admin
 
+lic_filemame: FVVM040000010871.lic
+lic_ftp_server: 192.0.2.23
