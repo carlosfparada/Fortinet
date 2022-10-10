@@ -78,7 +78,7 @@
     vm: "{{ vm_info_new.value[0].vm }}"
   delegate_to: localhost
 
-- name: Sleep for 90 seconds and continue with play
+- name: Sleep for 30 seconds and continue with play
   wait_for:
-    timeout: 90
+    timeout: 30
   delegate_to: localhost
