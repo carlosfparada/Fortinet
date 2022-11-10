@@ -1,6 +1,6 @@
 ---
 
-- name: Get dynamic Fortinet nodes and assign them to groups
+- name: Get dynamic Fortinet nodes and assign them to groups 
   hosts: localhost
   connection: local
   gather_facts: no
