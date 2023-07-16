@@ -1,0 +1,15 @@
+---
+
+- name: Debug Addresses
+  debug:
+    var: _address
+    verbosity: 2
+
+- name: "Create IPv4 address entry for {{ _address.name }}"
+  fortinet.fortios.fortios_firewall_address:
+    vdom: "{{ domain }}"
+    #access_token: "{{ fortigate_token }}"
+    state: present
+    firewall_address:
+      name: "{{ _address.name }}"
+      subnet: "{{ _address.ipv4}} 255.255.255.255"

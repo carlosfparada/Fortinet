@@ -15,6 +15,6 @@
     - main.yml
     - "{{infra}}.yml"  
   roles:
-    - fortigate_create_rules
+    - fortigate_create_rules_2
 
 

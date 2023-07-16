@@ -1,0 +1,10 @@
+---
+# main rule for Fortigate
+
+- name: Start loop for rules
+  include_tasks: rule_loop.yml
+  loop: "{{ fg_fw_rules }}"
+  loop_control:
+    label: "{{ _rule.name }}"
+    loop_var: _rule
+  when: fg_fw_rules | length > 0 
