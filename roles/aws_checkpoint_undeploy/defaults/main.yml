@@ -1,0 +1,32 @@
+# VPC
+ec2_vpc_name: VPC1
+ec2_vpc_region: us-east-1
+ec2_vpc_az: us-east-1a
+ec2_vpc_cidr: 10.0.0.0/16
+# Subnet
+ec2_subnet_name: Subnet1
+ec2_subnet_cidr: 10.0.0.0/24
+# IGW
+ec2_igw_name: IGW1
+# Route Table
+ec2_rt_name: RT1
+# RHEL Open ports
+ec2_sg_name: SG1
+ec2_sg_openports:
+  - 80
+  - 443
+  - 22
+
+# Fortigate
+# AMI
+ec2_ckp_image_name: FortiGate-VM64-AWSONDEMAND build2360 (7.4.0) GA-3124a694-441c-4ff1-8bf7-4d153be424a6
+# Flavour 
+ec2_ckp_flavor_name: t2.small
+# Disk
+ec2_ckp_disk_size: 20
+ec2_ckp_ebs_name: /dev/sda1
+# Key Pair
+ec2_ckp_key_name: "KeyPair-Virginia"
+# Instance
+ec2_ckp_instance_name: fortigate-1
+
