@@ -1,6 +1,6 @@
 ---
 
-- name: AWS deployment roles
+- name: AWS Fortinet deployment role
   hosts: localhost
   connection: local
   gather_facts: no
