@@ -19,14 +19,31 @@ ec2_sg_openports:
 
 # Fortigate
 # AMI
-ec2_ckp_image_name: FortiGate-VM64-AWSONDEMAND build2360 (7.4.0) GA-3124a694-441c-4ff1-8bf7-4d153be424a6
+ec2_fgt_image_name: FortiGate-VM64-AWSONDEMAND build2360 (7.4.0) GA-3124a694-441c-4ff1-8bf7-4d153be424a6
 # Flavour 
-ec2_ckp_flavor_name: t2.small
-# Disk
-ec2_ckp_disk_size: 20
-ec2_ckp_ebs_name: /dev/sda1
+ec2_fgt_flavor_name: t2.small
 # Key Pair
-ec2_ckp_key_name: "KeyPair-Virginia"
+ec2_fgt_key_name: "KeyPair-Virginia"
 # Instance
-ec2_ckp_instance_name: fortigate-1
+ec2_fgt_instance_name: fortigate-1
+
+# FortiAnalyzer
+# AMI
+ec2_faz_image_name: FortiAnalyzer-VM64-AWSONDEMAND build2223 (7.4.0) GA-9e82717a-78e4-4f57-9ef9-d50bdc2838a4
+# Flavour 
+ec2_faz_flavor_name: t2.small
+# Key Pair
+ec2_faz_key_name: "KeyPair-Virginia"
+# Instance
+ec2_faz_instance_name: fortianalyzer-1
+
+# FortiManager
+# AMI
+ec2_fmg_image_name: FortiManager VM64-AWSONDEMAND build2223 (7.4.0) GA-5d6aff10-05ff-4cc5-ac93-ef8a6ce51c77
+# Flavour 
+ec2_fmg_flavor_name: t2.small
+# Key Pair
+ec2_fmg_key_name: "KeyPair-Virginia"
+# Instance
+ec2_fmg_instance_name: fortimanager-1
 
