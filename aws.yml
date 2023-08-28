@@ -15,4 +15,4 @@
     - main.yml
     - "{{infra}}.yml"
   roles:
-    - aws_deploy_fortigate
+    - aws_deploy_fortinet

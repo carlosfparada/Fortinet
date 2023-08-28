@@ -79,13 +79,13 @@
       assign_public_ip: true
     tags:
       name: "{{ ec2_ckp_instance_name }}"
-    volumes:
-      - device_name: "{{ ec2_ckp_ebs_name | default('/dev/sda1', true) }}"
-        ebs:
-          volume_size: "{{ ec2_ckp_disk_size | default(20, true) }}"
-          delete_on_termination: true
-    state: running
-  register: ec2_instance
+  #   volumes:
+  #     - device_name: "{{ ec2_ckp_ebs_name | default('/dev/sda1', true) }}"
+  #       ebs:
+  #         volume_size: "{{ ec2_ckp_disk_size | default(20, true) }}"
+  #         delete_on_termination: true
+  #   state: running
+  # register: ec2_instance
 
 - name: Print instance details
   ansible.builtin.debug:
@@ -96,35 +96,4 @@
 #     timeout: 30
 #   delegate_to: localhost
 
-# Windows
-- name: Get AMI by Name (Windows)
-  amazon.aws.ec2_ami_info:
-    filters:
-      name: "{{ ec2_win_image_name }}"
-    region: "{{ ec2_vpc_region }}"
-  register: ami_win_find
 
-- name: Create Windows instance
-  amazon.aws.ec2_instance:
-    image_id: "{{ ami_win_find.images[-1].image_id | default('') }}"
-    instance_type: "{{ ec2_win_flavor_name }}"
-    security_group: "{{ ec2_sg_name }}"
-    name: "{{ ec2_win_instance_name }}"
-    key_name: "{{ ec2_win_key_name }}"
-    region: "{{ ec2_vpc_region }}"
-    vpc_subnet_id: "{{ subnet.subnet.id }}"
-    network:
-      assign_public_ip: true
-    tags:
-      name: "{{ ec2_win_instance_name }}"
-    state: running
-  register: ec2_instance
-
-- name: Print instance details
-  ansible.builtin.debug:
-    msg: "Instance DNS name is: {{ ec2_instance.instances[0].public_dns_name }} with IP address {{ ec2_instance.instances[0].public_ip_address }}"
-
-- name: Sleep for 30 seconds and continue with play
-  wait_for:
-    timeout: 30
-  delegate_to: localhost
