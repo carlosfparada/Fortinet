@@ -1,0 +1,44 @@
+# VPC
+ec2_vpc_name: VPC1
+ec2_vpc_region: us-east-1
+ec2_vpc_cidr: 10.0.0.0/16
+# Subnet
+ec2_subnet_name: Subnet1
+ec2_subnet_cidr: 10.0.0.0/24
+# IGW
+ec2_igw_name: IGW1
+# Route Table
+ec2_rt_name: RT1
+# RHEL Open ports
+ec2_sg_name: SG1
+ec2_sg_openports:
+  - 80
+  - 443
+  - 22
+
+# Checkpoint
+# AMI
+ec2_ckp_image_name: Check Point CloudGuard IaaS GW PAYG-NGTX R81.20-631.1291-5c2a3811-4da1-49e0-a2f9-b9a369548106
+# Flavour 
+ec2_ckp_flavor_name: c5.large
+# Disk
+ec2_ckp_disk_size: 20
+ec2_ckp_ebs_name: /dev/sda1
+# Key Pair
+ec2_ckp_key_name: "KeyPair-Virginia"
+# Instance
+ec2_ckp_instance_name: checkpoint-1
+
+# Windows - SmartConsole
+# AMI
+ec2_win_image_name: Windows_Server-2022-English-Full-Base-2023.08.10
+# Flavour 
+ec2_win_flavor_name: t2.micro
+# Disk
+# ec2_win_disk_size: 20
+# ec2_win_ebs_name: /dev/sda1
+# Key Pair
+ec2_win_key_name: "KeyPair-Virginia"
+# Instance
+ec2_win_instance_name: windows-1
+
