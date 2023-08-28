@@ -86,6 +86,14 @@
   ansible.builtin.debug:
     msg: "Instance DNS name is: {{ ec2_instance.instances[0].public_dns_name }} with IP address {{ ec2_instance.instances[0].public_ip_address }}"
 
+# Checkpoint
+- name: Get AMI by Name (Fortigate)
+  amazon.aws.ec2_ami_info:
+    filters:
+      name: "{{ ec2_fgt_image_name }}"
+    region: "{{ ec2_vpc_region }}"
+  register: ami_faz_find
+
 - name: Create FortiAnalyzer instance
   amazon.aws.ec2_instance:
     image_id: "{{ ami_faz_find.images[-1].image_id | default('') }}"
@@ -105,6 +113,14 @@
 - name: Print instance details
   ansible.builtin.debug:
     msg: "Instance DNS name is: {{ ec2_instance.instances[0].public_dns_name }} with IP address {{ ec2_instance.instances[0].public_ip_address }}"
+
+# Checkpoint
+- name: Get AMI by Name (Fortigate)
+  amazon.aws.ec2_ami_info:
+    filters:
+      name: "{{ ec2_fgt_image_name }}"
+    region: "{{ ec2_vpc_region }}"
+  register: ami_fmg_find
 
 - name: Create FortiAnalyzer instance
   amazon.aws.ec2_instance:
