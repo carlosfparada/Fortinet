@@ -4,8 +4,13 @@
   hosts: localhost
   connection: local
   gather_facts: no
-  roles:
-    - utils_dynamic_hosts
+  tasks:
+  - include_role: 
+      name: utils_hosts_vmware
+    when: infra == 'vmware'
+  - include_role:
+      name: utils_hosts_aws
+    when: infra == 'aws'
 
 - name: Fortinet FortiGate roles
   hosts: localhost

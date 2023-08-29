@@ -8,7 +8,7 @@
     - main.yml
   tasks:
   - include_role: 
-      name: utils_dynamic_hosts
+      name: utils_hosts_vmware
     when: infra == 'vmware'
   - include_role:
       name: utils_hosts_aws
@@ -20,7 +20,7 @@
   gather_facts: no
   vars_files: 
     - main.yml
-    - "{{infra}}.yml"  
+    - "{{infra}}.yml"
   tasks:
   - include_role: 
       name: fortigate_initial_setup

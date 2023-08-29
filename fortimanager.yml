@@ -4,8 +4,15 @@
   hosts: localhost
   connection: local
   gather_facts: no
-  roles:
-    - utils_dynamic_hosts
+  vars_files: 
+    - main.yml
+  tasks:
+  - include_role: 
+      name: utils_hosts_vmware
+    when: infra == 'vmware'
+  - include_role:
+      name: utils_hosts_aws
+    when: infra == 'aws'
 
 - name: Fortinet FortiManager roles
   hosts: fortimanager
