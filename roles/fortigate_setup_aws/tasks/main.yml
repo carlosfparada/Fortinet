@@ -27,22 +27,22 @@
       # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
       # 'You are forced to change your password. Please input a new password.'
       's password:': "{{ hostvars[groups['fortigate'][0]].instance_id }}" 
-      'New Password:': "{{ init_password }}" 
-      'Confirm Password:': "{{ init_password }}"
+      'New Password:': "{{ new_password }}" 
+      'Confirm Password:': "{{ new_password }}"
       'FGT': "exit" 
   no_log: false # hide passwords on logs
 
-- name: Change admin password
-  ansible.builtin.expect:
-    command: "ssh -o StrictHostKeyChecking=no admin@{{ groups['fortigate'][0] }}"
-    responses:
-      '.* password:': "{{ init_password }}" 
-      'FortiGate-VM64 # ': "config system admin"
-      'FortiGate-VM64 \(admin\) #':
-        - "edit admin"
-        - "set password {{ new_password }}"
-        - "end"
-  no_log: false # hide passwords on logs 
+# - name: Change admin password
+#   ansible.builtin.expect:
+#     command: "ssh -o StrictHostKeyChecking=no admin@{{ groups['fortigate'][0] }}"
+#     responses:
+#       '.* password:': "{{ init_password }}" 
+#       'FortiGate-VM64 # ': "config system admin"
+#       'FortiGate-VM64 \(admin\) #':
+#         - "edit admin"
+#         - "set password {{ new_password }}"
+#         - "end"
+#   no_log: false # hide passwords on logs 
       
 # - name: Update VM license
 #   ansible.builtin.expect:
