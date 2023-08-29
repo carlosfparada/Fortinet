@@ -34,7 +34,7 @@
 
 - name: Change admin password
   ansible.builtin.expect:
-    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ groups['fortigate'][0] }}"
     responses:
       '.* password:': "{{ init_password }}" 
       'FortiGate-VM64 # ': "config system admin"
