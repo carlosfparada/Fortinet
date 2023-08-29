@@ -22,7 +22,7 @@
 # https://www.mail-archive.com/ansible-project@googlegroups.com/msg39525.html 
 - name: Set admin initial password
   ansible.builtin.expect:
-    command: "ssh -o StrictHostKeyChecking=no admin:{{ hostvars[groups['fortigate'][0]].ansible_host }}@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
     responses:
       # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
       # 'You are forced to change your password. Please input a new password.'
