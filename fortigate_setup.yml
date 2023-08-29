@@ -19,6 +19,11 @@
   vars_files: 
     - main.yml
     - "{{infra}}.yml"  
-  roles:
-    - fortigate_initial_setup
+  tasks:
+  - include_role: 
+      name: fortigate_setup_vmware
+    when: infra == 'vmware'
+  - include_role:
+      name: fortigate_setup_aws
+    when: infra == 'aws'
 
