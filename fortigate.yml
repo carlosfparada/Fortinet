@@ -7,9 +7,11 @@
   vars_files: 
     - main.yml
   tasks:
-  - include_role: utils_dynamic_hosts
+  - include_role: 
+      name: utils_dynamic_hosts
     when: infra == 'vmware'
-  - include_role: utils_hosts_aws
+  - include_role:
+      name: utils_hosts_aws
     when: infra == 'aws'
 
 - name: Fortinet FortiGate setup roles
@@ -20,7 +22,8 @@
     - main.yml
     - "{{infra}}.yml"  
   tasks:
-  - include_role: fortigate_initial_setup
+  - include_role: 
+      name: fortigate_initial_setup
     when: infra == 'vmware'
     
 - name: Fortinet FortiGate roles
