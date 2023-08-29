@@ -147,4 +147,3 @@
     timeout: 30
   delegate_to: localhost
 
-
