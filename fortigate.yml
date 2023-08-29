@@ -14,20 +14,20 @@
       name: utils_hosts_aws
     when: infra == 'aws'
 
-- name: Fortinet FortiGate setup roles
-  hosts: localhost
-  connection: local
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"
-  tasks:
-  - include_role: 
-      name: fortigate_setup_wmware
-    when: infra == 'vmware'
-  - include_role: 
-      name: fortigate_setup_aws
-    when: infra == 'aws'
+# - name: Fortinet FortiGate setup roles
+#   hosts: localhost
+#   connection: local
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"
+#   tasks:
+#   - include_role: 
+#       name: fortigate_setup_wmware
+#     when: infra == 'vmware'
+#   - include_role: 
+#       name: fortigate_setup_aws
+#     when: infra == 'aws'
     
 - name: Fortinet FortiGate roles
   hosts: fortigate
