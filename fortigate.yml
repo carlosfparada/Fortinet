@@ -5,17 +5,18 @@
   connection: local
   gather_facts: no
   roles:
-    - utils_dynamic_hosts
+    #- utils_dynamic_hosts
+    - utils_hosts_aws
 
-- name: Fortinet FortiGate setup roles
-  hosts: localhost
-  connection: local
-  gather_facts: no
-  vars_files: 
-    - main.yml
-    - "{{infra}}.yml"  
-  roles:
-    - fortigate_initial_setup
+# - name: Fortinet FortiGate setup roles
+#   hosts: localhost
+#   connection: local
+#   gather_facts: no
+#   vars_files: 
+#     - main.yml
+#     - "{{infra}}.yml"  
+#   roles:
+#     - fortigate_initial_setup
     
 - name: Fortinet FortiGate roles
   hosts: fortigate
