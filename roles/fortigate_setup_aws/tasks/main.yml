@@ -12,7 +12,7 @@
 
 - name: ansible_host
   debug:
-    var: ansible_host
+    var: groups['fortigate'][0]
 
 - name: hostvars 
   debug:
