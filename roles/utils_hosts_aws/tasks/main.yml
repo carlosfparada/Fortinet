@@ -7,7 +7,7 @@
   set_fact:
     fortigate: "{{ item }}"
   loop: "{{ groups['all'] }}"
-  when: item.tags.name | regex_search("^fortigate-(.*)$")
+  when: groups[item].tags.name | regex_search("^fortigate-(.*)$")
 
 - name: Add FortiGate node to the fortigate group
   add_host:
