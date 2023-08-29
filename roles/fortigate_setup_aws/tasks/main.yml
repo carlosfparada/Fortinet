@@ -1,0 +1,59 @@
+---
+
+# https://stackoverflow.com/questions/71186804/ansible-to-run-commands-via-ssh-on-remote-hosts
+#- name: "Connecting to Checkpoint Firewalls"
+#  connection: ansible.netcommon.network_cli
+#  gather_facts: false
+#  hosts: checkpoint
+  # - name: Gather facts (asa)
+  #   ansible.netcommon.cli_command:
+  #     command:
+  #       - show
+
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
+# https://www.mail-archive.com/ansible-project@googlegroups.com/msg39525.html 
+- name: Set admin initial password
+  ansible.builtin.expect:
+    command: "ssh -o StrictHostKeyChecking=no admin:{{ hostvars[groups['fortigate'][0]].ansible_host }}@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    responses:
+      # 'Are you sure you want to continue connecting (yes/no/[fingerprint])': "yes"
+      # 'You are forced to change your password. Please input a new password.'
+      's password:': "{{ hostvars[groups['fortigate'][0]].instance_id }}" 
+      'New Password:': "{{ init_password }}" 
+      'Confirm Password:': "{{ init_password }}"
+      'FortiGate-VM64 # ': "exit" 
+  no_log: false # hide passwords on logs
+
+- name: Change admin password
+  ansible.builtin.expect:
+    command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+    responses:
+      '.* password:': "{{ init_password }}" 
+      'FortiGate-VM64 # ': "config system admin"
+      'FortiGate-VM64 \(admin\) #':
+        - "edit admin"
+        - "set password {{ new_password }}"
+        - "end"
+  no_log: false # hide passwords on logs 
+      
+# - name: Update VM license
+#   ansible.builtin.expect:
+#     command: "ssh -o StrictHostKeyChecking=no admin@{{ hostvars[groups['fortigate'][0]].ansible_host }}"
+#     responses:
+#       '.* password': "{{ new_password }}" 
+#       'FortiGate-VM64 # ': "execute restore vmlicense ftp {{ lic_filemame }} {{ lic_ftp_server }}"
+#       'Do you want to continue\? \(y/n\)': "y"
+#   no_log: false # hide passwords on logs 
+#   timeout: 60
+#   ignore_errors: yes
+
+# Deprecated
+# - name: Update VM license
+#   fortinet.fortios.fortios_system_vmlicense:
+#     vdom:  "{{ vdom }}"
+#     system_vmlicense:
+#       file_content: "{{ encoded_license }}"
+#   vars:
+#     license_file: ./FGVMXXXXXX-VM00.lic
+#     license_file_content: "{{ lookup( 'file', license_file) }}"
+#     encoded_license: "{{ license_file_content | string | b64encode }}"
