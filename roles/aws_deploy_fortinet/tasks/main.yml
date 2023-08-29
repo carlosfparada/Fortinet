@@ -142,9 +142,9 @@
   ansible.builtin.debug:
     msg: "Instance DNS name is: {{ ec2_instance.instances[0].public_dns_name }} with IP address {{ ec2_instance.instances[0].public_ip_address }}"
 
-# - name: Sleep for 30 seconds and continue with play
-#   wait_for:
-#     timeout: 30
-#   delegate_to: localhost
+- name: Sleep for 30 seconds and continue with play
+  wait_for:
+    timeout: 30
+  delegate_to: localhost
 
 
