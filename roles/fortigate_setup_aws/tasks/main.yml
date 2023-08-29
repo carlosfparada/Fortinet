@@ -29,7 +29,7 @@
       's password:': "{{ hostvars[groups['fortigate'][0]].instance_id }}" 
       'New Password:': "{{ init_password }}" 
       'Confirm Password:': "{{ init_password }}"
-      'FortiGate-VM64 # ': "exit" 
+      #'FortiGate-VM64 # ': "exit" 
   no_log: false # hide passwords on logs
 
 - name: Change admin password
