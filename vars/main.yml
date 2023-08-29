@@ -1,2 +1,3 @@
-infra: eve-ng
+#infra: eve-ng
 #infra: vmware
+infra: aws
