@@ -23,7 +23,7 @@
     - "{{infra}}.yml"
   tasks:
   - include_role: 
-      name: fortigate_setup_wmware
+      name: fortigate_setup_vmware
     when: infra == 'vmware'
   - include_role: 
       name: fortigate_setup_aws
